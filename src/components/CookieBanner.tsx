@@ -13,9 +13,9 @@ export default function CookieBanner() {
         
         if (consent === "accepted") {
             if (typeof window !== "undefined") {
-                // @ts-expect-error - gtag is defined by Google Analytics
+                // @ts-ignore - gtag is defined by Google Analytics
                 if (typeof window.gtag === "function") {
-                    // @ts-expect-error - gtag is defined by Google Analytics
+                    // @ts-ignore - gtag is defined by Google Analytics
                     window.gtag("consent", "update", {
                         analytics_storage: "granted",
                         ad_storage: "granted"
@@ -37,9 +37,9 @@ export default function CookieBanner() {
         setIsVisible(false);
         
         if (typeof window !== "undefined") {
-            // @ts-expect-error - gtag is defined by Google Analytics
+            // @ts-ignore - gtag is defined by Google Analytics
             if (typeof window.gtag === "function") {
-                // @ts-expect-error - gtag is defined by Google Analytics
+                // @ts-ignore - gtag is defined by Google Analytics
                 window.gtag("consent", "update", {
                     analytics_storage: "granted",
                     ad_storage: "granted"
