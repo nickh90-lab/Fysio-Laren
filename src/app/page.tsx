@@ -11,17 +11,17 @@ export default function OnderhoudsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#0B1F3A]">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-background">
 
-      {/* Achtergrond decoratie */}
+      {/* Subtiele achtergrond decoratie */}
       <div className="absolute inset-0 pointer-events-none">
         <div
-          className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full opacity-20"
-          style={{ background: "radial-gradient(circle, #2563eb 0%, transparent 70%)" }}
+          className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full opacity-30"
+          style={{ background: "radial-gradient(circle, #E8DFD1 0%, transparent 70%)" }}
         />
         <div
-          className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, #3b82f6 0%, transparent 70%)" }}
+          className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full opacity-20"
+          style={{ background: "radial-gradient(circle, #1D3FA3 0%, transparent 70%)" }}
         />
       </div>
 
@@ -35,9 +35,9 @@ export default function OnderhoudsPage() {
         }}
       >
         {/* Logo */}
-        <div className="mb-10 w-48 md:w-64 relative">
+        <div className="mb-10 w-64 md:w-80 relative">
           <Image
-            src="/Logo transparant op blauw.svg"
+            src="/Logo transparant op wit.svg"
             alt="Fysio Laren logo"
             width={260}
             height={120}
@@ -46,46 +46,29 @@ export default function OnderhoudsPage() {
           />
         </div>
 
-        {/* Dunne lijn */}
-        <div className="w-16 h-[2px] bg-blue-400/50 rounded-full mb-10" />
+
 
         {/* Tekst */}
         <h1
-          className="text-3xl md:text-5xl font-bold text-white mb-5 leading-tight"
+          className="text-3xl md:text-5xl font-bold text-foreground mb-5 leading-tight"
           style={{ letterSpacing: "-0.02em" }}
         >
-          We zijn er bijna
+          Website in aanbouw.
         </h1>
-        <p className="text-blue-200/80 text-lg md:text-xl leading-relaxed mb-10 max-w-md">
-          Onze nieuwe website is bijna klaar. Binnenkort vindt u hier alles over onze fysiotherapiepraktijk in Laren.
+        <p className="text-foreground/60 text-lg md:text-xl leading-relaxed mb-10 max-w-md">
+          Onze nieuwe website is bijna klaar. Binnenkort vindt u hier alles over onze nieuwe praktijk in Laren.
         </p>
 
-        {/* Contact info */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <a
-            href="tel:035-5385700"
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold transition-all border border-white/20 backdrop-blur-sm"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z" />
-            </svg>
-            035-5385700
-          </a>
-          <a
-            href="mailto:info@fysio-laren.nl"
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold transition-all border border-white/20 backdrop-blur-sm"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            info@fysio-laren.nl
-          </a>
-        </div>
-
-        {/* Adres */}
-        <p className="mt-8 text-blue-300/60 text-sm">
-          Naarderstraat 67 · 1251 BG Laren
-        </p>
+        {/* E-mail knop */}
+        <a
+          href="mailto:info@fysio-laren.nl"
+          className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold transition-all border border-foreground/15 hover:border-foreground/30 hover:bg-foreground/5 text-foreground"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          info@fysio-laren.nl
+        </a>
       </div>
     </div>
   );
