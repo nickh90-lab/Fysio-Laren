@@ -1,99 +1,92 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { ChevronRight, Activity, Users, Clock, ShieldCheck, Check, Phone, ArrowRight, MapPin, Search } from "lucide-react";
-import PracticalInfoSelector from "@/components/PracticalInfoSelector";
-import CTASelector from "@/components/CTASelector";
-import SpecialtiesSelector from "@/components/SpecialtiesSelector";
-import WaaromFysioSelector from "@/components/WaaromFysioSelector";
-import LogoDisplaySelector from "@/components/LogoDisplaySelector";
 
+export default function OnderhoudsPage() {
+  const [mounted, setMounted] = useState(false);
 
-export default function Home() {
-  const heroImageSrc = "/images/hero-praktijk-binnen.jpg";
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <div className="pt-20">
-      {/* Sectie 1: Hero Sectie */}
-      <div className="w-full bg-background flex flex-col lg:flex-row min-h-[85vh] -mt-20 pt-32 pb-16 relative">
-        <div className="max-w-screen-2xl mx-auto w-full flex flex-col lg:flex-row items-center px-6 lg:px-12 xl:px-24 gap-12 lg:gap-24">
-          <div className="w-full lg:w-1/2 flex flex-col justify-center py-12 lg:py-24 z-10 text-center lg:text-left items-center lg:items-start">
-            <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 leading-[1.1] lg:leading-[1.05]">
-              Samen werken<br className="hidden md:block" /> aan uw<br className="hidden md:block" /> gezondheid.
-            </h1>
-            <p className="text-foreground/70 text-lg md:text-xl max-w-md font-light leading-relaxed mx-auto lg:mx-0">
-              Persoonlijke aandacht, duidelijke uitleg en een behandeling die bij u past.<br className="hidden lg:block lg:mb-2" /> Samen werken we aan herstel en blijvend resultaat.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-10 items-center lg:items-start w-full sm:w-auto">
-              <Link href="/afspraak-maken" className="w-full sm:w-auto px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg hover:shadow-blue-accent/20 md:text-lg">
-                Maak een afspraak
-              </Link>
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#0B1F3A]">
 
-              <Link href="/ons-team" className="w-full sm:w-auto px-8 py-4 bg-white/80 hover:bg-white text-foreground font-bold rounded-full border border-foreground/10 shadow-sm transition-all flex items-center justify-center md:text-lg">
-                Ons team
-              </Link>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2 relative h-[40vh] sm:h-[50vh] lg:h-auto min-h-[300px] sm:min-h-[500px]">
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[90%] sm:w-[85%] aspect-square rounded-full overflow-hidden shadow-[0_40px_80px_-20px_rgba(30,41,59,0.15)] ring-1 ring-black/5 border-[4px] sm:border-[6px] border-white/90 z-0">
-              <Image src={heroImageSrc} alt="Praktijk" fill className="object-cover object-right" priority />
-            </div>
-            <LogoDisplaySelector />
-          </div>
-        </div>
+      {/* Achtergrond decoratie */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full opacity-20"
+          style={{ background: "radial-gradient(circle, #2563eb 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full opacity-15"
+          style={{ background: "radial-gradient(circle, #3b82f6 0%, transparent 70%)" }}
+        />
       </div>
 
-      {/* Sectie 1: Wat kunnen wij voor u betekenen? (Wit) */}
-      <section className="py-24 md:py-32 px-6 md:px-12 bg-white flex flex-col items-center">
-        <div className="max-w-5xl w-full">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">Wat kunnen wij voor u betekenen?</h2>
-            <p className="text-foreground/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Welkom bij Fysio Laren. Als professionele fysiotherapiepraktijk helpen wij u bij het behandelen, verhelpen en voorkomen van lichamelijke klachten.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Hoofdblok Fysiotherapie */}
-            <div className="bg-muted rounded-[2.5rem] p-10 md:p-12 flex flex-col h-full border border-foreground/5 shadow-sm hover:shadow-lg transition-all group">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground group-hover:text-primary-foreground transition-colors">Fysiotherapie</h3>
-              <p className="text-foreground/80 mb-10 flex-grow text-lg leading-relaxed">
-                Wij zijn in de basis een gespecialiseerde fysiotherapiepraktijk. Onze therapeuten bieden persoonlijke en doelgerichte behandelingen om u zo snel mogelijk weer pijnvrij in beweging te krijgen. Van herstel na een operatie tot complexe klachten.
-              </p>
-              <Link href="/afspraak-maken" className="inline-flex items-center text-white bg-blue-accent font-bold hover:bg-blue-accent/90 transition-all mt-auto w-fit px-8 py-4 rounded-full shadow-xl hover:scale-105 border border-foreground/5 md:text-lg">
-                Maak een afspraak <ArrowRight size={20} className="ml-2" />
-              </Link>
-            </div>
-
-            {/* Ondersteunend blok Sportis */}
-            <div className="bg-primary/20 rounded-[2.5rem] p-10 md:p-12 flex flex-col h-full border border-foreground/5 shadow-sm hover:shadow-lg transition-all group relative overflow-hidden">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground group-hover:text-primary-foreground transition-colors">Sportis</h3>
-              <p className="text-foreground/80 mb-10 flex-grow text-lg leading-relaxed">
-                Als krachtige aanvulling op onze fysiotherapie bieden wij Sportis: verantwoord trainen onder professionele begeleiding. Ideaal ter ondersteuning van uw opgebouwde herstel en ter preventie van nieuwe klachten.
-              </p>
-              <Link href="/sportis" className="inline-flex items-center text-foreground font-bold hover:gap-3 transition-all mt-auto bg-white/80 hover:bg-white w-fit px-8 py-4 rounded-full shadow-sm border border-foreground/10 md:text-lg">
-                Ontdek Sportis <ArrowRight size={20} className="ml-2 text-primary" />
-              </Link>
-            </div>
-          </div>
+      {/* Content */}
+      <div
+        className="relative z-10 flex flex-col items-center text-center px-6 max-w-xl mx-auto"
+        style={{
+          opacity: mounted ? 1 : 0,
+          transform: mounted ? "translateY(0)" : "translateY(20px)",
+          transition: "opacity 0.8s ease, transform 0.8s ease",
+        }}
+      >
+        {/* Logo */}
+        <div className="mb-10 w-48 md:w-64 relative">
+          <Image
+            src="/Logo transparant op blauw.svg"
+            alt="Fysio Laren logo"
+            width={260}
+            height={120}
+            priority
+            style={{ objectFit: "contain" }}
+          />
         </div>
-      </section>
 
-      {/* Sectie 2: Expertises en Behandelingen (Beige vs Lichtblauw) - Tabs Component */}
-      <SpecialtiesSelector />
+        {/* Dunne lijn */}
+        <div className="w-16 h-[2px] bg-blue-400/50 rounded-full mb-10" />
 
-      {/* Sectie 3: Waarom Fysio Laren? (Zand vs Nieuw) - Selector */}
-      <WaaromFysioSelector />
+        {/* Tekst */}
+        <h1
+          className="text-3xl md:text-5xl font-bold text-white mb-5 leading-tight"
+          style={{ letterSpacing: "-0.02em" }}
+        >
+          We zijn er bijna
+        </h1>
+        <p className="text-blue-200/80 text-lg md:text-xl leading-relaxed mb-10 max-w-md">
+          Onze nieuwe website is bijna klaar. Binnenkort vindt u hier alles over onze fysiotherapiepraktijk in Laren.
+        </p>
 
-      {/* Sectie 4: Praktische informatie (Wit) - A/B Test Selector */}
-      <PracticalInfoSelector />
+        {/* Contact info */}
+        <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <a
+            href="tel:035-5385700"
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold transition-all border border-white/20 backdrop-blur-sm"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z" />
+            </svg>
+            035-5385700
+          </a>
+          <a
+            href="mailto:info@fysio-laren.nl"
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold transition-all border border-white/20 backdrop-blur-sm"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            info@fysio-laren.nl
+          </a>
+        </div>
 
-      {/* Sectie 5: Call to action (A/B Test Selector) */}
-      <CTASelector />
+        {/* Adres */}
+        <p className="mt-8 text-blue-300/60 text-sm">
+          Naarderstraat 67 · 1251 BG Laren
+        </p>
+      </div>
     </div>
   );
 }
-
-
