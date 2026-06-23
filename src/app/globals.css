@@ -20,6 +20,17 @@
 
   --color-blue-accent: #1D3FA3;
   /* Cobalt blue accent */
+
+  --animate-marquee: marquee 80s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 1.5rem));
+    }
+  }
 }
 
 :root {

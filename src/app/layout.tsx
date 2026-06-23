@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 import { GoogleAnalytics } from '@next/third-parties/google';
-
-// ONDERHOUD MODUS ACTIEF
-// Om terug te gaan naar de echte website:
-// 1. Verwijder dit bestand en herstel layout.original.tsx
-// 2. Hernoem page.website.tsx terug naar page.tsx
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fysio Laren | Binnenkort online",
-  description: "Fysio Laren is binnenkort online. Specialist in fysiotherapie en revalidatie in Laren.",
+  title: "Fysio Laren | Specialist in Fysiotherapie & Revalidatie",
+  description: "Moderne fysiotherapie in Laren. Persoonlijke zorg, expertise en een snelle weg naar herstel. Plan direct online uw afspraak.",
 };
 
 export default function RootLayout({
@@ -36,8 +34,13 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} min-h-screen bg-background text-foreground antialiased`}>
-        {children}
+      <body className={`${inter.className} min-h-screen flex flex-col text-[17px] leading-relaxed bg-background text-foreground antialiased`}>
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+        <CookieBanner />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
     </html>

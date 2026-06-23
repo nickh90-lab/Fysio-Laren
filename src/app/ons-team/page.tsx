@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import OnsTeamClient from "./OnsTeamClient";
+import TeamInteractive from "@/components/TeamInteractive";
 
 export const metadata: Metadata = {
     title: 'Ons Team | Fysiotherapie Laren',
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function OnsTeam() {
-    return <OnsTeamClient />;
+    return <TeamInteractive />;
 }
