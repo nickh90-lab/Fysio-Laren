@@ -2,13 +2,19 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
+
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
 
 export default function ComingSoon() {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    // Aftellen naar 1 november 2026 om 08:00
     const targetDate = new Date("2026-11-01T08:00:00").getTime();
 
     const updateCountdown = () => {
@@ -32,94 +38,124 @@ export default function ComingSoon() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden">
+    <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4 sm:px-6 py-6 sm:py-10 relative overflow-hidden">
       {/* Subtiele achtergrond decoratie */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[45vw] h-[45vw] bg-primary/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-[35vw] h-[35vw] bg-blue-accent/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
       </div>
 
-      {/* Centrale content container */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-lg w-full">
-        {/* Logo - royaler formaat zoals voorheen */}
-        <div className="mb-8 w-64 md:w-80 relative">
-          <Image
-            src="/Logo%20transparant%20op%20wit.svg"
-            alt="Fysio Laren"
-            width={320}
-            height={110}
-            className="w-full h-auto"
-            priority
-          />
-        </div>
+      {/* Geoptimaliseerde Split Container: strak uitgelijnd binnen het scherm */}
+      <div className="relative z-10 max-w-5xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center my-auto">
+        
+        {/* Linkerkant: Inhoud & Contact */}
+        <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+          
+          {/* Groot Logo - compacte ondermarge zodat de rest direct aansluit */}
+          <div className="mb-3 sm:mb-4 w-64 sm:w-72 md:w-80 relative">
+            <Image
+              src="/Logo%20transparant%20op%20wit.svg"
+              alt="Fysio Laren"
+              width={340}
+              height={115}
+              className="w-full h-auto drop-shadow-xs"
+              priority
+            />
+          </div>
 
-        {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-          Hier komt binnenkort onze nieuwe website.
-        </h1>
+          {/* Titel */}
+          <h1 className="text-2xl sm:text-3xl md:text-3.5xl font-bold text-foreground mb-2 leading-tight tracking-tight">
+            Hier komt binnenkort onze nieuwe website.
+          </h1>
 
-        {/* Afteller - rustige, subtiele capsule */}
-        <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/90 border border-foreground/10 px-4 sm:px-5 py-2 rounded-full shadow-xs text-xs sm:text-sm text-foreground/80 mb-8">
-          <span className="w-2 h-2 rounded-full bg-blue-accent animate-pulse" />
-          <span>
-            Nog <strong className="text-blue-accent font-bold">{timeLeft.days}</strong> dagen, <strong className="text-blue-accent font-bold">{timeLeft.hours}</strong> uur en <strong className="text-blue-accent font-bold">{timeLeft.minutes}</strong> min tot de start
-          </span>
-        </div>
+          {/* Afteller */}
+          <p className="text-xs sm:text-sm font-medium text-foreground/70 mb-5">
+            Opening 1 november 2026 • Nog <strong className="text-blue-accent font-bold">{timeLeft.days} dagen</strong>, {timeLeft.hours} uur en {timeLeft.minutes} min
+          </p>
 
-        {/* Locatie & Fasering blok - helder, overzichtelijk en rustig */}
-        <div className="w-full bg-white/80 backdrop-blur-sm border border-foreground/10 rounded-2xl p-5 sm:p-6 mb-8 text-left shadow-xs space-y-4">
-          <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-full bg-blue-accent/10 flex items-center justify-center text-blue-accent shrink-0 mt-0.5">
-              <MapPin size={16} />
-            </div>
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-accent block mb-0.5">
-                Vanaf 1 november 2026
+          {/* 2 Kolommen met locaties & fasering */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 w-full max-w-xl text-center sm:text-left mb-5 border-t border-b border-foreground/10 py-4">
+            {/* Kolom 1: 1 November 2026 */}
+            <div className="flex flex-col">
+              <span className="text-base sm:text-lg font-black text-blue-accent tracking-tight block mb-0.5">
+                1 November 2026
               </span>
-              <p className="text-sm sm:text-[15px] font-medium text-foreground leading-snug">
-                Wij gaan officieel van start onder de naam <strong>Fysio Laren</strong> op onze vertrouwde locatie:
+              <p className="text-sm sm:text-base font-bold text-foreground leading-snug mb-1.5">
+                Start als Fysio Laren
               </p>
-              <p className="text-xs sm:text-sm text-foreground/70 mt-0.5">
-                Rengersweg 2, Laren (Gld)
+              <div className="mt-auto">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-foreground/50 block">
+                  Vertrouwde locatie:
+                </span>
+                <p className="text-xs sm:text-sm font-semibold text-foreground/85 leading-snug">
+                  Rengersweg 2, Laren
+                </p>
+              </div>
+            </div>
+
+            {/* Kolom 2: 1 Januari 2027 */}
+            <div className="flex flex-col border-t sm:border-t-0 sm:border-l border-foreground/8 pt-3.5 sm:pt-0 sm:pl-6">
+              <span className="text-base sm:text-lg font-black text-foreground tracking-tight block mb-0.5">
+                1 Januari 2027
+              </span>
+              <p className="text-sm sm:text-base font-bold text-foreground leading-snug mb-1.5">
+                Nieuwe praktijklocatie
               </p>
+              <div className="mt-auto">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-foreground/50 block">
+                  Vanaf het nieuwe jaar:
+                </span>
+                <p className="text-xs sm:text-sm font-semibold text-foreground/85 leading-snug">
+                  Huenderstraat 3, Laren
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="border-t border-foreground/8 pt-3.5 flex items-start gap-3">
-            <div className="w-8 h-8 rounded-full bg-primary/40 flex items-center justify-center text-foreground shrink-0 mt-0.5">
-              <MapPin size={16} />
-            </div>
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-foreground/60 block mb-0.5">
-                Vanaf 1 januari 2027
-              </span>
-              <p className="text-sm sm:text-[15px] font-medium text-foreground leading-snug">
-                Verhuizen wij naar onze nieuwe praktijklocatie:
-              </p>
-              <p className="text-xs sm:text-sm text-foreground/70 mt-0.5">
-                Huenderstraat 3, Laren (Gld)
-              </p>
-            </div>
+          {/* Solis afspraakinfo */}
+          <div className="w-full max-w-xl mb-5 text-xs sm:text-sm text-foreground/75 leading-relaxed bg-foreground/[0.03] rounded-xl p-3 sm:p-3.5 border border-foreground/8 text-center sm:text-left">
+            <p className="font-medium text-foreground mb-0.5">
+              Afspraak maken tot 1 november?
+            </p>
+            <p className="text-foreground/65 text-xs sm:text-[13px]">
+              U kunt tot 1 november voor afspraken contact opnemen met <strong>Solis</strong>. Vanaf 1 november zijn wij rechtstreeks bereikbaar via onderstaand nummer:
+            </p>
+          </div>
+
+          {/* Contact knoppen */}
+          <div className="flex flex-col sm:flex-row gap-2.5 items-center w-full justify-center lg:justify-start">
+            <a
+              href="tel:+31573215058"
+              className="w-full sm:w-auto px-6 py-3 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center gap-2 shadow-sm text-sm hover:scale-[1.02]"
+            >
+              <Phone size={15} />
+              <span>0573 - 21 50 58</span>
+            </a>
+            <a
+              href="mailto:info@fysio-laren.nl"
+              className="w-full sm:w-auto px-6 py-3 bg-white text-foreground font-semibold rounded-full border border-foreground/15 hover:bg-foreground/5 transition-all flex items-center justify-center gap-2 shadow-xs text-sm"
+            >
+              <Mail size={15} />
+              <span>info@fysio-laren.nl</span>
+            </a>
+          </div>
+
+        </div>
+
+        {/* Rechterkant: Teamfoto in een perfect passende kaart */}
+        <div className="lg:col-span-5 flex justify-center w-full mt-4 lg:mt-0">
+          <div className="relative w-full max-w-[290px] sm:max-w-[310px] lg:max-w-[320px] aspect-[3545/5206] rounded-[2rem] overflow-hidden shadow-xl bg-muted border-4 border-white">
+            <Image
+              src="/images/Teamfoto_v2.jpg"
+              alt="Team Fysio Laren"
+              fill
+              priority
+              sizes="(max-width: 768px) 290px, 320px"
+              className="object-cover"
+            />
           </div>
         </div>
 
-        {/* Contact knop & mail */}
-        <div className="flex flex-col sm:flex-row gap-3 items-center w-full justify-center">
-          <a
-            href="tel:+31573215058"
-            className="w-full sm:w-auto px-8 py-3.5 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center gap-2 shadow-md md:text-base hover:scale-[1.02]"
-          >
-            <Phone size={17} />
-            <span>Bel ons: 0573 - 21 50 58</span>
-          </a>
-          <a
-            href="mailto:info@fysio-laren.nl"
-            className="w-full sm:w-auto px-7 py-3.5 bg-white text-foreground font-semibold rounded-full border border-foreground/15 hover:bg-foreground/5 transition-all flex items-center justify-center gap-2 shadow-xs md:text-base"
-          >
-            <Mail size={17} />
-            <span>info@fysio-laren.nl</span>
-          </a>
-        </div>
       </div>
     </div>
   );
