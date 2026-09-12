@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/Teamfoto_v2.png",
+        url: "/images/Teamfoto_v2.jpg",
         width: 1200,
         height: 630,
         alt: "Team Fysio Laren",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fysio Laren | Specialist in Fysiotherapie & Revalidatie",
     description: "Professionele fysiotherapie en manuele therapie in Laren (Gelderland).",
-    images: ["/images/Teamfoto_v2.png"],
+    images: ["/images/Teamfoto_v2.jpg"],
   },
   robots: {
     index: true,
@@ -73,7 +73,7 @@ const clinicSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
   "name": "Fysio Laren",
-  "image": "https://www.fysio-laren.nl/images/Teamfoto_v2.png",
+  "image": "https://www.fysio-laren.nl/images/Teamfoto_v2.jpg",
   "@id": "https://www.fysio-laren.nl",
   "url": "https://www.fysio-laren.nl",
   "telephone": "+31573215058",

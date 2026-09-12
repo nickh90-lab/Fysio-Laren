@@ -13,8 +13,6 @@ import InstagramFeed from "@/components/InstagramFeed";
 import { partners } from "@/data/partners";
 
 export default function Home() {
-  const heroImageSrc = "/images/Teamfoto_v2.png?v=18";
-
   return (
     <div className="pt-20">
       {/* Sectie 1: Hero Sectie */}
@@ -42,10 +40,13 @@ export default function Home() {
           {/* Rechterzijde - De Groepsfoto */}
           <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
             <div className="relative w-full max-w-[370px] aspect-[3545/5206] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] bg-muted">
-              <img 
-                src={heroImageSrc} 
+              <Image 
+                src="/images/Teamfoto_v2.jpg" 
                 alt="Team Fysio Laren" 
-                className="w-full h-full object-cover"
+                fill
+                priority
+                sizes="(max-width: 768px) 370px, 450px"
+                className="object-cover"
               />
             </div>
           </div>
