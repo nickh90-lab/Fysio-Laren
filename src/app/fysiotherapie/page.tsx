@@ -13,7 +13,7 @@ export default function FysiotherapiePage() {
         "@type": "MedicalClinic",
         "name": "Fysio Laren",
         "description": "Specialist in fysiotherapie, manuele therapie en revalidatie in Laren en omstreken.",
-        "url": "https://www.fysiolaren.nl/fysiotherapie",
+        "url": "https://www.fysio-laren.nl/fysiotherapie",
         "telephone": "+31573215058",
         "address": {
             "@type": "PostalAddress",

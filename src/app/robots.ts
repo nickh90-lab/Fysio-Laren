@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/api/'],
         },
-        sitemap: 'https://www.fysiolaren.nl/sitemap.xml',
+        sitemap: 'https://www.fysio-laren.nl/sitemap.xml',
     };
 }

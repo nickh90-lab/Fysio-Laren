@@ -9,7 +9,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fysiolaren.nl"),
+  metadataBase: new URL("https://www.fysio-laren.nl"),
   title: {
     default: "Fysio Laren | Specialist in Fysiotherapie, Manuele Therapie & FysioFit",
     template: "%s | Fysio Laren"
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fysio Laren | Specialist in Fysiotherapie & Revalidatie",
     description: "Professionele fysiotherapie en manuele therapie in Laren (Gelderland). Persoonlijke zorg en een snelle weg naar herstel.",
-    url: "https://www.fysiolaren.nl",
+    url: "https://www.fysio-laren.nl",
     siteName: "Fysio Laren",
     locale: "nl_NL",
     type: "website",
@@ -73,9 +73,9 @@ const clinicSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
   "name": "Fysio Laren",
-  "image": "https://www.fysiolaren.nl/images/Teamfoto_v2.png",
-  "@id": "https://www.fysiolaren.nl",
-  "url": "https://www.fysiolaren.nl",
+  "image": "https://www.fysio-laren.nl/images/Teamfoto_v2.png",
+  "@id": "https://www.fysio-laren.nl",
+  "url": "https://www.fysio-laren.nl",
   "telephone": "+31573215058",
   "email": "info@fysio-laren.nl",
   "address": {
