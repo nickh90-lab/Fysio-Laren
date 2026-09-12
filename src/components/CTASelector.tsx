@@ -27,12 +27,22 @@ export default function CTASelector() {
                                     <CalendarPlus size={24} className="group-hover/btn:scale-110 transition-transform" />
                                 </Link>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-                                    <a href="tel:0351234567" className="flex items-center justify-center gap-3 bg-white text-foreground px-6 py-4 rounded-full border border-foreground/5 hover:border-foreground/20 hover:bg-white/80 transition-all font-semibold shadow-sm">
-                                        <Phone size={20} className="text-primary" /> Bel ons
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-2">
+                                    <a 
+                                        href="tel:0573215058" 
+                                        className="flex items-center justify-center gap-2.5 bg-white text-foreground px-4 sm:px-5 py-3.5 sm:py-4 rounded-full border border-foreground/5 hover:border-foreground/20 hover:bg-white/90 transition-all font-semibold text-sm sm:text-base shadow-sm whitespace-nowrap group/call"
+                                    >
+                                        <Phone size={18} className="text-primary shrink-0 group-hover/call:scale-110 transition-transform" /> 
+                                        <span className="truncate">0573 - 21 50 58</span>
                                     </a>
-                                    <a href="https://wa.me/31612345678" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-white text-foreground px-6 py-4 rounded-full border border-foreground/5 hover:border-foreground/20 hover:bg-white/80 transition-all font-semibold shadow-sm">
-                                        <MessageCircle size={20} className="text-green-600" /> WhatsApp
+                                    <a 
+                                        href="https://wa.me/31573215058" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="flex items-center justify-center gap-2.5 bg-white text-foreground px-4 sm:px-5 py-3.5 sm:py-4 rounded-full border border-foreground/5 hover:border-foreground/20 hover:bg-white/90 transition-all font-semibold text-sm sm:text-base shadow-sm whitespace-nowrap group/wa"
+                                    >
+                                        <MessageCircle size={18} className="text-green-600 shrink-0 group-hover/wa:scale-110 transition-transform" /> 
+                                        <span>WhatsApp</span>
                                     </a>
                                 </div>
                             </div>

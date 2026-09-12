@@ -3,23 +3,33 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, ChevronDown } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
+const mainNavLinks = [
     { name: "Home", href: "/" },
-    { name: "Fysiotherapie/Manueel therapie", href: "/fysiotherapie" },
-    { name: "Sportis", href: "/sportis" },
-    { name: "Ons team", href: "/ons-team" },
+    { name: "Fysiotherapie", href: "/fysiotherapie" },
+];
+
+const teamLink = { name: "Ons team", href: "/ons-team" };
+
+const infoLinks = [
     { name: "De praktijk", href: "/de-praktijk" },
     { name: "Tarieven", href: "/tarieven" },
     { name: "Contact", href: "/contact" },
 ];
 
-export default function Header() {
+export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
+    const [isGespecialiseerdOpen, setIsGespecialiseerdOpen] = useState(false);
+    const [isNeuroOpen, setIsNeuroOpen] = useState(false);
+
+    const toggleMobileSubmenu = (name: string) => {
+        setOpenMobileSubmenu(prev => prev === name ? null : name);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,34 +41,49 @@ export default function Header() {
     }, []);
 
     // Sluit menu bij navigatie
-    const closeMenu = () => setIsMobileMenuOpen(false);
+    const closeMenu = () => {
+        setIsMobileMenuOpen(false);
+        setOpenMobileSubmenu(null);
+        setIsGespecialiseerdOpen(false);
+        setIsNeuroOpen(false);
+    };
 
     return (
         <header
             className={cn(
-                "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-out",
-                isScrolled ? "py-3 px-4 md:py-4 md:px-12" : "py-5 px-4 md:py-6 md:px-12"
+                "fixed z-[100] transition-all duration-500 ease-out",
+                isScrolled 
+                    ? "top-0 left-0 right-0 py-3 px-4 md:py-3.5 md:px-6 xl:px-12"
+                    : "top-0 left-0 right-0 py-4 px-4 md:py-5 md:px-6 xl:px-12"
             )}
         >
-            {/* Sticky background layer (visible only when scrolled) */}
+            {/* Background layer */}
             <div
                 className={cn(
-                    "absolute inset-0 bg-white/95 backdrop-blur-md shadow-md border-b border-black/5 transition-all duration-300",
-                    isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+                    "absolute inset-0 backdrop-blur-md transition-all duration-500",
+                    variant === 'light' && (isScrolled 
+                        ? "bg-white/95 shadow-2xl border-b border-black/5" 
+                        : "bg-white/95 shadow-sm border-b border-black/10"),
+                    variant === 'dark' && (isScrolled 
+                        ? "bg-foreground/95 shadow-2xl border-b border-white/5" 
+                        : "bg-foreground/95 shadow-sm border-b border-white/10"),
+                    variant === 'blue' && (isScrolled 
+                        ? "bg-blue-accent/95 shadow-2xl border-b border-white/10" 
+                        : "bg-blue-accent/95 shadow-sm border-b border-white/20")
                 )}
             />
 
-            <div className="max-w-7xl mx-auto flex items-center justify-between relative z-10 h-full">
+            <div className="max-w-7xl mx-auto flex items-center justify-between relative z-10 h-full gap-2 xl:gap-4">
                 {/* User Logo / Branding */}
-                <Link href="/" className="flex items-center relative z-20 group" onClick={closeMenu}>
+                <Link href="/" className="flex items-center relative z-20 group shrink-0" onClick={closeMenu}>
                     <div className={cn(
-                        "relative h-12 md:h-16 w-56 md:w-72 transition-all duration-300 group-hover:opacity-80 origin-left pointer-events-none",
+                        "relative h-12 md:h-14 xl:h-16 w-48 md:w-56 xl:w-64 transition-all duration-300 group-hover:opacity-80 origin-left pointer-events-none",
                         isScrolled 
-                            ? "scale-[1.4] md:scale-[2.0]" 
-                            : "scale-[1.8] md:scale-[2.6]"
+                            ? "scale-[1.3] md:scale-[1.6] xl:scale-[2.0]" 
+                            : "scale-[1.5] md:scale-[1.9] xl:scale-[2.5]"
                     )}>
                         <Image 
-                            src="/Logo%20transparant%20op%20wit.svg" 
+                            src={variant !== 'light' ? "/Logo%20transparant%20op%20blauw.svg" : "/Logo%20transparant%20op%20wit.svg"} 
                             alt="Fysio Laren Logo" 
                             fill 
                             className="object-contain object-left pointer-events-none" 
@@ -69,32 +94,73 @@ export default function Header() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex items-center space-x-8 relative z-30">
-                    {navLinks.slice(0, 4).map((link) => (
+                <nav className="hidden lg:flex items-center space-x-3.5 xl:space-x-7 relative z-30 shrink-0">
+                    {mainNavLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={cn("text-sm font-bold transition-colors text-foreground/80 hover:text-foreground")}
+                            className={cn(
+                                "text-sm font-bold transition-colors relative py-2 whitespace-nowrap",
+                                variant === 'light' ? "text-foreground/90 hover:text-foreground" : "text-white/90 hover:text-white",
+                                "after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left",
+                                variant !== 'light' && "after:bg-white"
+                            )}
                         >
                             {link.name}
                         </Link>
                     ))}
 
+                    {/* Beweeggroepen - Directe link (zonder dropdown) */}
+                    <Link
+                        href="/gespecialiseerde-groepstraining"
+                        onClick={closeMenu}
+                        className={cn(
+                            "text-sm font-bold transition-colors relative py-2 whitespace-nowrap shrink-0",
+                            variant === 'light' ? "text-foreground/90 hover:text-foreground" : "text-white/90 hover:text-white",
+                            "after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left",
+                            variant !== 'light' && "after:bg-white"
+                        )}
+                    >
+                        Beweeggroepen
+                    </Link>
+
+                    {/* Ons team */}
+                    <Link
+                        href={teamLink.href}
+                        className={cn(
+                            "text-sm font-bold transition-colors relative py-2 whitespace-nowrap shrink-0",
+                            variant === 'light' ? "text-foreground/90 hover:text-foreground" : "text-white/90 hover:text-white",
+                            "after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left",
+                            variant !== 'light' && "after:bg-white"
+                        )}
+                    >
+                        {teamLink.name}
+                    </Link>
+
                     {/* Informatie Dropdown */}
-                    <div className="relative group/dropdown py-4">
-                        <button className="flex items-center gap-1 text-sm font-bold transition-colors text-foreground/80 hover:text-foreground">
+                    <div className="relative group/dropdown py-4 shrink-0">
+                        <button className={cn(
+                            "flex items-center gap-1 text-sm font-bold transition-colors cursor-pointer whitespace-nowrap",
+                            variant === 'light' ? "text-foreground/90 hover:text-foreground" : "text-white/90 hover:text-white"
+                        )}>
                             Informatie
                             <ChevronDown size={14} className="opacity-70 group-hover/dropdown:rotate-180 transition-transform duration-300" />
                         </button>
 
                         <div className="absolute top-12 left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-300 transform group-hover/dropdown:translate-y-0 translate-y-2">
-                            <div className="bg-white rounded-2xl shadow-2xl border border-black/5 py-3 w-48 relative before:absolute before:-top-2 before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-b-white">
-                                {navLinks.slice(4).map((link) => (
+                            <div className={cn(
+                                "rounded-2xl shadow-2xl py-3 w-48 relative before:absolute before:-top-2 before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent transition-colors duration-300",
+                                variant === 'light' ? "bg-white border border-black/5 before:border-b-white" : "bg-[#1E293B] border border-white/10 before:border-b-[#1E293B]"
+                            )}>
+                                {infoLinks.map((link) => (
                                     <Link
                                         key={link.name}
                                         href={link.href}
                                         onClick={closeMenu}
-                                        className="block px-5 py-2.5 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-black/5 transition-colors"
+                                        className={cn(
+                                            "block px-5 py-2.5 text-sm font-medium transition-colors whitespace-nowrap",
+                                            variant === 'light' ? "text-foreground/80 hover:text-foreground hover:bg-black/5" : "text-white/80 hover:text-white hover:bg-white/5"
+                                        )}
                                     >
                                         {link.name}
                                     </Link>
@@ -105,23 +171,33 @@ export default function Header() {
                 </nav>
 
                 {/* Header Actions */}
-                <div className="flex items-center gap-2 md:gap-3 relative z-30">
+                <div className="flex items-center gap-2 md:gap-3 relative z-30 shrink-0">
                     {/* Bel Ons CTA */}
                     <a
-                        href="tel:0351234567"
-                        className="flex items-center justify-center gap-2 text-foreground/90 hover:text-foreground transition-all bg-black/5 hover:bg-black/10 rounded-full w-10 h-10 md:w-auto md:h-auto md:px-5 md:py-2 border border-black/5 shadow-sm"
+                        href="tel:0573215058"
+                        className={cn(
+                            "flex items-center justify-center gap-2 transition-all rounded-full w-10 h-10 md:w-auto md:h-auto px-3 xl:px-4 py-2 border shadow-sm shrink-0 whitespace-nowrap",
+                            variant === 'light' 
+                                ? "text-foreground/90 hover:text-foreground bg-black/5 hover:bg-black/10 border-black/5"
+                                : "text-white/90 hover:text-white bg-white/10 hover:bg-white/20 border-white/10"
+                        )}
                         title="Bel Fysio Laren direct op"
                     >
-                        <Phone size={18} />
-                        <span className="hidden md:block font-bold text-sm tracking-wide">035 123 45 67</span>
+                        <Phone size={16} className="shrink-0 text-blue-accent" />
+                        <span className="hidden md:inline font-bold text-xs xl:text-sm tracking-wide whitespace-nowrap">0573 - 21 50 58</span>
                     </a>
 
-                    {/* Afspraak Maken CTA - Solid Blue */}
-                    <Link href="/afspraak-maken" onClick={closeMenu}>
+                    {/* Afspraak Maken CTA - Solid Blue / Solid White */}
+                    <Link href="/afspraak-maken" onClick={closeMenu} className="shrink-0">
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-blue-accent text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold shadow-md hover:bg-blue-accent/90 transition-all font-sans"
+                            className={cn(
+                                "px-3.5 py-2 xl:px-5 xl:py-2.5 rounded-full text-xs xl:text-sm font-bold shadow-md transition-all font-sans shrink-0 whitespace-nowrap",
+                                variant !== 'blue' 
+                                    ? "bg-blue-accent text-white hover:bg-blue-accent/90" 
+                                    : "bg-white text-blue-accent hover:bg-white/90"
+                            )}
                         >
                             Afspraak maken
                         </motion.div>
@@ -130,7 +206,12 @@ export default function Header() {
                     {/* Mobile Menu Toggle */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="lg:hidden flex items-center justify-center w-10 h-10 text-foreground bg-black/5 rounded-full border border-black/10 transition-colors hover:bg-black/10"
+                        className={cn(
+                            "lg:hidden flex items-center justify-center w-10 h-10 rounded-full border transition-colors",
+                            variant === 'light' 
+                                ? "text-foreground bg-black/5 border-black/10 hover:bg-black/10" 
+                                : "text-white bg-white/10 border-white/20 hover:bg-white/20"
+                        )}
                         aria-label="Toggle menu"
                     >
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -138,62 +219,273 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Menu Overlay - Rustig & Georganiseerd, exact zoals PC */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
+                        initial={{ opacity: 0, y: -12 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="absolute top-full left-0 right-0 bg-white border-t border-black/5 shadow-2xl overflow-hidden lg:hidden"
+                        exit={{ opacity: 0, y: -12 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
+                        className="absolute top-full left-0 right-0 bg-white/98 backdrop-blur-xl border-t border-black/5 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto lg:hidden"
                     >
-                        <nav className="flex flex-col p-6 space-y-1">
-                            {navLinks.slice(0, 4).map((link, i) => (
-                                <motion.div
-                                    key={link.name}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: i * 0.05 }}
-                                >
-                                    <Link
-                                        href={link.href}
-                                        onClick={closeMenu}
-                                        className="flex items-center justify-between py-4 px-4 text-lg font-bold text-foreground/80 hover:text-foreground hover:bg-black/5 rounded-xl transition-all"
-                                    >
-                                        {link.name}
-                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-accent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    </Link>
-                                </motion.div>
-                            ))}
-
-                            {/* Informatie Dropdown Mobile */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 4 * 0.05 }}
-                                className="px-4 py-2"
+                        <nav className="p-4 sm:p-6 space-y-1.5 max-w-lg mx-auto">
+                            {/* 1. Home */}
+                            <Link
+                                href="/"
+                                onClick={closeMenu}
+                                className="flex items-center justify-between py-3 px-4 text-base font-bold text-foreground/85 hover:text-foreground hover:bg-black/5 rounded-2xl transition-all"
                             >
-                                <p className="text-xs font-bold text-foreground/40 uppercase tracking-widest mb-2 mt-2">Informatie</p>
-                                <div className="space-y-1 pl-2 border-l border-black/10">
-                                    {navLinks.slice(4).map((link) => (
-                                        <Link
-                                            key={link.name}
-                                            href={link.href}
-                                            onClick={closeMenu}
-                                            className="block py-3 px-4 font-medium text-foreground/70 hover:text-foreground hover:bg-black/5 rounded-xl transition-all"
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    ))}
-                                </div>
-                            </motion.div>
+                                <span>Home</span>
+                            </Link>
 
-                            <div className="pt-6 mt-4 border-t border-black/5 flex flex-col gap-4">
-                                <p className="text-xs font-bold text-foreground/40 uppercase tracking-widest px-4">Contactgegevens</p>
-                                <a href="tel:0351234567" className="flex items-center gap-3 px-4 py-2 text-foreground/80 hover:text-foreground transition-colors">
-                                    <Phone size={18} className="text-blue-accent" />
-                                    <span className="font-bold">035 123 45 67</span>
+                            {/* 2. Fysiotherapie */}
+                            <Link
+                                href="/fysiotherapie"
+                                onClick={closeMenu}
+                                className="flex items-center justify-between py-3 px-4 text-base font-bold text-foreground/85 hover:text-foreground hover:bg-black/5 rounded-2xl transition-all"
+                            >
+                                <span>Fysiotherapie</span>
+                            </Link>
+
+                            {/* 3. Beweeggroepen (Inklapbaar menu) */}
+                            <div className="rounded-2xl transition-colors">
+                                <button
+                                    onClick={() => toggleMobileSubmenu("groepen")}
+                                    className={cn(
+                                        "w-full flex items-center justify-between py-3 px-4 text-base font-bold transition-all rounded-2xl cursor-pointer",
+                                        openMobileSubmenu === "groepen" 
+                                            ? "bg-black/5 text-blue-accent" 
+                                            : "text-foreground/85 hover:text-foreground hover:bg-black/5"
+                                    )}
+                                >
+                                    <span>Beweeggroepen</span>
+                                    <ChevronDown 
+                                        size={18} 
+                                        className={cn(
+                                            "transition-transform duration-300 opacity-60",
+                                            openMobileSubmenu === "groepen" && "rotate-180 text-blue-accent opacity-100"
+                                        )} 
+                                    />
+                                </button>
+
+                                <AnimatePresence>
+                                    {openMobileSubmenu === "groepen" && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: "auto" }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="bg-slate-50/80 rounded-2xl p-2 my-1.5 border border-black/5 space-y-1 text-sm">
+                                                {/* FysioFit */}
+                                                <Link
+                                                    href="/fysiofit"
+                                                    onClick={closeMenu}
+                                                    className="flex items-center justify-between py-2.5 px-3.5 rounded-xl font-semibold text-foreground/85 hover:text-blue-accent hover:bg-white transition-all"
+                                                >
+                                                    <span>FysioFit</span>
+                                                    <ChevronRight size={15} className="opacity-40" />
+                                                </Link>
+
+                                                {/* Gespecialiseerde groepstraining (Dropdown niveau 2) */}
+                                                <div>
+                                                    <button
+                                                        onClick={() => setIsGespecialiseerdOpen(prev => !prev)}
+                                                        className={cn(
+                                                            "w-full flex items-center justify-between py-2.5 px-3.5 rounded-xl font-semibold transition-all cursor-pointer",
+                                                            isGespecialiseerdOpen 
+                                                                ? "bg-white text-blue-accent shadow-2xs" 
+                                                                : "text-foreground/85 hover:text-foreground hover:bg-white"
+                                                        )}
+                                                    >
+                                                        <span>Gespecialiseerde groepstraining</span>
+                                                        <ChevronDown 
+                                                            size={16} 
+                                                            className={cn(
+                                                                "transition-transform duration-300 opacity-60",
+                                                                isGespecialiseerdOpen && "rotate-180 text-blue-accent opacity-100"
+                                                            )} 
+                                                        />
+                                                    </button>
+
+                                                    <AnimatePresence>
+                                                        {isGespecialiseerdOpen && (
+                                                            <motion.div
+                                                                initial={{ opacity: 0, height: 0 }}
+                                                                animate={{ opacity: 1, height: "auto" }}
+                                                                exit={{ opacity: 0, height: 0 }}
+                                                                transition={{ duration: 0.2, ease: "easeInOut" }}
+                                                                className="overflow-hidden pl-3 pr-1 py-1"
+                                                            >
+                                                                <div className="border-l-2 border-blue-accent/20 pl-2.5 space-y-1 my-1">
+                                                                    <Link
+                                                                        href="/gespecialiseerde-groepstraining"
+                                                                        onClick={closeMenu}
+                                                                        className="block py-2 px-3 rounded-lg text-xs font-bold uppercase tracking-wider text-blue-accent hover:bg-blue-50/60 transition-all"
+                                                                    >
+                                                                        Overzicht alle groepen →
+                                                                    </Link>
+
+                                                                    {/* Neurologie (Dropdown niveau 3) */}
+                                                                    <div>
+                                                                        <button
+                                                                            onClick={() => setIsNeuroOpen(prev => !prev)}
+                                                                            className={cn(
+                                                                                "w-full flex items-center justify-between py-2 px-3 rounded-lg text-sm font-medium transition-all cursor-pointer",
+                                                                                isNeuroOpen 
+                                                                                    ? "text-blue-accent font-semibold bg-white shadow-2xs" 
+                                                                                    : "text-foreground/80 hover:text-foreground hover:bg-white"
+                                                                            )}
+                                                                        >
+                                                                            <span>Neurologie</span>
+                                                                            <ChevronDown 
+                                                                                size={14} 
+                                                                                className={cn(
+                                                                                    "transition-transform duration-300 opacity-60",
+                                                                                    isNeuroOpen && "rotate-180 text-blue-accent opacity-100"
+                                                                                )} 
+                                                                            />
+                                                                        </button>
+
+                                                                        <AnimatePresence>
+                                                                            {isNeuroOpen && (
+                                                                                <motion.div
+                                                                                    initial={{ opacity: 0, height: 0 }}
+                                                                                    animate={{ opacity: 1, height: "auto" }}
+                                                                                    exit={{ opacity: 0, height: 0 }}
+                                                                                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                                                                                    className="overflow-hidden pl-3 pr-1 py-1"
+                                                                                >
+                                                                                    <div className="border-l-2 border-blue-accent/15 pl-2.5 space-y-0.5 my-1 text-xs">
+                                                                                        <Link
+                                                                                            href="/gespecialiseerde-groepstraining?groep=neurologie"
+                                                                                            onClick={closeMenu}
+                                                                                            className="block py-1.5 px-2.5 rounded-md font-semibold text-blue-accent hover:bg-blue-50/60 transition-all"
+                                                                                        >
+                                                                                            Overzicht Neurologie →
+                                                                                        </Link>
+                                                                                        <Link
+                                                                                            href="/gespecialiseerde-groepstraining?groep=neurologie&sub=neurofit"
+                                                                                            onClick={closeMenu}
+                                                                                            className="block py-1.5 px-2.5 rounded-md text-foreground/75 hover:text-foreground hover:bg-white transition-all font-medium"
+                                                                                        >
+                                                                                            NeuroFit
+                                                                                        </Link>
+                                                                                        <Link
+                                                                                            href="/gespecialiseerde-groepstraining?groep=neurologie&sub=trom"
+                                                                                            onClick={closeMenu}
+                                                                                            className="block py-1.5 px-2.5 rounded-md text-foreground/75 hover:text-foreground hover:bg-white transition-all font-medium"
+                                                                                        >
+                                                                                            Trainen Op Muziek (TROM)
+                                                                                        </Link>
+                                                                                        <Link
+                                                                                            href="/gespecialiseerde-groepstraining?groep=neurologie&sub=boksen"
+                                                                                            onClick={closeMenu}
+                                                                                            className="block py-1.5 px-2.5 rounded-md text-foreground/75 hover:text-foreground hover:bg-white transition-all font-medium"
+                                                                                        >
+                                                                                            Non-contact boksen
+                                                                                        </Link>
+                                                                                    </div>
+                                                                                </motion.div>
+                                                                            )}
+                                                                        </AnimatePresence>
+                                                                    </div>
+
+                                                                    {/* COPD */}
+                                                                    <Link
+                                                                        href="/gespecialiseerde-groepstraining?groep=copd"
+                                                                        onClick={closeMenu}
+                                                                        className="flex items-center justify-between py-2 px-3 rounded-lg text-sm font-medium text-foreground/80 hover:text-blue-accent hover:bg-white transition-all"
+                                                                    >
+                                                                        <span>COPD</span>
+                                                                        <ChevronRight size={14} className="opacity-40" />
+                                                                    </Link>
+                                                                </div>
+                                                            </motion.div>
+                                                        )}
+                                                    </AnimatePresence>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
+                            {/* 4. Ons team */}
+                            <Link
+                                href={teamLink.href}
+                                onClick={closeMenu}
+                                className="flex items-center justify-between py-3 px-4 text-base font-bold text-foreground/85 hover:text-foreground hover:bg-black/5 rounded-2xl transition-all"
+                            >
+                                <span>{teamLink.name}</span>
+                            </Link>
+
+                            {/* 5. Informatie (Inklapbaar menu) */}
+                            <div className="rounded-2xl transition-colors">
+                                <button
+                                    onClick={() => toggleMobileSubmenu("info")}
+                                    className={cn(
+                                        "w-full flex items-center justify-between py-3 px-4 text-base font-bold transition-all rounded-2xl cursor-pointer",
+                                        openMobileSubmenu === "info" 
+                                            ? "bg-black/5 text-blue-accent" 
+                                            : "text-foreground/85 hover:text-foreground hover:bg-black/5"
+                                    )}
+                                >
+                                    <span>Informatie</span>
+                                    <ChevronDown 
+                                        size={18} 
+                                        className={cn(
+                                            "transition-transform duration-300 opacity-60",
+                                            openMobileSubmenu === "info" && "rotate-180 text-blue-accent opacity-100"
+                                        )} 
+                                    />
+                                </button>
+
+                                <AnimatePresence>
+                                    {openMobileSubmenu === "info" && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: "auto" }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="bg-slate-50/80 rounded-2xl p-2 my-1.5 border border-black/5 space-y-1 text-sm">
+                                                {infoLinks.map((link) => (
+                                                    <Link
+                                                        key={link.name}
+                                                        href={link.href}
+                                                        onClick={closeMenu}
+                                                        className="flex items-center justify-between py-2.5 px-3.5 font-semibold text-foreground/85 hover:text-blue-accent hover:bg-white rounded-xl transition-all"
+                                                    >
+                                                        <span>{link.name}</span>
+                                                        <ChevronRight size={15} className="opacity-40" />
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
+                            {/* Actieknoppen onderaan */}
+                            <div className="pt-4 mt-2 border-t border-black/5 space-y-2.5">
+                                <Link
+                                    href="/afspraak-maken"
+                                    onClick={closeMenu}
+                                    className="w-full py-3 px-5 rounded-full bg-blue-accent text-white font-bold text-sm text-center shadow-md hover:bg-blue-accent/90 transition-all flex items-center justify-center gap-2"
+                                >
+                                    Afspraak maken
+                                </Link>
+
+                                <a
+                                    href="tel:0573215058"
+                                    className="w-full py-2.5 px-4 rounded-full bg-black/5 hover:bg-black/10 text-foreground/85 font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
+                                >
+                                    <Phone size={15} className="text-blue-accent" />
+                                    <span>Direct bellen: 0573 - 21 50 58</span>
                                 </a>
                             </div>
                         </nav>
@@ -202,4 +494,8 @@ export default function Header() {
             </AnimatePresence>
         </header>
     );
+}
+
+export default function Header() {
+    return <HeaderBase variant="light" />;
 }

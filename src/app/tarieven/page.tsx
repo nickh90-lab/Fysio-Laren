@@ -7,26 +7,27 @@ export const metadata: Metadata = {
     description: "Bekijk de tarieven en vergoedingen voor fysiotherapie behandelingen bij Fysio Laren.",
 };
 
-const rates = {
-    consults: [
-        { name: "Intake en onderzoek na screening", price: "€ 60,00" },
-        { name: "Intake en onderzoek na verwijzing", price: "€ 60,00" },
-        { name: "Eenmalig fysiotherapeutisch onderzoek", price: "€ 65,00" }
-    ],
-    treatments: [
-        { name: "Reguliere zitting fysiotherapie", price: "€ 45,00" },
-        { name: "Zitting manuele therapie", price: "€ 55,00" },
-        { name: "Lange zitting (complexe aandoeningen)", price: "€ 65,00" }
-    ],
-    surcharges: [
-        { name: "Toeslag uit aan huis behandeling", price: "€ 15,00" },
-        { name: "Niet-nagekomen afspraak (binnen 24u)", price: "€ 35,00" }
-    ]
-};
+const allRates = [
+    { code: "1000", name: "Reguliere zitting", price: "€ 48,00" },
+    { code: "1001", name: "Zitting aan huis", price: "€ 72,00" },
+    { code: "1200", name: "Manuele therapie", price: "€ 60,00" },
+    { code: "1500", name: "Oedeemtherapie", price: "€ 72,00" },
+    { code: "1700", name: "Lange zitting met complexe/meervoudige zorgvraag", price: "€ 72,00" },
+    { code: "1850", name: "DTF (screening)", price: "€ 24,00" },
+    { code: "1860", name: "DTF (intake en onderzoek na screening)", price: "€ 48,00" },
+    { code: "1865", name: "DTF (intake en onderzoek na screening aan huis)", price: "€ 72,00" },
+    { code: "1870", name: "Intake en onderzoek na verwijzing", price: "€ 72,00" },
+    { code: "1871", name: "Intake en onderzoek na verwijzing aan huis", price: "€ 95,00" },
+    { code: "1317", name: "Groepszitting 3 personen", price: "€ 35,50" },
+    { code: "1318", name: "Groepszitting 4 personen", price: "€ 26,50" },
+    { code: "1319", name: "Groepszitting 5 t/m 10 personen", price: "€ 21,00" },
+    { code: null, name: "Hardloopblessure preventie screening (45 minuten)", price: "€ 75,00" },
+    { code: null, name: "Hardloopblessure preventie evaluatie (30 minuten)", price: "€ 50,00" },
+    { code: null, name: "Fysiotherapie, digitaal consult per 15 minuten", price: "€ 25,00" },
+    { code: null, name: "Niet-nagekomen afspraak (afmelding < 24u)", price: "100%" }
+];
 
 export default function TarievenPage() {
-    const allRates = [...rates.consults, ...rates.treatments, ...rates.surcharges];
-
     return (
         <main className="bg-background pt-32 pb-24 relative min-h-screen">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -46,7 +47,7 @@ export default function TarievenPage() {
                             {allRates.map((rate, i) => (
                                 <div key={i} className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-3 border-b border-foreground/5 last:border-0 last:pb-0 gap-2">
                                     <h3 className="font-medium text-foreground/90 text-base">{rate.name}</h3>
-                                    <span className="text-base font-bold text-foreground/80">{rate.price}</span>
+                                    <span className="text-base font-bold text-foreground/80 whitespace-nowrap">{rate.price}</span>
                                 </div>
                             ))}
                         </div>

@@ -19,12 +19,14 @@ export default function Footer() {
                             />
                         </div>
                     </Link>
-                    <div className="flex space-x-4">
-                        <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-foreground text-white transition-all">
-                            <Instagram size={20} />
+                    <div className="flex space-x-6 mt-4">
+                        <Link href="https://www.instagram.com/fysiolaren" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-accent transition-all hover:scale-110">
+                            <Instagram size={22} strokeWidth={1.5} />
+                            <span className="sr-only">Instagram</span>
                         </Link>
-                        <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-foreground text-white transition-all">
-                            <Facebook size={20} />
+                        <Link href="https://www.facebook.com/people/Fysio-Laren-Gld/61592226100408/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-accent transition-all hover:scale-110">
+                            <Facebook size={22} strokeWidth={1.5} />
+                            <span className="sr-only">Facebook</span>
                         </Link>
                     </div>
                 </div>
@@ -35,8 +37,9 @@ export default function Footer() {
                     <ul className="space-y-4">
                         {[
                             { name: "Home", href: "/" },
-                            { name: "Fysiotherapie/Manueel therapie", href: "/behandelingen" },
-                            { name: "Sportis", href: "/sportis" },
+                            { name: "Fysiotherapie", href: "/fysiotherapie" },
+                            { name: "FysioFit", href: "/fysiofit" },
+                            { name: "Gespecialiseerde groepstraining", href: "/gespecialiseerde-groepstraining" },
                             { name: "Ons team", href: "/ons-team" },
                             { name: "De praktijk", href: "/de-praktijk" },
                             { name: "Contact", href: "/contact" },
@@ -80,17 +83,21 @@ export default function Footer() {
                                 7245 BG Laren
                             </span>
                         </li>
-                        <li className="flex items-center space-x-3 group cursor-pointer">
-                            <div className="p-2 bg-white/10 rounded-full group-hover:bg-white group-hover:text-foreground text-white transition-all shrink-0">
-                                <Phone size={16} />
-                            </div>
-                            <span className="text-sm text-white/80">035 123 45 67</span>
+                        <li>
+                            <a href="tel:0573215058" className="flex items-center space-x-3 group hover:text-white transition-colors">
+                                <div className="p-2 bg-white/10 rounded-full group-hover:bg-white group-hover:text-foreground text-white transition-all shrink-0">
+                                    <Phone size={16} />
+                                </div>
+                                <span className="text-sm text-white/80 group-hover:text-white">0573 - 21 50 58</span>
+                            </a>
                         </li>
-                        <li className="flex items-center space-x-3 group cursor-pointer">
-                            <div className="p-2 bg-white/10 rounded-full group-hover:bg-white group-hover:text-foreground text-white transition-all shrink-0">
-                                <Mail size={16} />
-                            </div>
-                            <span className="text-sm text-white/80">info@fysiolaren.nl</span>
+                        <li>
+                            <a href="mailto:info@fysio-laren.nl" className="flex items-center space-x-3 group hover:text-white transition-colors">
+                                <div className="p-2 bg-white/10 rounded-full group-hover:bg-white group-hover:text-foreground text-white transition-all shrink-0">
+                                    <Mail size={16} />
+                                </div>
+                                <span className="text-sm text-white/80 group-hover:text-white">info@fysio-laren.nl</span>
+                            </a>
                         </li>
                     </ul>
                 </div>

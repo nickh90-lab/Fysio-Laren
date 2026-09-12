@@ -65,7 +65,7 @@ export default function AfspraakMaken() {
                             </div>
                             <div>
                                 <p className="font-bold text-foreground text-sm uppercase tracking-wider mb-1">Hulp nodig bij inplannen?</p>
-                                <a href="tel:0351234567" className="text-xl font-bold text-foreground hover:text-blue-accent transition-colors">035 - 123 4567</a>
+                                <a href="tel:0573215058" className="text-xl font-bold text-foreground hover:text-blue-accent transition-colors">0573 - 21 50 58</a>
                             </div>
                         </div>
                     </div>

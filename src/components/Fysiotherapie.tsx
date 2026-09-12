@@ -99,7 +99,7 @@ const behandelingen = [
     },
     {
         title: "Manuele therapie",
-        desc: "Manuele therapie is een specialisatie binnen de fysiotherapie die zich richt op het beter laten functioneren van uw gewrichten. Als gewrichten in uw rug, nek of ledematen stroef aanvoelen, kan een manueel therapeut dit vaak met specifieke, zachte handgrepen verhelpen. Dit zorgt direct voor minder pijn en meer bewegingsvrijheid. We maken hierbij vaak gebruik van het Mulligan concept, wat zich kenmerkt door 100% pijnvrije mobilisaties. Het resultaat is sneller herstel en direct profijt in uw dagelijks leven."
+        desc: "Manuele therapie is een verdieping binnen de orthopedische fysiotherapie en richt zich op het verbeteren van de beweeglijkheid en functie van gewrichten. Bij klachten aan bijvoorbeeld de nek, rug of ledematen kan manuele therapie helpen om bewegingen soepeler te laten verlopen en pijn te verminderen. Tijdens de behandeling maken we gebruik van verschillende manuele technieken, afgestemd op jouw klachten en doelen. Dit combineren we met actieve oefentherapie, zodat je niet alleen tijdens de behandeling verbetering ervaart, maar ook zelf aan de slag kunt met je herstel."
     },
     {
         title: "Orthopedische revalidatie",

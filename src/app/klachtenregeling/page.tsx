@@ -63,12 +63,12 @@ export default function Klachtenregeling() {
                             <p className="font-bold text-foreground mb-1">Bezoekadres</p>
                             <p>Fysio Laren</p>
                             <p>Huenderstraat 3</p>
-                            <p>7245 AK Laren (GLD)</p>
+                            <p>7245 BG Laren (GLD)</p>
                         </div>
                         <div>
                             <p className="font-bold text-foreground mb-1">Bereikbaarheid</p>
-                            <p>E-mail: <a href="mailto:info@fysiolaren.nl" className="underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors">info@fysiolaren.nl</a></p>
-                            <p>Telefoon: <a href="tel:0612345678" className="underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors">06 1234 5678</a></p>
+                            <p>E-mail: <a href="mailto:info@fysio-laren.nl" className="underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors">info@fysio-laren.nl</a></p>
+                            <p>Telefoon: <a href="tel:0573215058" className="underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors">0573 - 21 50 58</a></p>
                         </div>
                     </div>
                 </section>
