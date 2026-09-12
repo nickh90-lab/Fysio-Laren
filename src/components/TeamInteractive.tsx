@@ -74,11 +74,10 @@ export default function TeamInteractive() {
                       src={member.image} 
                       alt={member.name} 
                       fill 
+                      sizes="(max-width: 768px) 80px, 96px"
                       className={cn(
-                        "object-cover object-[center_12%] transition-transform duration-300",
-                        shouldMirror(member.slug) 
-                          ? "scale-x-[-1]" 
-                          : ""
+                        "object-cover object-[center_12%]",
+                        shouldMirror(member.slug) && "scale-x-[-1]"
                       )} 
                     />
                 ) : renderEmptyImage(member.name, 32, "text-2xl")}
@@ -98,7 +97,7 @@ export default function TeamInteractive() {
           {/* Foto Links: Op mobiel volledig in beeld (zonder uitsnede/zoom), op PC vullend */}
           <div className="w-full md:w-[38%] h-[320px] sm:h-[360px] md:h-full relative bg-slate-100/90 overflow-hidden shrink-0 flex items-center justify-center">
             {activeMember.image ? (
-              <>
+              <div key={activeMember.slug} className="w-full h-full relative flex items-center justify-center">
                 {/* Zachte sfeervolle achtergrondvervaging op mobiel zodat de zijkanten mooi overlopen */}
                 <div className="absolute inset-0 md:hidden overflow-hidden pointer-events-none">
                   <Image 
@@ -115,12 +114,14 @@ export default function TeamInteractive() {
                   src={activeMember.image} 
                   alt={activeMember.name} 
                   fill 
+                  priority
+                  sizes="(max-width: 768px) 100vw, 400px"
                   className={cn(
-                    "object-contain md:object-cover object-bottom md:object-[center_10%] relative z-10 transition-transform duration-300",
+                    "object-contain md:object-cover object-bottom md:object-[center_10%] relative z-10",
                     shouldMirror(activeMember.slug) && "scale-x-[-1]"
                   )} 
                 />
-              </>
+              </div>
             ) : renderEmptyImage(activeMember.name, 64, "text-5xl")}
           </div>
 
