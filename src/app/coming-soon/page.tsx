@@ -82,7 +82,7 @@ export default function ComingSoon() {
                 Afspraak maken tot 1 november?
               </p>
               <p className="text-foreground/65 text-xs sm:text-[13px]">
-                U kunt tot 1 november voor afspraken contact opnemen met <strong>Solis</strong>. Vanaf 1 november zijn wij rechtstreeks bereikbaar via onderstaand nummer:
+                U kunt tot 1 november voor afspraken contact opnemen met <strong>Solis</strong> (<a href="tel:0573401984" className="hover:underline font-semibold text-foreground">0573-401984</a>). Vanaf 1 november zijn wij rechtstreeks bereikbaar via onderstaand nummer:
               </p>
             </div>
 
