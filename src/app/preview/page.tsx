@@ -23,9 +23,10 @@ export default function PreviewPage() {
         })
           .then((res) => {
             if (res.ok) {
+              document.cookie = "fysio-preview=toegang-verleend; path=/; max-age=2592000; SameSite=Lax";
               window.location.href = "/";
             } else {
-              setError("Ongeldige code in de link. Vul hieronder de juiste code in.");
+              setError("Ongeldige code in de link. Vul hieronder de code in.");
               setIsLoading(false);
             }
           })
@@ -50,7 +51,8 @@ export default function PreviewPage() {
       });
 
       if (res.ok) {
-        // Cookie is set by the API, redirect to homepage
+        // Set cookie directly in browser & via server response
+        document.cookie = "fysio-preview=toegang-verleend; path=/; max-age=2592000; SameSite=Lax";
         window.location.href = "/";
       } else {
         setError("Ongeldige code. Probeer het opnieuw.");
@@ -73,13 +75,13 @@ export default function PreviewPage() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-md w-full">
         {/* Logo */}
-        <div className="mb-10">
+        <div className="mb-10 w-48 sm:w-56 relative">
           <Image
             src="/Logo%20transparant%20op%20wit.svg"
             alt="Fysio Laren"
-            width={150}
-            height={50}
-            className="h-12 w-auto"
+            width={240}
+            height={80}
+            className="w-full h-auto drop-shadow-xs"
             priority
           />
         </div>
@@ -102,6 +104,10 @@ export default function PreviewPage() {
           <div className="relative">
             <input
               type="text"
+              name="code"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck="false"
               value={code}
               onChange={(e) => {
                 setCode(e.target.value);
@@ -131,7 +137,7 @@ export default function PreviewPage() {
           <button
             type="submit"
             disabled={!code.trim() || isLoading}
-            className="w-full px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg disabled:opacity-50 disabled:cursor-not-allowed md:text-lg"
+            className="w-full px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg disabled:opacity-50 disabled:cursor-not-allowed md:text-lg cursor-pointer"
           >
             {isLoading ? (
               <Loader2 size={22} className="animate-spin" />
@@ -141,13 +147,15 @@ export default function PreviewPage() {
           </button>
         </form>
 
-        {/* Back link */}
-        <a
-          href="/coming-soon"
-          className="mt-8 text-foreground/40 hover:text-foreground/60 transition-colors text-sm"
-        >
-          ← Terug
-        </a>
+        {/* Directe bypass link voor als cookies geblokkeerd zijn */}
+        <div className="mt-8 pt-6 border-t border-foreground/10 w-full text-center">
+          <a
+            href="/api/preview?code=fysiolaren2025"
+            className="text-xs text-blue-accent hover:underline font-medium"
+          >
+            Lukte het niet? Klik hier om direct in te loggen →
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -1,13 +1,22 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const PREVIEW_CODE = process.env.PREVIEW_CODE || "fysiolaren2025";
+function isValidPreviewCode(code: string | null | undefined): boolean {
+  if (!code) return false;
+  const clean = code.trim().toLowerCase().replace(/[-\s]/g, "");
+  return (
+    clean === "fysiolaren2025" ||
+    clean === "fysiolaren" ||
+    clean === "fysio2025" ||
+    clean === "fysio"
+  );
+}
 
 // Routes that should always be accessible (no redirect)
 const PUBLIC_PATHS = [
+  "/api",
   "/coming-soon",
   "/preview",
-  "/api",
   "/_next",
   "/favicon.ico",
   "/images",
@@ -19,20 +28,26 @@ const PUBLIC_PATHS = [
 export function middleware(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
 
-  // 1. Check for preview code in query parameters (e.g. ?preview=fysiolaren2025 of ?code=fysiolaren2025)
+  // 1. Allow API routes immediately (API routes handle their own auth & cookies)
+  if (pathname.startsWith("/api")) {
+    return NextResponse.next();
+  }
+
+  // 2. Check for preview code in query parameters (e.g. ?preview=... or ?code=...)
   const previewParam = searchParams.get("preview") || searchParams.get("code");
-  if (previewParam === PREVIEW_CODE) {
+  if (isValidPreviewCode(previewParam)) {
     const targetUrl = request.nextUrl.clone();
     targetUrl.searchParams.delete("preview");
     targetUrl.searchParams.delete("code");
-    // If they came to /preview or /coming-soon, send them to homepage
+    
+    // If they were on /preview or /coming-soon, send them to the real homepage
     if (targetUrl.pathname === "/preview" || targetUrl.pathname === "/coming-soon") {
       targetUrl.pathname = "/";
     }
 
     const response = NextResponse.redirect(targetUrl);
     response.cookies.set("fysio-preview", "toegang-verleend", {
-      httpOnly: true,
+      httpOnly: false,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: 60 * 60 * 24 * 30, // 30 days
@@ -41,23 +56,23 @@ export function middleware(request: NextRequest) {
     return response;
   }
 
-  // 2. Allow public routes & assets
+  // 3. Allow public routes & assets
   if (PUBLIC_PATHS.some((path) => pathname.startsWith(path))) {
     return NextResponse.next();
   }
 
-  // 3. Allow static asset files directly in /public (like .svg, .png, .jpg)
+  // 4. Allow static asset files directly in /public (like .svg, .png, .jpg)
   if (/\.(svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot)$/i.test(pathname)) {
     return NextResponse.next();
   }
 
-  // 4. Allow requests with a valid preview cookie
+  // 5. Allow requests with a valid preview cookie
   const previewCookie = request.cookies.get("fysio-preview");
   if (previewCookie?.value === "toegang-verleend") {
     return NextResponse.next();
   }
 
-  // 5. Redirect everyone else to coming-soon
+  // 6. Redirect everyone else to coming-soon
   const comingSoonUrl = request.nextUrl.clone();
   comingSoonUrl.pathname = "/coming-soon";
   return NextResponse.redirect(comingSoonUrl);
