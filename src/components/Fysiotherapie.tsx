@@ -16,7 +16,7 @@ const klachtenClusters = [
         id: "artrose",
         title: "Artrose & Gewrichten",
         icon: <Bone className="w-6 h-6 text-blue-accent" />,
-        items: ["Artrose (slijtage)", "Reumatische klachten", "Heup- en knieklachten", "Schouderklachten"]
+        items: ["Artrose", "Reumatische klachten", "Heup- en knieklachten", "Schouderklachten"]
     },
     {
         id: "osteoporose",
@@ -153,23 +153,23 @@ const behandelingen = [
     },
     {
         title: "Beroerte (CVA)",
-        desc: "Na een beroerte (CVA) moet uw lichaam vaak veel bewegingen en vaardigheden helemaal opnieuw aanleren. Dit proces van neurorevalidatie vraagt om geduld en zeer gerichte en gespecialiseerde begeleiding. We oefenen intensief op het verbeteren van uw rompstabiliteit, loopvaardigheid en het functioneren van eventuele verlamde ledematen. Ons doel is altijd om u zo goed mogelijk terug te laten keren in de maatschappij. Indien reizen in het begin lastig is, komen wij voor de eerste fase van deze intensieve behandelingen ook bij u aan huis in Laren, Gld."
+        desc: "Na een beroerte (CVA) moet het lichaam soms vertrouwde bewegingen en vaardigheden opnieuw leren. Met gerichte neurorevalidatie en specialistische begeleiding werken we samen stap voor stap aan uw herstel. We richten ons op het verbeteren van uw balans, spierkracht, coördinatie en looppatroon met functionele oefeningen die direct aansluiten op uw dagelijks leven. Is het in de eerste fase voor u nog niet mogelijk om naar de praktijk te komen? Dan behandelen en begeleiden wij u met alle zorg bij u aan huis in Laren en omgeving."
     },
     {
-        title: "Artrose (Slijtage)",
-        desc: "Bij artrose (slijtage van het kraakbeen in het gewricht) denken veel mensen ten onrechte dat rust de enige oplossing is. Juist gecontroleerd en gedoseerd bewegen is essentieel om de gewrichten 'gesmeerd' en de spieren eromheen krachtig te houden. Onze oefentherapie richt zich op het verminderen van startstijfheid en de kenmerkende zeurende pijn in knieën en heupen. Door de spieren rondom het aangetaste gewricht te versterken, vangen we de klappen beter op. Dit traject kan bovendien operaties vaak jarenlang succesvol uitstellen."
+        title: "Artrose",
+        desc: "Artrose wordt nog vaak onterecht gezien als onvermijdelijke slijtage waar niets meer aan te doen is. Het tegendeel is waar: artrose is een aandoening van het totale gewricht die juist heel goed actief te beïnvloeden is. Gedoseerd bewegen is het beste medicijn om het kraakbeen gezond en de gewrichten soepel te houden. Onder deskundige begeleiding traint u gericht aan spierkracht, stabiliteit en het vinden van de juiste balans tussen belasting en herstel. Hierdoor nemen stijfheid en pijn af en bouwt u aan een sterk fundament rondom uw heupen, knieën of andere gewrichten."
     },
     {
         title: "Osteoporose",
-        desc: "Osteoporose, ofwel botontkalking, maakt uw botten poreuzer waardoor het risico op breuken significant toeneemt. Specifieke fysiotherapie speelt een grote rol in de preventie van deze gevolgen. Met specifieke, gewichtsdragende belastingoefeningen kunnen we het botweefsel stimuleren en versterken. Minstens zo belangrijk is de balans- en stabiliteitstraining, waarmee we de kans op vallen tot een minimum beperken. Ook leren we u technieken om uw houding, zoals een voorovergebogen rug, actief te corrigeren."
+        desc: "Bij osteoporose (botontkalking) neemt de botdichtheid af, maar regelmatig en verantwoord bewegen is juist een van de beste manieren om uw lichaam sterk te houden. Met gerichte, gewichtsdragende oefeningen stimuleren we de botkwaliteit en versterken we de spieren rondom uw gewrichten. Minstens zo belangrijk is balans- en stabiliteitstraining: door uw evenwicht te trainen, verkleint u de kans op vallen aanzienlijk. Daarnaast geven we u duidelijke voorlichting en praktisch advies over wat u in het dagelijks leven het beste wel én niet kunt doen, met veel aandacht voor het versterken van de rugspieren en het behouden van een actieve, stabiele lichaamshouding."
     },
     {
         title: "COPD",
-        desc: "Leven met COPD, astma of andere chronische longklachten brengt benauwdheid, kortademigheid en daardoor vaak enorme inlevering in conditie met zich mee. Door gerichte ademhalings- en spierkrachttraining verbeteren we de efficiëntie van uw zuurstofopname. We leren u mucus (slijm) effectiever op te hoesten en spanning rond de borstkas te verminderen. U zult merken dat, naarmate de therapie vordert, alledaagse activiteiten zoals traplopen en aankleden u een stuk makkelijker afgaan. Dit kan enorm geruststellend werken tegen de angst om benauwd te worden."
+        desc: "Bij COPD of andere chronische longklachten kunnen kortademigheid en benauwdheid het bewegen belemmeren, waardoor de conditie langzaam kan afnemen. Met fysiotherapie werken we gericht aan het versterken van uw spieren en conditie, zodat uw lichaam zo efficiënt mogelijk omgaat met zuurstof. Daarnaast leren we u praktische ademhalingstechnieken en methodes om slijm makkelijker op te hoesten en spanning rond de borstkas te verminderen. We stemmen de oefeningen zorgvuldig af op uw persoonlijke belastbaarheid, zodat u op een veilige en verantwoorde manier actief blijft."
     },
     {
         title: "Claudicatio Intermittens (etalagebenen)",
-        desc: "Bij Perifeer Arterieel Vaatlijden, de medische term voor etalagebenen, ervaart u krampende pijn in de kuiten tijdens het lopen wegens zuurstoftekort in de spieren. Gesuperviseerde looptraining (GLI) onder begeleiding van een fysio is hiertoe dé effectiefste, wetenschappelijk bewezen behandeling. Door systematisch door de eerste pijn heen te leren wandelen, stimuleert u de aanmaak van kleine, nieuwe bloedvaatjes in uw benen. In zeer veel gevallen neemt dit de noodzaak voor een operatie preventief weg en verdubbelt of verdrievoudigt het pijnvrije loopafstand."
+        desc: "Bij Claudicatio Intermittens (in de volksmond 'etalagebenen') ontstaat tijdens het lopen pijn of kramp in de benen — meestal in de kuiten — door een verminderde doorbloeding van de beenspieren. Gesuperviseerde looptherapie onder begeleiding van een gespecialiseerde fysiotherapeut is hiervoor de meest effectieve, wetenschappelijk bewezen aanpak. Door gestructureerd te trainen stimuleert u het lichaam om de zuurstofopname in de spieren te verbeteren en omliggende bloedvaatjes beter te benutten. Dit helpt om uw loopafstand stapsgewijs te vergroten en uw conditie te verbeteren, waardoor een vaatoperatie in veel gevallen kan worden voorkomen of uitgesteld."
     },
     {
         title: "Valpreventie",
@@ -193,11 +193,11 @@ const behandelingen = [
     },
     {
         title: "Hardloopanalyses",
-        desc: "Mensen die lopen of beginnen te sporten in en rondom de natuurgebieden in Laren, Gld krijgen nog al eens en keer blessures aan de achillespees, de meniscus, of irritaties rond de knieschijf. Een effectieve verandering van deze biomechanische overbelastingen kan gemaakt worden aan de hand van een gedegen loopband of video loop-analyse ter plekke. Op de weergave is perfect op micromomenten te ontleden waar heuplijnen afvlakken of enkels naar binnen over-proneren. Veel pijnreductie vergt vaak slechts 3 minuten aandacht aan loopcadans verhogingen of specifieke schoen adviezen."
+        desc: "Hardlopen is een heerlijke sport, maar vraagt ook veel van uw spieren, pezen en gewrichten. Zowel beginnende hardlopers als ervaren lopers kunnen te maken krijgen met overbelasting, bijvoorbeeld aan de knieën, schenen of achillespezen. Met een video-loopanalyse op onze loopband brengen we uw looppatroon nauwkeurig in beeld. We kijken onder andere naar uw landing, pasfrequentie, lichaamshouding en stabiliteit. Aan de hand van deze beelden geven we u praktisch en persoonlijk advies over looptechniek, versterkende oefeningen, trainingsopbouw en passend schoeisel — zodat u weer prettig, efficiënt en blessurevrij kunt hardlopen."
     },
     {
         title: "Voetentraining",
-        desc: "Voeten vormen logischerwijs het absolute en onwankelbare fundament voor ons staand bewegen en postuur in het leven, maar krijgen weinig actieve oefeningen voorgeschoteld in standaard behandeltrajecten. Als basis ondersteunen sterke en functionele voetspieren alle stabiliteits-ketens, beginnend in uw heup en doortrekkend tot en met uw hoofd/nek regio. Door de kleine voetspieren weer in conditie te brengen, bijvoorbeeld na periodes met verkeerd (aangepast of stug) steunend schoeisel, neemt u ontzettend veel klachten aan knie- en heup gewrichten weg of lost ze blijvend op."
+        desc: "Uw voeten vormen letterlijk de basis van uw lichaam bij het staan en bewegen. Wanneer de spieren in de voeten verzwakt of stijf zijn, kan dit niet alleen leiden tot voetklachten (zoals hielpijn of overbelasting van de peesplaat), maar ook tot compensatie en spanning in de enkels, knieën of heupen. Met gerichte voetentraining versterken we de spieren en de flexibiliteit van uw voeten en voetboog. Dit zorgt voor een betere natuurlijke schokdemping en stabiliteit, zodat u weer prettig en met vertrouwen kunt staan en lopen."
     },
     {
         title: "Medical taping",
@@ -205,7 +205,7 @@ const behandelingen = [
     },
     {
         title: "Leefstijladvies",
-        desc: "Als medisch professional weten wij u, over het alledaagse voedingsadvies heen, enorm doeltreffend te ontzorgen op alledaagse rituelen of obstakels welke preventief blessure- en overbelasting ontketenen op uw stramme lichaamsgestel en immuunsysteem per seizoen, nacht en weersperiode. Van kleine instellingswijzigingen op ergonomisch advies rond een lokaal kantoor of lang transport, of simpelweg wandelstappen op uw horloge to the slaapprocedures rond langdurige vermoeidheidsopbouw als topsporter op weekendniveau. Fysiotherapeuten bezitten de unieke helicopterview de complete mechanische mens over perioden en doelen succesvol bij en af te pellen ter preventie."
+        desc: "Duurzaam herstellen en vitaal blijven gaat verder dan alleen de behandeltafel. Uw dagelijkse gewoonten spelen een grote rol in hoe uw lichaam functioneert en herstelt. Veel klachten hangen samen met factoren zoals langdurig zitten, spanning, een verkeerde werkhouding of een tekort aan rust en slaap. Samen kijken we naar uw dagelijkse routines en de balans tussen belasting en herstel. We geven u praktische en haalbare adviezen — van ergonomie op de werkplek en slimme beweegmomenten tot tips voor een goede nachtrust. Zo bouwt u aan een veerkrachtig lichaam en voorkomt u dat klachten terugkeren."
     }
 ];
 

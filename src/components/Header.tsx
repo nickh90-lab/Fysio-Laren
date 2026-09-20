@@ -64,8 +64,8 @@ export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) 
                 className={cn(
                     "absolute inset-0 backdrop-blur-md transition-all duration-500",
                     variant === 'light' && (isScrolled 
-                        ? "bg-white/95 shadow-2xs border-b border-black/5" 
-                        : "bg-white/95 shadow-2xs border-b border-black/5"),
+                        ? "bg-white/95 shadow-2xs border-b border-blue-accent" 
+                        : "bg-white/95 shadow-2xs border-b border-blue-accent"),
                     variant === 'dark' && (isScrolled 
                         ? "bg-foreground/95 shadow-2xl border-b border-white/5" 
                         : "bg-foreground/95 shadow-sm border-b border-white/10"),

@@ -291,6 +291,153 @@ Wat we voor u kunnen betekenen:
     suggestedFollowups: ["Beweeggroepen", "Parkinson", "Contact"]
   },
   {
+    id: "cva",
+    keywords: ["cva", "beroerte", "herseninfarct", "hersenbloeding", "neurorevalidatie", "cva revalidatie"],
+    intentPatterns: [/beroerte/i, /\bcva\b/i, /herseninfarct/i, /hersenbloeding/i],
+    title: "Revalidatie na een Beroerte (CVA)",
+    answer: `Na een beroerte (CVA) moet het lichaam soms vertrouwde bewegingen en vaardigheden opnieuw leren. Met gerichte neurorevalidatie en specialistische begeleiding werken we samen stap voor stap aan uw herstel.
+
+Wat we voor u kunnen betekenen:
+• Verbeteren van balans, spierkracht, coördinatie en het looppatroon
+• Functionele en gerichte oefeningen afgestemd op uw dagelijkse bezigheden
+• Behandeling op de praktijk of in de beginfase bij u aan huis in Laren en omgeving
+• Mogelijkheid tot doorstroom naar gespecialiseerde beweeggroepen zoals NeuroFit`,
+    quickLinks: [
+      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Neurologie beweeggroepen", href: "/gespecialiseerde-groepstraining?groep=neurologie" },
+      { label: "Afspraak maken", href: "/afspraak-maken" }
+    ],
+    suggestedFollowups: ["Beweeggroepen", "Parkinson", "Ons team", "Contact"]
+  },
+  {
+    id: "hardloopanalyse",
+    keywords: ["hardloopanalyse", "loopanalyse", "hardlopen", "hardloopblessure", "achillespees", "schenen", "hardlooptechniek", "loopband"],
+    intentPatterns: [/hardloopanalyse/i, /loopanalyse/i, /hardloop/i, /hardlopen/i],
+    title: "Hardloopanalyse & Blessurepreventie",
+    answer: `Met onze video-loopanalyse op de loopband brengen we uw looppatroon nauwkeurig in beeld. We kijken onder andere naar uw landing, pasfrequentie, lichaamshouding en stabiliteit om overbelasting te voorkomen of op te lossen.
+
+U ontvangt persoonlijk advies over:
+• Verbetering van uw looptechniek en pasritme
+• Gerichte spierversterkende oefeningen en mobiliteit
+• Verantwoorde opbouw van uw trainingsschema
+• Passend schoen- en inlegzooladvies`,
+    quickLinks: [
+      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Sportfysiotherapie", href: "/behandelingen/sportfysiotherapie-laren" },
+      { label: "Afspraak maken", href: "/afspraak-maken" }
+    ],
+    suggestedFollowups: ["Behandelingen", "Tarieven", "Contact"]
+  },
+  {
+    id: "copd",
+    keywords: ["copd", "long", "longaandoening", "astma", "benauwd", "kortademig", "longfysio", "slijm", "copd groep"],
+    intentPatterns: [/copd/i, /longaandoening/i, /longfysio/i, /astma/i],
+    title: "COPD & Longfysiotherapie",
+    answer: `Bij COPD of andere chronische longklachten kunnen kortademigheid en benauwdheid het bewegen belemmeren, waardoor de conditie langzaam kan afnemen. Met fysiotherapie werken we gericht aan het versterken van uw spieren en conditie, zodat uw lichaam zo efficiënt mogelijk omgaat met zuurstof.
+
+Wat we voor u kunnen betekenen:
+• Verbeteren van spierkracht en uithoudingsvermogen
+• Praktische ademhalingstechnieken bij inspanning
+• Methodes om slijm makkelijker op te hoesten en spanning rond de borstkas te verminderen
+• Begeleiding individueel én in onze gespecialiseerde COPD-beweeggroep`,
+    quickLinks: [
+      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "COPD beweeggroep", href: "/copd" },
+      { label: "Afspraak maken", href: "/afspraak-maken" }
+    ],
+    suggestedFollowups: ["Beweeggroepen", "Tarieven", "Contact"]
+  },
+  {
+    id: "claudicatio",
+    keywords: ["claudicatio", "etalagebenen", "claudicatio intermittens", "kramp in kuit", "pijn bij lopen", "vaatlijden", "looptherapie", "chronisch zorgnet"],
+    intentPatterns: [/claudicatio/i, /etalagebenen/i, /looptherapie/i],
+    title: "Etalagebenen (Claudicatio Intermittens)",
+    answer: `Bij Claudicatio Intermittens (etalagebenen) ontstaat tijdens het lopen pijn of kramp in de benen door een verminderde doorbloeding. Gesuperviseerde looptherapie onder begeleiding van een gespecialiseerde fysiotherapeut (aangesloten bij Chronisch ZorgNet) is hiervoor de meest effectieve behandeling.
+
+Wat we voor u kunnen betekenen:
+• Stapsgewijs vergroten van uw pijnvrije en maximale loopafstand
+• Verbeteren van uw algehele conditie en loopefficiëntie
+• Begeleiding bij een gezonde, actieve leefstijl
+• Voorkomen of uitstellen van een operatieve vaatingreep`,
+    quickLinks: [
+      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Afspraak maken", href: "/afspraak-maken" }
+    ],
+    suggestedFollowups: ["Behandelingen", "Vergoedingen", "Contact"]
+  },
+  {
+    id: "leefstijladvies",
+    keywords: ["leefstijladvies", "leefstijl", "ergonomie", "werkhouding", "werkplek", "slaap", "vitaliteit", "preventie", "herstel"],
+    intentPatterns: [/leefstijl/i, /ergonomie/i, /werkhouding/i, /werkplekadvies/i],
+    title: "Leefstijladvies & Ergonomie",
+    answer: `Duurzaam herstellen en vitaal blijven gaat verder dan alleen de behandeltafel. Uw dagelijkse gewoonten spelen een grote rol in hoe uw lichaam functioneert en herstelt.
+
+Waar we u mee kunnen helpen:
+• Praktische adviezen voor ergonomie op de werkplek en een gezonde werkhouding
+• Tips voor een goede nachtrust en herstelmomenten
+• Slimme beweeggewoonten door de dag heen
+• Balans tussen dagelijkse belasting en rust om terugkerende klachten te voorkomen`,
+    quickLinks: [
+      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Afspraak maken", href: "/afspraak-maken" }
+    ],
+    suggestedFollowups: ["Behandelingen", "Ons team", "Contact"]
+  },
+  {
+    id: "voetentraining",
+    keywords: ["voetentraining", "voetoefeningen", "hielspoor", "peesplaat", "voetpijn", "ingezakte voet", "platvoeten", "enkels"],
+    intentPatterns: [/voetentraining/i, /voetoefening/i, /hielspoor/i, /peesplaat/i],
+    title: "Voetentraining & Voetklachten",
+    answer: `Uw voeten vormen letterlijk de basis van uw lichaam bij het staan en bewegen. Met gerichte voetentraining versterken we de spieren en mobiliteit van de voet en voetboog.
+
+Wat we voor u kunnen betekenen:
+• Verbeteren van de natuurlijke schokdemping en stabiliteit
+• Verlichten van hielpijn, hielspoor en peesplaatklachten
+• Verminderen van overbelasting en compensatie in enkels, knieën en heupen
+• Praktische oefeningen voor thuis en advies over schoeisel`,
+    quickLinks: [
+      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Afspraak maken", href: "/afspraak-maken" }
+    ],
+    suggestedFollowups: ["Hardloopanalyse", "Behandelingen", "Contact"]
+  },
+  {
+    id: "osteoporose",
+    keywords: ["osteoporose", "botontkalking", "botdichtheid", "botbreuken", "valpreventie", "evenwicht", "rugpijn osteoporose"],
+    intentPatterns: [/osteoporose/i, /botontkalking/i, /botdichtheid/i],
+    title: "Osteoporose & Valpreventie",
+    answer: `Bij osteoporose (botontkalking) is verantwoord en doelgericht bewegen juist een van de beste manieren om uw lichaam sterk en weerbaar te houden.
+
+Wat we voor u kunnen betekenen:
+• Gerichte gewichtsdragende oefeningen om botweefsel en spieren te stimuleren
+• Balans- en stabiliteitstraining om de kans op vallen aanzienlijk te verkleinen
+• Duidelijke voorlichting en praktisch advies over wat u het beste wel én niet kunt doen
+• Praktische handvatten voor het versterken van de rugspieren en een veilige, actieve lichaamshouding`,
+    quickLinks: [
+      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Afspraak maken", href: "/afspraak-maken" }
+    ],
+    suggestedFollowups: ["Behandelingen", "Ons team", "Contact"]
+  },
+  {
+    id: "artrose",
+    keywords: ["artrose", "slijtage", "gewrichtsslijtage", "kraakbeen", "stijve knie", "stijve heup", "ochtendstijfheid", "gewrichtspijn"],
+    intentPatterns: [/artrose/i, /kraakbeen/i, /gewrichtsslijtage/i],
+    title: "Artrose & Gewrichtsklachten",
+    answer: `Artrose is geen onvermijdelijke 'slijtage', maar een aandoening van het totale gewricht die juist heel goed actief te beïnvloeden is. Gedoseerd bewegen is het beste medicijn om het kraakbeen gezond en de gewrichten soepel te houden.
+
+Wat we voor u kunnen betekenen:
+• Gerichte oefentherapie voor meer spierkracht en stabiliteit rondom het gewricht
+• Verminderen van startstijfheid en zeurende pijn
+• Vinden van de juiste balans tussen belasting en herstel in het dagelijks leven
+• Voorkomen of langdurig uitstellen van operaties`,
+    quickLinks: [
+      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Afspraak maken", href: "/afspraak-maken" }
+    ],
+    suggestedFollowups: ["Behandelingen", "Osteoporose", "Contact"]
+  },
+  {
     id: "team",
     keywords: ["team", "fysiotherapeut", "wie werken", "marloes", "karin", "nick", "ingrid", "collega", "behandelaars"],
     intentPatterns: [/wie werken er/i, /wie is/i, /ons team/i, /marloes/i, /karin/i, /nick/i, /ingrid/i],
