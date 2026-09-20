@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Activity, Zap, ShieldCheck, HeartPulse, Brain, Wind, CheckCircle2, Bone, Heart, Sparkles, ChevronDown } from "lucide-react";
+import { ArrowRight, Activity, ShieldCheck, HeartPulse, Brain, Wind, Bone, Heart, Sparkles, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const klachtenClusters = [

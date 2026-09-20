@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { GraduationCap, ChevronDown } from "lucide-react";
-import { team, TeamMember } from "@/data/team";
+import { team } from "@/data/team";
 import { cn } from "@/lib/utils";
 
 export default function TeamInteractive() {

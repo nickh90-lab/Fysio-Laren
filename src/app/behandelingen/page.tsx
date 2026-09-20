@@ -83,7 +83,7 @@ export default function BehandelingenOverview() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {treatments.map((service, i) => (
+                        {treatments.map((service) => (
                             <div key={service.title} className="group p-8 bg-white rounded-[2rem] shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col h-full border border-foreground/5">
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <div className="relative z-10 flex flex-col flex-grow">

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { 
@@ -112,23 +112,33 @@ const neuroContent: Record<NeuroSubtype, GroepContent & { tabLabel: string }> = 
 
 export default function GespecialiseerdeGroepstrainingSelector() {
     const searchParams = useSearchParams();
-    const [hoofdcategorie, setHoofdcategorie] = useState<HoofdCategorie>("fysiofit");
-    const [neuroSubtype, setNeuroSubtype] = useState<NeuroSubtype>("neurofit");
+    const paramGroep = searchParams.get("groep");
+    const paramSub = searchParams.get("sub");
 
-    useEffect(() => {
-        const groep = searchParams.get("groep");
-        const sub = searchParams.get("sub");
-        if (groep === "fysiofit") {
-            setHoofdcategorie("fysiofit");
-        } else if (groep === "copd") {
+    const [prevSearchParams, setPrevSearchParams] = useState(searchParams);
+    const [hoofdcategorie, setHoofdcategorie] = useState<HoofdCategorie>(() => {
+        if (paramGroep === "copd") return "copd";
+        if (paramGroep === "neurologie") return "neurologie";
+        return "fysiofit";
+    });
+    const [neuroSubtype, setNeuroSubtype] = useState<NeuroSubtype>(() => {
+        if (paramSub === "trom" || paramSub === "boksen") return paramSub;
+        return "neurofit";
+    });
+
+    if (searchParams !== prevSearchParams) {
+        setPrevSearchParams(searchParams);
+        if (paramGroep === "copd") {
             setHoofdcategorie("copd");
-        } else if (groep === "neurologie") {
+        } else if (paramGroep === "neurologie") {
             setHoofdcategorie("neurologie");
-            if (sub === "neurofit" || sub === "trom" || sub === "boksen") {
-                setNeuroSubtype(sub);
+            if (paramSub === "trom" || paramSub === "boksen" || paramSub === "neurofit") {
+                setNeuroSubtype(paramSub);
             }
+        } else if (paramGroep === "fysiofit") {
+            setHoofdcategorie("fysiofit");
         }
-    }, [searchParams]);
+    }
 
     const activeContent = 
         hoofdcategorie === "fysiofit"

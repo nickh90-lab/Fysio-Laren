@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Instagram } from "lucide-react";
 
@@ -75,6 +74,7 @@ export default function InstagramFeed() {
                                 rel="noopener noreferrer"
                                 className="relative aspect-square w-full rounded-2xl overflow-hidden group bg-muted shadow-sm"
                             >
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img 
                                     src={post.mediaUrl || post.thumbnailUrl}
                                     alt={post.caption || "Instagram post Fysio Laren"}
