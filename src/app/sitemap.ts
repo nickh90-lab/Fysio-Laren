@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes = [
         { url: baseUrl, priority: 1.0, changeFrequency: 'weekly' as const },
         { url: `${baseUrl}/fysiotherapie`, priority: 0.9, changeFrequency: 'monthly' as const },
-        { url: `${baseUrl}/fysiofit`, priority: 0.9, changeFrequency: 'monthly' as const },
         { url: `${baseUrl}/gespecialiseerde-groepstraining`, priority: 0.9, changeFrequency: 'monthly' as const },
         { url: `${baseUrl}/copd`, priority: 0.8, changeFrequency: 'monthly' as const },
         { url: `${baseUrl}/neurologie`, priority: 0.8, changeFrequency: 'monthly' as const },

@@ -17,7 +17,7 @@ export default function NeurologiePage() {
                             Neurologie Groepstrainingen.
                         </h1>
                         <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-light">
-                            Gespecialiseerde beweeggroepen gericht op het behoud van mobiliteit, balans en zelfvertrouwen bij neurologische aandoeningen in Laren.
+                            Gespecialiseerde beweeggroepen gericht op het behoud van mobiliteit, balans en zelfvertrouwen bij neurologische aandoeningen in Laren, Gld.
                         </p>
                     </div>
 

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
 export default function SportisRedirect() {
-    redirect("/fysiofit");
+    redirect("/gespecialiseerde-groepstraining");
 }
 

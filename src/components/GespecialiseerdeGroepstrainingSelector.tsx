@@ -30,12 +30,12 @@ interface GroepContent {
 const fysiofitContent: GroepContent = {
     title: "FysioFit",
     subtitle: "Verantwoord bewegen en fitnessen onder deskundige fysiotherapeutische begeleiding",
-    intro: "Voor iedereen die fit wil blijven, wil werken aan herstel of een deskundige stok achter de deur zoekt. Bij FysioFit traint u in onze moderne oefenzaal op uw eigen tempo en niveau, met de zekerheid dat er altijd een professionele fysiotherapeut aanwezig is om u te adviseren en de juiste oefeningen aan te reiken.",
+    intro: "Voor iedereen die fit wil blijven, wil werken aan herstel of een deskundige stok achter de deur zoekt. Bij FysioFit traint u in onze oefenzaal op uw eigen tempo en niveau, met de zekerheid dat er altijd een professionele fysiotherapeut aanwezig is om u te adviseren en de juiste oefeningen aan te reiken.",
     highlights: [
-        "Trainen in een moderne, professioneel ingerichte oefenzaal in hartje Laren",
-        "Continue deskundige begeleiding en toezicht van onze fysiotherapeuten",
+        "Trainen in een professioneel ingerichte oefenzaal in hartje Laren, Gld",
+        "Deskundige begeleiding en toezicht van onze fysiotherapeuten",
         "Persoonlijk afgestemd trainingsschema op uw doelen en belastbaarheid",
-        "Zowel overdag als 's avonds flexibele trainingsmogelijkheden",
+        "Zowel overdag als 's avonds meerdere trainingsmogelijkheden",
     ],
     voorWie: "Voor iedereen die zelfstandig en verantwoord wil trainen met deskundige ondersteuning (ook ideaal na afloop van een fysiotherapietraject of ter preventie van nieuwe klachten).",
     opzet: "Wekelijks trainen in blokken van 30 of 60 minuten. We stemmen samen met u het trainingsschema en het meest geschikte tijdstip af.",
@@ -64,12 +64,12 @@ const neuroContent: Record<NeuroSubtype, GroepContent & { tabLabel: string }> = 
         tabLabel: "NeuroFit",
         title: "NeuroFit",
         subtitle: "Behoud van mobiliteit, balans, loopvaardigheid en zelfstandigheid",
-        intro: "Bij neurologische aandoeningen zoals de ziekte van Parkinson, Multiple Sclerose (MS) of na een beroerte (CVA) is regelmatig en doelgericht bewegen essentieel. In onze NeuroFit-groep werken we aan het behoud en verbeteren van uw motoriek, spierkracht en stabiliteit in een veilige omgeving.",
+        intro: "Bij neurologische aandoeningen zoals de ziekte van Parkinson, Multiple Sclerose (MS) of na een beroerte (CVA) is regelmatig en doelgericht bewegen essentieel. In onze NeuroFit-groep werken we aan het behoud en verbeteren van uw spierkracht, conditie, balans, coördinatie en loopvaardigheid in een veilige omgeving.",
         highlights: [
-            "Balans- en looptraining ter preventie van valincidenten",
-            "Aanleren van cueing-technieken om 'bevriezen' (freezing) tegen te gaan",
+            "Balans- en looptraining",
+            "Verbeteren van kracht en conditie",
             "Oefenen van alledaagse vaardigheden (opstaan, draaien, reiken en lopen)",
-            "Lotgenotencontact in een ontspannen, begripvolle en motiverende sfeer",
+            "Trainen in een ontspannen en motiverende sfeer",
         ],
         voorWie: "Mensen met neurologische aandoeningen (o.a. de ziekte van Parkinson, parkinsonisme, MS of restverschijnselen na CVA) die veilig en onder deskundig toezicht willen bewegen.",
         opzet: "Onder leiding van onze gespecialiseerde neuro-/ParkinsonNet fysiotherapeut. De oefeningen worden volledig afgestemd op de persoonlijke belastbaarheid en het energieniveau van iedere deelnemer.",
@@ -82,13 +82,13 @@ const neuroContent: Record<NeuroSubtype, GroepContent & { tabLabel: string }> = 
         subtitle: "Plezier in bewegen, ritme, conditie en coördinatie op stimulerende muziek",
         intro: "Trainen Op Muziek (TROM) combineert fysiotherapeutisch verantwoorde oefeningen met herkenbare, motiverende muziek. Bewegen op een vast ritme maakt trainen lichter, geeft energie en stimuleert de hersen-spierverbindingen, het pasritme en de coördinatie op een hele plezierige manier.",
         highlights: [
-            "Verbetering van conditie, mobiliteit en spierkracht op een vrolijke manier",
-            "Muziek als natuurlijke stimulans voor pasritme, reactiesnelheid en balans",
-            "Gevarieerde bewegingsvormen afgestemd op ieder startniveau (zittend en staand)",
-            "Gezellige groepsdynamiek met veel aandacht voor plezier en vitaliteit",
+            "Verbetering van conditie, mobiliteit en spierkracht op een aangename manier",
+            "Muziek als natuurlijke stimulans voor pasritme, reactiesnelheid en balans. Bewezen effectief.",
+            "Gevarieerde bewegingsvormen afgestemd op ieders persoonlijk niveau (zittend en staand)",
+            "Fijne groepsdynamiek met veel aandacht voor plezier en vitaliteit",
         ],
-        voorWie: "Voor iedereen die op een vrolijke, muzikale en laagdrempelige manier wil werken aan coördinatie, soepelheid, ritmegevoel en zelfvertrouwen in bewegen.",
-        opzet: "Wekelijkse training in onze moderne oefenzaal onder fysiotherapeutische begeleiding. De oefeningen worden zorgvuldig opgebouwd en zijn veilig voor gewrichten en spieren.",
+        voorWie: "Voor iedereen die op een aangename, muzikale en laagdrempelige manier wil werken aan coördinatie, soepelheid, ritmegevoel en zelfvertrouwen in bewegen.",
+        opzet: "Wekelijkse training in onze oefenzaal onder fysiotherapeutische begeleiding. De oefeningen worden zorgvuldig opgebouwd en zijn veilig voor gewrichten en spieren.",
         vergoeding: "Kan afhankelijk van uw doelstelling en eventuele indicatie binnen een fysiotherapietraject vallen of in groeps-/abonnementsvorm worden gevolgd. Vraag ons naar de actuele mogelijkheden.",
         ctaText: "Aanmelden voor TROM",
     },
@@ -98,7 +98,7 @@ const neuroContent: Record<NeuroSubtype, GroepContent & { tabLabel: string }> = 
         subtitle: "Energieke neuro-motorische bokstraining zonder fysiek contact",
         intro: "Non-contact boksen is een dynamische, intensieve en vooral ontzettend leuke trainingsvorm. Er wordt níét tegen elkaar gevochten: alle oefeningen vinden plaats op stootkussens, bokszakken of met de fysiotherapeut. Boksen stimuleert razendsnel de neuro-motorische verbindingen in het brein.",
         highlights: [
-            "100% veilig: geen fysiek contact of stoten naar het lichaam",
+            "Geen fysiek contact of stoten naar het lichaam",
             "Krachtige stimulans voor balans, voetenwerk, coördinatie en reactiesnelheid",
             "Dubbeltaken trainen: denkvermogen en beweging tegelijk activeren",
             "Bewezen effectief bij o.a. Parkinson (Boxing for Parkinson) en neuro-revalidatie",
@@ -319,19 +319,11 @@ export default function GespecialiseerdeGroepstrainingSelector() {
                                         </p>
                                     )}
 
-                                    {hoofdcategorie !== "fysiofit" ? (
+                                    {hoofdcategorie !== "fysiofit" && (
                                         <div className="flex items-center gap-2 text-xs font-semibold text-foreground/60 bg-white p-3 rounded-xl border border-foreground/5">
                                             <FileText className="w-4 h-4 text-blue-accent shrink-0" />
                                             <span>Heeft u een verwijsbrief van uw specialist of huisarts? Neem deze mee naar de intake.</span>
                                         </div>
-                                    ) : (
-                                        <Link 
-                                            href="/fysiofit"
-                                            className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-accent hover:text-blue-700 transition-colors pt-2"
-                                        >
-                                            <span>Bekijk de uitgebreide FysioFit pagina</span>
-                                            <ArrowRight className="w-3.5 h-3.5" />
-                                        </Link>
                                     )}
                                 </div>
                             </div>

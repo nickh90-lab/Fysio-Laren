@@ -53,7 +53,7 @@ export default function BehandelingenOverview() {
                             Onze Expertise
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-foreground leading-tight">
-                            Fysiotherapeutische behandelingen in <span className="text-foreground/50">Laren</span>.
+                            Fysiotherapeutische behandelingen in <span className="text-foreground/50">Laren, Gld</span>.
                         </h1>
                         <p className="text-foreground/80 text-lg leading-relaxed mb-8">
                             Bij Fysio Laren bieden we een breed scala aan gespecialiseerde behandelingen. Omdat geen enkele klacht of patiënt hetzelfde is, stemmen we de therapie altijd volledig af op uw persoonlijke situatie. Ontdek hieronder al onze specialisaties.

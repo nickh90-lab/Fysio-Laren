@@ -104,7 +104,7 @@ export default function Privacybeleid() {
                             <p className="font-bold text-foreground mb-1">Bezoekadres</p>
                             <p>Fysio Laren</p>
                             <p>Huenderstraat 3</p>
-                            <p>7245 BG Laren (GLD)</p>
+                            <p>7245 BG Laren, Gld</p>
                         </div>
                         <div>
                             <p className="font-bold text-foreground mb-1">Privacy Contact</p>

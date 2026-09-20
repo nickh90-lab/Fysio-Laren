@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Tarieven | Fysiotherapie Laren",
+    title: "Tarieven | Fysiotherapie Laren, Gld",
     description: "Bekijk de tarieven en vergoedingen voor fysiotherapie behandelingen bij Fysio Laren.",
 };
 
@@ -29,42 +29,42 @@ const allRates = [
 
 export default function TarievenPage() {
     return (
-        <main className="bg-background pt-32 pb-24 relative min-h-screen">
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
-                <div className="bg-transparent max-w-4xl mx-auto">
+        <main className="bg-background pt-28 pb-20 relative min-h-screen">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
+                <div className="max-w-2xl mx-auto">
 
-                    {/* Header */}
-                    <div className="text-center mb-16 md:mb-20">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight">Onze Tarieven.</h1>
-                        <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-light">
+                    {/* Header: Rustig & Ingetogen */}
+                    <div className="text-center mb-8 sm:mb-10">
+                        <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">Onze Tarieven.</h1>
+                        <p className="text-sm sm:text-base text-foreground/65 leading-relaxed font-light max-w-lg mx-auto">
                             Onderstaande particuliere tarieven gelden wanneer u niet of onvoldoende aanvullend verzekerd bent voor fysiotherapie in het huidige kalenderjaar.
                         </p>
                     </div>
 
-                    {/* Tarieven Lijst (Sobere Kaart) */}
-                    <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-sm border border-foreground/5 mb-16">
-                        <div className="space-y-1">
+                    {/* Tarieven Lijst: Subtiel & Rustig vormgegeven */}
+                    <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xs border border-foreground/5 mb-10">
+                        <div className="divide-y divide-foreground/5">
                             {allRates.map((rate, i) => (
-                                <div key={i} className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-3 border-b border-foreground/5 last:border-0 last:pb-0 gap-2">
-                                    <h3 className="font-medium text-foreground/90 text-base">{rate.name}</h3>
-                                    <span className="text-base font-bold text-foreground/80 whitespace-nowrap">{rate.price}</span>
+                                <div key={i} className="flex justify-between items-center py-2.5 sm:py-3 gap-4 text-xs sm:text-sm">
+                                    <span className="text-foreground/85 font-medium">{rate.name}</span>
+                                    <span className="font-semibold text-foreground/90 tabular-nums whitespace-nowrap">{rate.price}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Call to Actions */}
-                    <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+                    {/* Call to Actions: Bescheiden & Elegant */}
+                    <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 text-sm font-semibold">
                         <Link
                             href="/afspraak-maken"
-                            className="bg-blue-accent text-white rounded-full py-4 px-8 font-bold flex items-center justify-center gap-2 group hover:scale-105 transition-transform"
+                            className="bg-blue-accent text-white rounded-full py-3 px-6 flex items-center justify-center gap-2 group hover:bg-blue-accent/90 transition-all shadow-xs w-full sm:w-auto"
                         >
-                            Afspraak inplannen <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            Afspraak inplannen <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
 
                         <Link
                             href="/contact"
-                            className="bg-foreground/5 text-foreground hover:bg-foreground/10 rounded-full py-4 px-8 font-bold flex items-center justify-center gap-2 transition-colors"
+                            className="bg-foreground/5 text-foreground/80 hover:bg-foreground/10 hover:text-foreground rounded-full py-3 px-6 flex items-center justify-center gap-2 transition-colors border border-foreground/5 w-full sm:w-auto"
                         >
                             Vragen over vergoedingen?
                         </Link>

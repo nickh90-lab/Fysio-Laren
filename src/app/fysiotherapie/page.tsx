@@ -32,7 +32,7 @@ export default function FysiotherapiePage() {
             { "@type": "MedicalTherapy", "name": "Artrose & Gewrichtsklachten" },
             { "@type": "MedicalTherapy", "name": "Sportblessures" },
             { "@type": "MedicalTherapy", "name": "Neurologische klachten" },
-            { "@type": "MedicalTherapy", "name": "Reguliere Fysiotherapie" },
+            { "@type": "MedicalTherapy", "name": "Algemene Fysiotherapie" },
             { "@type": "MedicalTherapy", "name": "Manuele Therapie" },
             { "@type": "MedicalTherapy", "name": "Revalidatie (Post-operatief)" },
         ]

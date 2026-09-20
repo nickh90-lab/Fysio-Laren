@@ -27,13 +27,13 @@ const complaints = [
     {
         title: "Knieklachten",
         path: "/klachten/knieklachten-fysiotherapie-laren",
-        desc: "Pijn bij traplopen, sporten of na een val? Onze knie-experts in Laren analyseren uw beweegpatroon voor een snel en blijvend resultaat.",
+        desc: "Pijn bij traplopen, sporten of na een val? Onze knie-experts in Laren, Gld analyseren uw beweegpatroon voor een snel en blijvend resultaat.",
         icon: Sparkles
     },
     {
         title: "Sportblessures",
         path: "/klachten/sportblessures-fysiotherapie-laren",
-        desc: "Van enkelverstuikingen en zweepslag tot overbelasting, wij zorgen dat u snel weer veilig op het sportveld staat in regio Laren.",
+        desc: "Van enkelverstuikingen en zweepslag tot overbelasting, wij zorgen dat u snel weer veilig op het sportveld staat in regio Laren, Gld.",
         icon: MoveUpRight
     }
 ];
@@ -78,7 +78,7 @@ export default function KlachtenOverview() {
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Kies de regio van uw klacht</h2>
                         <p className="text-lg text-foreground/70 leading-relaxed">
-                            Klik hieronder op uw specifieke pijngebied. Ontdek meer over de symptomen, mogelijke oorzaken en hoe onze fysiotherapeuten in Laren u snel en veilig van de last en pijn afhelpen.
+                            Klik hieronder op uw specifieke pijngebied. Ontdek meer over de symptomen, mogelijke oorzaken en hoe onze fysiotherapeuten in Laren, Gld u snel en veilig van de last en pijn afhelpen.
                         </p>
                     </div>
 

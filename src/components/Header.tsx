@@ -16,8 +16,9 @@ const teamLink = { name: "Ons team", href: "/ons-team" };
 
 const infoLinks = [
     { name: "De praktijk", href: "/de-praktijk" },
-    { name: "Tarieven", href: "/tarieven" },
+    { name: "Openingstijden", href: "/openingstijden" },
     { name: "Contact", href: "/contact" },
+    { name: "Tarieven", href: "/tarieven" },
 ];
 
 export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) {
@@ -49,21 +50,22 @@ export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) 
     };
 
     return (
-        <header
-            className={cn(
-                "fixed z-[100] transition-all duration-500 ease-out",
-                isScrolled 
-                    ? "top-0 left-0 right-0 py-3 px-4 md:py-3.5 md:px-6 xl:px-12"
-                    : "top-0 left-0 right-0 py-4 px-4 md:py-5 md:px-6 xl:px-12"
-            )}
-        >
+        <header className="fixed z-[100] top-0 left-0 right-0">
+            <div
+                className={cn(
+                    "transition-all duration-500 ease-out relative",
+                    isScrolled 
+                        ? "py-3 px-4 md:py-3.5 md:px-6 xl:px-12"
+                        : "py-4 px-4 md:py-5 md:px-6 xl:px-12"
+                )}
+            >
             {/* Background layer */}
             <div
                 className={cn(
                     "absolute inset-0 backdrop-blur-md transition-all duration-500",
                     variant === 'light' && (isScrolled 
-                        ? "bg-white/95 shadow-2xl border-b border-black/5" 
-                        : "bg-white/95 shadow-sm border-b border-black/10"),
+                        ? "bg-white/95 shadow-2xs border-b border-black/5" 
+                        : "bg-white/95 shadow-2xs border-b border-black/5"),
                     variant === 'dark' && (isScrolled 
                         ? "bg-foreground/95 shadow-2xl border-b border-white/5" 
                         : "bg-foreground/95 shadow-sm border-b border-white/10"),
@@ -74,22 +76,36 @@ export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) 
             />
 
             <div className="max-w-7xl mx-auto flex items-center justify-between relative z-10 h-full gap-2 xl:gap-4">
-                {/* User Logo / Branding */}
-                <Link href="/" className="flex items-center relative z-20 group shrink-0" onClick={closeMenu}>
-                    <div className={cn(
-                        "relative h-12 md:h-14 xl:h-16 w-48 md:w-56 xl:w-64 transition-all duration-300 group-hover:opacity-80 origin-left pointer-events-none",
-                        isScrolled 
-                            ? "scale-[1.3] md:scale-[1.6] xl:scale-[2.0]" 
-                            : "scale-[1.5] md:scale-[1.9] xl:scale-[2.5]"
-                    )}>
-                        <Image 
-                            src={variant !== 'light' ? "/Logo%20transparant%20op%20blauw.svg" : "/Logo%20transparant%20op%20wit.svg"} 
-                            alt="Fysio Laren Logo" 
-                            fill 
-                            className="object-contain object-left pointer-events-none" 
-                            priority 
-                            unoptimized 
-                        />
+                {/* Logo & Branding - Optie 4 (Logo + Subtiele Typografische Descriptor) */}
+                <Link href="/" className="flex items-center relative z-20 shrink-0" onClick={closeMenu}>
+                    <div className="flex items-center">
+                        <div className={cn(
+                            "relative transition-all duration-300 shrink-0 aspect-[385/210]",
+                            isScrolled 
+                                ? "h-10 sm:h-11 md:h-12 xl:h-[52px]" 
+                                : "h-12 sm:h-14 md:h-16 xl:h-[68px]"
+                        )}>
+                            <Image 
+                                src={variant !== 'light' ? "/Logo_cropped_blauw.svg" : "/Logo_cropped_wit.svg"} 
+                                alt="Fysio Laren Logo" 
+                                fill 
+                                className="object-contain object-left" 
+                                priority 
+                                unoptimized 
+                            />
+                        </div>
+                        <div className={cn(
+                            "hidden sm:flex items-center pl-3 sm:pl-3.5 ml-3 sm:ml-3.5 border-l transition-all duration-300 text-left shrink-0",
+                            variant === 'light' ? "border-foreground/15" : "border-white/20"
+                        )}>
+                            <span className={cn(
+                                "font-bold uppercase tracking-[0.22em] transition-all duration-300 leading-none",
+                                isScrolled ? "text-[10px] md:text-[11px]" : "text-[11px] md:text-[12.5px]",
+                                variant === 'light' ? "text-blue-accent" : "text-white"
+                            )}>
+                                Gelderland
+                            </span>
+                        </div>
                     </div>
                 </Link>
 
@@ -218,6 +234,8 @@ export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) 
                     </button>
                 </div>
             </div>
+            </div>
+
 
             {/* Mobile Menu Overlay - Rustig & Georganiseerd, exact zoals PC */}
             <AnimatePresence>
@@ -281,7 +299,7 @@ export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) 
                                             <div className="bg-slate-50/80 rounded-2xl p-2 my-1.5 border border-black/5 space-y-1 text-sm">
                                                 {/* FysioFit */}
                                                 <Link
-                                                    href="/fysiofit"
+                                                    href="/gespecialiseerde-groepstraining"
                                                     onClick={closeMenu}
                                                     className="flex items-center justify-between py-2.5 px-3.5 rounded-xl font-semibold text-foreground/85 hover:text-blue-accent hover:bg-white transition-all"
                                                 >

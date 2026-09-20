@@ -11,47 +11,17 @@ import SpecialtiesSelector from "@/components/SpecialtiesSelector";
 import WaaromFysioSelector from "@/components/WaaromFysioSelector";
 import InstagramFeed from "@/components/InstagramFeed";
 import { partners } from "@/data/partners";
+import OpeningHeroSelector from "@/components/OpeningHeroSelector";
+import OpeningConfetti from "@/components/OpeningConfetti";
 
 export default function Home() {
   return (
     <div className="pt-20">
-      {/* Sectie 1: Hero Sectie */}
-      <div className="w-full bg-background flex flex-col lg:flex-row min-h-[85vh] -mt-20 pt-32 pb-16 relative items-center">
-        <div className="max-w-screen-2xl mx-auto w-full flex flex-col lg:flex-row items-center px-6 lg:px-12 xl:px-24 gap-12 lg:gap-20">
-          
-          {/* Linkerzijde - Introductietekst */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left items-center lg:items-start z-10">
-            <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 leading-[1.1] lg:leading-[1.05]">
-              Samen werken<br className="hidden md:block" /> aan uw<br className="hidden md:block" /> gezondheid.
-            </h1>
-            <p className="text-foreground/70 text-lg md:text-xl max-w-md font-light leading-relaxed mx-auto lg:mx-0">
-              Persoonlijke aandacht, duidelijke uitleg en een behandeling die bij u past. Samen werken we aan herstel en blijvend resultaat.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-10 items-center lg:items-start w-full sm:w-auto">
-              <Link href="/afspraak-maken" className="w-full sm:w-auto px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg hover:shadow-blue-accent/20 md:text-lg">
-                Maak een afspraak
-              </Link>
-              <Link href="/ons-team" className="w-full sm:w-auto px-8 py-4 bg-white/80 hover:bg-white text-foreground font-bold rounded-full border border-foreground/10 shadow-sm transition-all flex items-center justify-center md:text-lg">
-                Ons team
-              </Link>
-            </div>
-          </div>
+      {/* Feestelijke openingsconfetti (bij 1e bezoek & met testknop) */}
+      <OpeningConfetti />
 
-          {/* Rechterzijde - De Groepsfoto */}
-          <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
-            <div className="relative w-full max-w-[370px] aspect-[3545/5206] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] bg-muted">
-              <Image 
-                src="/images/Teamfoto_v2.jpg" 
-                alt="Team Fysio Laren" 
-                fill
-                priority
-                sizes="(max-width: 768px) 370px, 450px"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Sectie 1: Hero Sectie (met Openings-Selector & Origineel) */}
+      <OpeningHeroSelector />
 
       {/* Sectie 1: Wat kunnen wij voor u betekenen? (Wit) */}
       <section className="py-24 md:py-32 px-6 md:px-12 bg-white flex flex-col items-center">
@@ -81,7 +51,7 @@ export default function Home() {
               <p className="text-foreground/80 mb-10 flex-grow text-lg leading-relaxed">
                 Als krachtige aanvulling op onze fysiotherapie bieden wij FysioFit: verantwoord trainen onder professionele begeleiding. Ideaal ter ondersteuning van uw opgebouwde herstel en ter preventie van nieuwe klachten.
               </p>
-              <Link href="/fysiofit" className="inline-flex items-center text-foreground font-bold hover:gap-3 transition-all mt-auto bg-white/80 hover:bg-white w-fit px-8 py-4 rounded-full shadow-sm border border-foreground/10 md:text-lg">
+              <Link href="/gespecialiseerde-groepstraining" className="inline-flex items-center text-foreground font-bold hover:gap-3 transition-all mt-auto bg-white/80 hover:bg-white w-fit px-8 py-4 rounded-full shadow-sm border border-foreground/10 md:text-lg">
                 Ontdek FysioFit <ArrowRight size={20} className="ml-2 text-primary" />
               </Link>
             </div>

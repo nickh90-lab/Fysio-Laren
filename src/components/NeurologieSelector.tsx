@@ -33,12 +33,12 @@ const neuroGroepen: NeuroGroepDetail[] = [
         title: "NeuroFit",
         tabLabel: "NeuroFit",
         subtitle: "Behoud van mobiliteit, balans, loopvaardigheid en zelfstandigheid",
-        intro: "Bij neurologische aandoeningen zoals de ziekte van Parkinson, Multiple Sclerose (MS) of na een beroerte (CVA) is regelmatig en doelgericht bewegen essentieel. In onze NeuroFit-groep werken we aan het behoud en verbeteren van uw motoriek, spierkracht en stabiliteit in een veilige omgeving.",
+        intro: "Bij neurologische aandoeningen zoals de ziekte van Parkinson, Multiple Sclerose (MS) of na een beroerte (CVA) is regelmatig en doelgericht bewegen essentieel. In onze NeuroFit-groep werken we aan het behoud en verbeteren van uw spierkracht, conditie, balans, coördinatie en loopvaardigheid in een veilige omgeving.",
         highlights: [
-            "Balans- en looptraining ter preventie van valincidenten",
-            "Aanleren van cueing-technieken om 'bevriezen' (freezing) tegen te gaan",
+            "Balans- en looptraining",
+            "Verbeteren van kracht en conditie",
             "Oefenen van alledaagse vaardigheden (opstaan, draaien, reiken en lopen)",
-            "Lotgenotencontact in een ontspannen, begripvolle en motiverende sfeer",
+            "Trainen in een ontspannen en motiverende sfeer",
         ],
         voorWie: "Mensen met neurologische aandoeningen (o.a. de ziekte van Parkinson, parkinsonisme, MS of restverschijnselen na CVA) die veilig en onder deskundig toezicht willen bewegen.",
         opzet: "Onder leiding van onze gespecialiseerde neuro-/ParkinsonNet fysiotherapeut. De oefeningen worden volledig afgestemd op de persoonlijke belastbaarheid en het energieniveau van iedere deelnemer.",
@@ -52,13 +52,13 @@ const neuroGroepen: NeuroGroepDetail[] = [
         subtitle: "Plezier in bewegen, ritme, conditie en coördinatie op stimulerende muziek",
         intro: "Trainen Op Muziek (TROM) combineert fysiotherapeutisch verantwoorde oefeningen met herkenbare, motiverende muziek. Bewegen op een vast ritme maakt trainen lichter, geeft energie en stimuleert de hersen-spierverbindingen, het pasritme en de coördinatie op een hele plezierige manier.",
         highlights: [
-            "Verbetering van conditie, mobiliteit en spierkracht op een vrolijke manier",
-            "Muziek als natuurlijke stimulans voor pasritme, reactiesnelheid en balans",
-            "Gevarieerde bewegingsvormen afgestemd op ieder startniveau (zittend en staand)",
-            "Gezellige groepsdynamiek met veel aandacht voor plezier en vitaliteit",
+            "Verbetering van conditie, mobiliteit en spierkracht op een aangename manier",
+            "Muziek als natuurlijke stimulans voor pasritme, reactiesnelheid en balans. Bewezen effectief.",
+            "Gevarieerde bewegingsvormen afgestemd op ieders persoonlijk niveau (zittend en staand)",
+            "Fijne groepsdynamiek met veel aandacht voor plezier en vitaliteit",
         ],
-        voorWie: "Voor iedereen die op een vrolijke, muzikale en laagdrempelige manier wil werken aan coördinatie, soepelheid, ritmegevoel en zelfvertrouwen in bewegen.",
-        opzet: "Wekelijkse training in onze moderne oefenzaal onder fysiotherapeutische begeleiding. De oefeningen worden zorgvuldig opgebouwd en zijn veilig voor gewrichten en spieren.",
+        voorWie: "Voor iedereen die op een aangename, muzikale en laagdrempelige manier wil werken aan coördinatie, soepelheid, ritmegevoel en zelfvertrouwen in bewegen.",
+        opzet: "Wekelijkse training in onze oefenzaal onder fysiotherapeutische begeleiding. De oefeningen worden zorgvuldig opgebouwd en zijn veilig voor gewrichten en spieren.",
         vergoeding: "Kan afhankelijk van uw doelstelling en eventuele indicatie binnen een fysiotherapietraject vallen of in groeps-/abonnementsvorm worden gevolgd. Vraag ons naar de actuele mogelijkheden.",
         ctaText: "Aanmelden voor TROM",
     },
@@ -69,7 +69,7 @@ const neuroGroepen: NeuroGroepDetail[] = [
         subtitle: "Energieke neuro-motorische bokstraining zonder fysiek contact",
         intro: "Non-contact boksen is een dynamische, intensieve en vooral ontzettend leuke trainingsvorm. Er wordt níét tegen elkaar gevochten: alle oefeningen vinden plaats op stootkussens, bokszakken of met de fysiotherapeut. Boksen stimuleert razendsnel de neuro-motorische verbindingen in het brein.",
         highlights: [
-            "100% veilig: geen fysiek contact of stoten naar het lichaam",
+            "Geen fysiek contact of stoten naar het lichaam",
             "Krachtige stimulans voor balans, voetenwerk, coördinatie en reactiesnelheid",
             "Dubbeltaken trainen: denkvermogen en beweging tegelijk activeren",
             "Bewezen effectief bij o.a. Parkinson (Boxing for Parkinson) en neuro-revalidatie",
@@ -206,12 +206,12 @@ export default function NeurologieSelector() {
                                 Andere beweeggroepen ontdekken?
                             </h3>
                             <p className="text-foreground/70 text-sm md:text-base font-light">
-                                Bekijk ook onze <Link href="/copd" className="underline font-semibold hover:text-foreground">COPD beweeggroep</Link> of ontdek <Link href="/fysiofit" className="underline font-semibold hover:text-foreground">FysioFit</Link> voor zelfstandig particulier trainen.
+                                Bekijk ook onze <Link href="/copd" className="underline font-semibold hover:text-foreground">COPD beweeggroep</Link> of ontdek <Link href="/gespecialiseerde-groepstraining" className="underline font-semibold hover:text-foreground">FysioFit</Link> voor zelfstandig particulier trainen.
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
                             <Link
-                                href="/fysiofit"
+                                href="/gespecialiseerde-groepstraining"
                                 className="bg-white hover:bg-white/90 text-foreground font-bold rounded-full py-3.5 px-6 text-sm md:text-base transition-all border border-foreground/10 shadow-sm flex items-center justify-center gap-2 w-full sm:w-auto"
                             >
                                 Bekijk FysioFit <ArrowRight className="w-4 h-4" />

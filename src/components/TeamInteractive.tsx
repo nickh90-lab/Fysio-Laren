@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, ChevronDown } from "lucide-react";
 import { team, TeamMember } from "@/data/team";
 import { cn } from "@/lib/utils";
 
@@ -34,6 +34,17 @@ export default function TeamInteractive() {
     if (scrollContainerRef.current) {
       const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
       setCanScrollDown(scrollHeight - scrollTop - clientHeight > 20);
+    }
+  };
+
+  const handleScrollDown = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({
+        top: scrollContainerRef.current.scrollHeight,
+        behavior: "smooth"
+      });
+      setTimeout(checkScroll, 200);
+      setTimeout(checkScroll, 500);
     }
   };
 
@@ -182,12 +193,18 @@ export default function TeamInteractive() {
               )}
             </div>
 
-            {/* ✨ SUBTIELE VISUELE SCROLL-INDICATOR */}
+            {/* ✨ SUBTIELE VISUELE SCROLL-INDICATOR / KLIKBARE KNOP */}
             {canScrollDown && (
-              <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent flex items-end justify-center pb-3">
-                <span className="pointer-events-auto text-[11px] font-bold uppercase tracking-wider text-blue-accent bg-white/95 px-3.5 py-1 rounded-full border border-blue-accent/20 shadow-xs flex items-center gap-1.5 transition-opacity duration-300">
-                  Meer informatie <span>↓</span>
-                </span>
+              <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white via-white/80 to-transparent flex items-end justify-center pb-3">
+                <button
+                  type="button"
+                  onClick={handleScrollDown}
+                  className="pointer-events-auto text-[11px] font-bold uppercase tracking-wider text-blue-accent bg-white/95 hover:bg-blue-accent hover:text-white px-4 py-1.5 rounded-full border border-blue-accent/25 hover:border-blue-accent shadow-xs hover:shadow-md flex items-center gap-1.5 transition-all duration-200 cursor-pointer active:scale-95 group"
+                  aria-label="Scroll naar beneden voor meer informatie"
+                >
+                  <span>Meer informatie</span>
+                  <ChevronDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+                </button>
               </div>
             )}
           </div>

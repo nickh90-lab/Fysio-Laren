@@ -153,7 +153,7 @@ export default function ContactClient() {
         address: (
             <>
                 Huenderstraat 3<br />
-                7245 BG Laren
+                7245 BG Laren, Gld
             </>
         ),
     };
@@ -215,7 +215,7 @@ export default function ContactClient() {
                     <div className="max-w-5xl mx-auto relative z-10 flex flex-col md:flex-row gap-12 items-center">
                         <div className="w-full md:w-1/3">
                             <h3 className="text-3xl font-bold mb-6">Onze Locatie</h3>
-                            <p className="text-foreground/70 mb-6">U vindt ons centraal in Laren, met gratis parkeergelegenheid direct voor de deur.</p>
+                            <p className="text-foreground/70 mb-6">U vindt ons centraal in Laren, Gld, met gratis parkeergelegenheid direct voor de deur.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&destination=Huenderstraat+3,+7245+BG+Laren" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-accent font-bold hover:gap-2 transition-all">
                                 Plan uw route via Google Maps <ArrowRight size={18} className="ml-2" />
                             </a>

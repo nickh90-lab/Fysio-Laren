@@ -19,8 +19,8 @@ export const team: TeamMember[] = [
         name: "Marloes",
         role: "Fysiotherapeut en maatschapslid",
         image: "/team/Marloes.jpg",
-        bio: "Nadat ik meerdere jaren als fysiotherapeut in het ziekenhuis heb gewerkt, werk ik sinds 2007 met veel plezier in Laren. Ik vind het belangrijk om goed te luisteren en samen te kijken naar wat iemand nodig heeft.",
-        extendedBio: `Nadat ik meerdere jaren als fysiotherapeut in het ziekenhuis heb gewerkt, werk ik sinds 2007 met veel plezier in Laren.
+        bio: "Nadat ik meerdere jaren als fysiotherapeut in het ziekenhuis heb gewerkt, werk ik sinds 2007 met veel plezier in Laren, Gld. Ik vind het belangrijk om goed te luisteren en samen te kijken naar wat iemand nodig heeft.",
+        extendedBio: `Nadat ik meerdere jaren als fysiotherapeut in het ziekenhuis heb gewerkt, werk ik sinds 2007 met veel plezier in Laren, Gld.
 
 Ik vind het belangrijk om goed te luisteren en samen te kijken naar wat iemand nodig heeft en aan te sluiten bij wat voor die persoon echt zinvol is. Geen mens en geen hulpvraag is hetzelfde. Juist die persoonlijke benadering maakt mijn vak zo mooi.
 
@@ -60,13 +60,29 @@ Ik kijk ernaar uit om je te ontmoeten bij Fysio Laren.`,
     {
         slug: "karin",
         name: "Karin",
-        role: "Senior Fysiotherapeut",
+        role: "Fysiotherapeut en maatschapslid",
         image: "/team/Karin.jpg",
-        bio: "Karin heeft jarenlange ervaring in de behandeling van complexe aandoeningen. Ze is gespecialiseerd in gerichte oedeemtherapie en begeleidt vrouwen rondom en na zwangerschappen.",
-        extendedBio: "Door haar jarenlange ervaring weet Karin precies hoe de weefsels en het lymfesysteem in het lichaam reageren op trauma en operaties. Haar behandelingen zijn zacht, maar ontzettend effectief. Ze heeft tevens de specialisatie Bekkenfysiotherapie afgerond om een nog betere en bredere zorg rondom het bekkengebied te kunnen bieden.",
-        specialties: ["Oedeemtherapie", "Bekkenfysio", "Zwangerschapsbegeleiding", "Littekenbehandeling", "Oncologische revalidatie"],
+        bio: "Al ruim 35 jaar werk ik met plezier als fysiotherapeute. Nog steeds geeft het me veel voldoening mensen te helpen beter te functioneren. In al die jaren heb ik het vak behoorlijk zien veranderen.",
+        extendedBio: `Al ruim 35 jaar werk ik met plezier als fysiotherapeute. Nog steeds geeft het me veel voldoening mensen te helpen beter te functioneren. In al die jaren heb ik het vak behoorlijk zien veranderen. Van vooral hands-on behandelen naar samen werken aan herstel, waarbij een actieve rol steeds belangrijker is geworden. Herstellen, of leren omgaan met een klacht of beperking, doen we wat mij betreft samen.
+
+Als fysiotherapeute vind ik het belangrijk dat mensen zich bij mij op hun gemak voelen. Openheid en vertrouwen horen daar voor mij bij. Ik kijk graag wat verder dan alleen de klacht en heb oog voor verschillende factoren die een rol kunnen spelen bij het ontstaan of aanhouden ervan.
+
+Privé ‘scharrel’ ik graag in en om het huis en ben ik altijd wel ergens mee bezig. Samen met mijn man zorg ik met veel plezier voor onze dieren. Honden nemen daarbij een belangrijke plaats in.`,
+        specialties: [
+            "Herstel na operaties",
+            "Oedeemtherapie",
+            "Ontspanning",
+            "Ademhaling",
+            "COPD",
+            "Valpreventie (Otago)",
+            "CVA",
+            "Oncologie",
+            "Psychosomatiek"
+        ],
         networks: [
-            "Kwaliteitsregister Fysiotherapie"
+            "Kwaliteitsregister Fysiotherapie",
+            "Chronisch Zorgnet",
+            "NVFL"
         ],
         big: "29934567804",
         education: "BSc Fysiotherapie, Oedeemtherapeut",
@@ -79,7 +95,7 @@ Ik kijk ernaar uit om je te ontmoeten bij Fysio Laren.`,
         role: "Fysio-/manueeltherapeut en maatschapslid",
         image: "/team/Nick.jpg",
         bio: "Wat ik mooi vind aan mijn werk als fysiotherapeut, is dat ik samen met mensen kan werken aan hun doelen en op zoek kan gaan naar de kern van hun klachten.",
-        extendedBio: `Sinds 2018 werk ik als fysiotherapeut in Laren. Na mijn afstuderen in 2013 heb ik in 2018 mijn masteropleiding tot manueel therapeut afgerond. Ik begon bij Solis (voorheen Ortis) en sinds 2026 doe ik dat met heel veel plezier vanuit onze eigen praktijk Fysio Laren.
+        extendedBio: `Sinds 2018 werk ik als fysiotherapeut in Laren, Gld. Na mijn afstuderen in 2013 heb ik in 2018 mijn masteropleiding tot manueel therapeut afgerond. Ik begon bij Solis (voorheen Ortis) en sinds 2026 doe ik dat met heel veel plezier vanuit onze eigen praktijk Fysio Laren.
 
 Wat ik mooi vind aan mijn werk als fysiotherapeut, is dat ik samen met mensen kan werken aan hun doelen en op zoek kan gaan naar de kern van hun klachten. Ik richt me voornamelijk op orthopedisch gerelateerde klachten, waarbij ik hands-on behandelingen combineer met actieve oefentherapie.
 

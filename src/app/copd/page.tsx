@@ -111,7 +111,7 @@ export default function COPDPage() {
                                 Andere beweeggroepen bekijken?
                             </h3>
                             <p className="text-foreground/70 text-sm md:text-base font-light">
-                                Bekijk onze <Link href="/neurologie" className="underline font-semibold hover:text-foreground">Neurologie groepstrainingen</Link> (NeuroFit, TROM & Boksen) of ontdek <Link href="/fysiofit" className="underline font-semibold hover:text-foreground">FysioFit</Link> voor vrij particulier trainen.
+                                Bekijk onze <Link href="/neurologie" className="underline font-semibold hover:text-foreground">Neurologie groepstrainingen</Link> (NeuroFit, TROM & Boksen) of ontdek <Link href="/gespecialiseerde-groepstraining" className="underline font-semibold hover:text-foreground">FysioFit</Link> voor particulier trainen.
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">

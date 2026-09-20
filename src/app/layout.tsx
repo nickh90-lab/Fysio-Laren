@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import ChatBot from "@/components/ChatBot";
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -14,9 +15,9 @@ export const metadata: Metadata = {
     default: "Fysio Laren | Specialist in Fysiotherapie, Manuele Therapie & FysioFit",
     template: "%s | Fysio Laren"
   },
-  description: "Professionele fysiotherapie, manuele therapie en revalidatie in Laren (Gelderland). Persoonlijke aandacht, deskundige therapeuten en een gerichte aanpak voor snel herstel.",
+  description: "Professionele fysiotherapie, manuele therapie en revalidatie in Laren, Gld. Persoonlijke aandacht, deskundige therapeuten en een gerichte aanpak voor snel herstel.",
   keywords: [
-    "Fysiotherapie Laren",
+    "Fysiotherapie Laren, Gld",
     "Fysio Laren",
     "Manuele therapie Laren",
     "FysioFit Laren",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Fysio Laren | Specialist in Fysiotherapie & Revalidatie",
-    description: "Professionele fysiotherapie en manuele therapie in Laren (Gelderland). Persoonlijke zorg en een snelle weg naar herstel.",
+    description: "Professionele fysiotherapie en manuele therapie in Laren, Gld. Persoonlijke zorg en een snelle weg naar herstel.",
     url: "https://www.fysio-laren.nl",
     siteName: "Fysio Laren",
     locale: "nl_NL",
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Fysio Laren | Specialist in Fysiotherapie & Revalidatie",
-    description: "Professionele fysiotherapie en manuele therapie in Laren (Gelderland).",
+    description: "Professionele fysiotherapie en manuele therapie in Laren, Gld.",
     images: ["/images/Teamfoto_v2.jpg"],
   },
   robots: {
@@ -94,15 +95,27 @@ const clinicSchema = {
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Thursday"],
+      "dayOfWeek": ["Monday"],
       "opens": "08:00",
       "closes": "21:00"
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Wednesday", "Friday"],
+      "dayOfWeek": ["Tuesday"],
       "opens": "08:00",
-      "closes": "18:00"
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Wednesday"],
+      "opens": "08:00",
+      "closes": "21:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
     }
   ],
   "medicalSpecialty": [
@@ -143,6 +156,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
+        <ChatBot />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
     </html>

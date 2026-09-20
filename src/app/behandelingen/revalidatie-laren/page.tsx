@@ -43,7 +43,7 @@ export default function RevalidatieLaren() {
 
                         <h3 className="text-2xl font-bold text-foreground mb-4">Voor welke revalidatietrajecten kunt u de afspraak maken?</h3>
                         <p className="text-foreground/80 leading-relaxed mb-6">
-                            Wij begeleiden patiënten in onze zeer ruime en lichte moderne oefenzaal. Tijdens uw consult kunt u begeleid worden in revalidatie-specifieke condities voor velen trajecten maar focussen ons qua locatie lokaal voor de buurt rondom Laren vooral voor:
+                            Wij begeleiden patiënten in onze oefenzaal. Tijdens uw consult kunt u begeleid worden in revalidatie-specifieke condities voor velen trajecten maar focussen ons qua locatie lokaal voor de buurt rondom Laren vooral voor:
                         </p>
                         <ul className="space-y-4 mb-10 list-none pl-0">
                             {[

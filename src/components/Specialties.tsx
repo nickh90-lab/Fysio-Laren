@@ -69,7 +69,7 @@ export default function Specialties() {
                 <div className="text-center mb-16 md:mb-24 max-w-3xl mx-auto relative z-10">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground tracking-tight">Onze expertises <br className="hidden md:block" />& behandelingen.</h2>
                     <p className="text-foreground/70 text-lg md:text-xl leading-relaxed font-light">
-                        Van reguliere fysiotherapie tot complexe revalidatietrajecten en gespecialiseerde technieken. Ontdek aan welke klachten wij werken en met welke methodes wij u in Laren gericht kunnen helpen.
+                        Van reguliere fysiotherapie tot complexe revalidatietrajecten en gespecialiseerde technieken. Ontdek aan welke klachten wij werken en met welke methodes wij u in Laren, Gld gericht kunnen helpen.
                     </p>
                 </div>
 

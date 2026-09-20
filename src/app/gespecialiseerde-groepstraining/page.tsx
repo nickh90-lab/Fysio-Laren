@@ -18,7 +18,7 @@ export default function GespecialiseerdeGroepstrainingPage() {
                             Beweeggroepen & Training.
                         </h1>
                         <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-light">
-                            Deskundige begeleiding, beweging op uw eigen niveau en trainen in onze moderne oefenzaal in Laren. Van vrij sporten bij FysioFit tot gespecialiseerde medische groepen.
+                            Deskundige begeleiding, beweging op uw eigen niveau en trainen in onze oefenzaal in Laren. Van sporten bij FysioFit tot gespecialiseerde medische groepen.
                         </p>
                     </div>
 

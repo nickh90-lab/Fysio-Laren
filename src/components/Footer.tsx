@@ -8,8 +8,8 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center sm:text-left">
                 {/* About */}
                 <div className="flex flex-col items-center sm:items-start">
-                    <Link href="/" className="flex items-center mb-6 group">
-                        <div className="relative h-20 md:h-24 w-72 md:w-96 transition-opacity group-hover:opacity-80">
+                    <Link href="/" className="flex items-center mb-6">
+                        <div className="relative h-20 md:h-24 w-72 md:w-96">
                             <Image 
                                 src="/Logo%20transparant%20op%20blauw.svg" 
                                 alt="Fysio Laren Logo" 
@@ -38,10 +38,11 @@ export default function Footer() {
                         {[
                             { name: "Home", href: "/" },
                             { name: "Fysiotherapie", href: "/fysiotherapie" },
-                            { name: "FysioFit", href: "/fysiofit" },
-                            { name: "Gespecialiseerde groepstraining", href: "/gespecialiseerde-groepstraining" },
+                            { name: "Beweeggroepen & FysioFit", href: "/gespecialiseerde-groepstraining" },
                             { name: "Ons team", href: "/ons-team" },
                             { name: "De praktijk", href: "/de-praktijk" },
+                            { name: "Openingstijden", href: "/openingstijden" },
+                            { name: "Tarieven", href: "/tarieven" },
                             { name: "Contact", href: "/contact" },
                         ].map((link) => (
                             <li key={link.name}>
@@ -61,10 +62,10 @@ export default function Footer() {
                     <h4 className="text-lg font-bold mb-6 text-white text-center sm:text-left">Openingstijden</h4>
                     <ul className="space-y-4 text-sm text-white/80 max-w-[240px] mx-auto sm:mx-0">
                         <li className="flex justify-between"><span>Maandag:</span> <span>08:00 - 21:00</span></li>
-                        <li className="flex justify-between"><span>Dinsdag:</span> <span>08:00 - 21:00</span></li>
-                        <li className="flex justify-between"><span>Woensdag:</span> <span>08:00 - 18:00</span></li>
-                        <li className="flex justify-between"><span>Donderdag:</span> <span>08:00 - 21:00</span></li>
-                        <li className="flex justify-between"><span>Vrijdag:</span> <span>08:00 - 18:00</span></li>
+                        <li className="flex justify-between"><span>Dinsdag:</span> <span>08:00 - 20:00</span></li>
+                        <li className="flex justify-between"><span>Woensdag:</span> <span>08:00 - 21:30</span></li>
+                        <li className="flex justify-between"><span>Donderdag:</span> <span>08:00 - 17:00</span></li>
+                        <li className="flex justify-between"><span>Vrijdag:</span> <span>08:00 - 17:00</span></li>
                         <li className="flex justify-between"><span>Zaterdag:</span> <span className="text-white/40">Gesloten</span></li>
                         <li className="flex justify-between"><span>Zondag:</span> <span className="text-white/40">Gesloten</span></li>
                     </ul>
@@ -80,7 +81,7 @@ export default function Footer() {
                             </div>
                             <span className="text-sm text-white/80 mt-1">
                                 Huenderstraat 3<br />
-                                7245 BG Laren
+                                7245 BG Laren, Gld
                             </span>
                         </li>
                         <li>

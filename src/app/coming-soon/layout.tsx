@@ -15,7 +15,7 @@ export default function ComingSoonLayout({
     <>
       {/* Override the main layout: no header, no footer */}
       <style>{`
-        header, footer, .cookie-banner { display: none !important; }
+        header, footer { display: none !important; }
         main { padding: 0 !important; margin: 0 !important; }
       `}</style>
       {children}

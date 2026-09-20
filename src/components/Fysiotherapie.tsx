@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Activity, Zap, ShieldCheck, HeartPulse, Brain, Wind, CheckCircle2, Bone, Heart, Sparkles } from "lucide-react";
+import { ArrowRight, Activity, Zap, ShieldCheck, HeartPulse, Brain, Wind, CheckCircle2, Bone, Heart, Sparkles, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const klachtenClusters = [
@@ -40,37 +40,37 @@ const klachtenClusters = [
         id: "parkinson",
         title: "Parkinson",
         icon: <Brain className="w-6 h-6 text-blue-accent" />,
-        items: ["Problemen met bewegen", "Balansstoornissen", "Spierstijfheid", "Behoud van mobiliteit"]
+        items: ["Bewegingsadviezen", "Balansverbetering/looptraining", "Krachtopbouw", "Conditieverbetering"]
     },
     {
         id: "ms",
         title: "Multiple Sclerose (MS)",
         icon: <Brain className="w-6 h-6 text-blue-accent" />,
-        items: ["Spierzwakte en spasmen", "Vermoeidheidsklachten", "Brede neurologische revalidatie", "Coördinatieproblemen"]
+        items: ["Coördinatieverbetering", "Balans-looptraining", "Krachtopbouw", "Conditieverbetering"]
     },
     {
         id: "cva",
         title: "Beroerte (CVA)",
         icon: <Brain className="w-6 h-6 text-blue-accent" />,
-        items: ["Herleren van vaardigheden", "Halfzijdige verlamming", "Balans- en looptraining", "Krachttraining"]
+        items: ["Balans-looptraining", "Herleren van vaardigheden", "Krachtopbouw", "Conditieverbetering"]
     },
     {
         id: "oncologie",
         title: "Oncologie",
         icon: <HeartPulse className="w-6 h-6 text-blue-accent" />,
-        items: ["Herstel tijdens/na behandeling", "Opbouwen van conditie", "Omgaan met vermoeidheid", "Behoud van spierkracht"]
+        items: ["Herstel tijdens/na behandeling", "Opbouwen van conditie", "Omgaan met vermoeidheid", "Krachtopbouw"]
     },
     {
         id: "copd",
         title: "COPD & Longklachten",
         icon: <Wind className="w-6 h-6 text-blue-accent" />,
-        items: ["Kortademigheid", "Benauwdheid", "Conditieverlies", "Ademhalingstherapie"]
+        items: ["Ademhalingsoefeningen", "Vermindering kortademigheid", "Krachtopbouw", "Conditieverbetering"]
     },
     {
         id: "etalagebenen",
         title: "Claudicatio Intermittens (etalagebenen)",
         icon: <Activity className="w-6 h-6 text-blue-accent" />,
-        items: ["Pijn bij het lopen", "Kramp in de kuiten", "Gesuperviseerde looptraining", "Verbeteren loopafstand"]
+        items: ["Vermindering van pijn/kramp", "Verbeteren loopafstand", "Looptraining onder begeleiding", "Leefstijladvies"]
     },
     {
         id: "oedeem",
@@ -94,8 +94,8 @@ const klachtenClusters = [
 
 const behandelingen = [
     {
-        title: "Reguliere fysiotherapie",
-        desc: "Onze reguliere fysiotherapie richt zich op het oplossen van problemen met uw houding en bewegingsapparaat. We onderzoeken de oorzaak van uw pijn, stijfheid of krachtsverlies en stellen een persoonlijk behandelplan op. Dit plan bestaat vaak uit een combinatie van gerichte oefeningen, mobilisatietechnieken en persoonlijk advies. Het doel is altijd om uw dagelijkse activiteiten, werk of sport weer soepel en pijnvrij op te pakken. We kijken daarbij verder dan alleen de klacht zelf, maar pakken ook de onderliggende oorzaak aan."
+        title: "Algemene fysiotherapie",
+        desc: "Algemene fysiotherapie richt zich op het herstellen en optimaliseren van uw bewegingsvrijheid en algehele vitaliteit. Goed bewegen is een complex samenspel tussen spieren, gewrichten, het zenuwstelsel en uw dagelijkse leefgewoonten. Wanneer de balans tussen belasting en belastbaarheid verstoord raakt, ontstaan er belemmeringen. Onze fysiotherapeuten kijken daarom naar het totale functioneren van uw lichaam. Met gerichte oefentherapie, mobiliserende technieken en praktische adviezen pakken we de kern aan en bouwen we aan een sterk en veerkrachtig lichaam. Zo krijgt u weer de volledige regie over uw eigen mobiliteit en welzijn."
     },
     {
         title: "Manuele therapie",
@@ -103,7 +103,7 @@ const behandelingen = [
     },
     {
         title: "Orthopedische revalidatie",
-        desc: "Na een orthopedische ingreep, zoals het plaatsen van een nieuwe knie of heup, is een zorgvuldig revalidatietraject cruciaal. Wij begeleiden u stap voor stap bij het herwinnen van uw kracht, stabiliteit en zelfvertrouwen in bewegen. In onze ruime en lichte oefenzaal werken we wekelijks aan uw belastbaarheid via een op maat gemaakt schema. Er is nauw overleg met uw orthopedisch chirurg om het herstel veilig en vlot te laten verlopen. Uiteindelijk werken we toe naar volledige zelfstandigheid in uw dagelijkse handelingen."
+        desc: "Na een orthopedische ingreep, zoals het plaatsen van een nieuwe knie of heup, is een zorgvuldig revalidatietraject cruciaal. Wij begeleiden u stap voor stap bij het herwinnen van uw kracht, stabiliteit en zelfvertrouwen in bewegen. In onze oefenzaal werken we wekelijks aan uw belastbaarheid via een op maat gemaakt schema. Er is nauw overleg met uw orthopedisch chirurg om het herstel veilig en vlot te laten verlopen. Uiteindelijk werken we toe naar volledige zelfstandigheid in uw dagelijkse handelingen."
     },
     {
         title: "Oedeemtherapie",
@@ -114,16 +114,46 @@ const behandelingen = [
         desc: "De diagnose en behandeling van kanker eisen zowel fysiek als mentaal een zware tol. Onze oncologisch fysiotherapeut begeleidt u voor, tijdens en na uw medische behandeling (zoals chemotherapie of bestraling). Vermoeidheid en conditieverlies zijn vaak de grootste drempels in het dagelijks leven. Door gecontroleerd en verantwoord te blijven bewegen onder begeleiding, beperkt u spierafbraak, vermindert u stijfheid en krijgt u letterlijk weer meer regie over uw eigen lichaam. Samen werken we op een respectvolle manier aan uw persoonlijke kwaliteit van leven."
     },
     {
-        title: "Parkinson (ParkinsonNet)",
-        desc: "Als aangesloten praktijk bij ParkinsonNet bieden wij hoogwaardige en gespecialiseerde zorg voor mensen met de ziekte van Parkinson. We richten ons sterk op het behouden van uw mobiliteit en veiligheid in uw eigen leefomgeving. Dit doen we door het aanleren van slimme bewegingsstrategieën om 'bevriezen' (freezing) tegen te gaan en balansproblemen te overwinnen. Naast krachttraining kijken we ook erg praktisch naar hoe u makkelijker uit een stoel komt of veiliger traploopt. Uw zelfstandigheid staat hierbij centraal."
+        title: "Parkinson",
+        desc: (
+            <>
+                <span>
+                    Bij de ziekte van Parkinson is regelmatig en gericht bewegen van groot belang voor het behoud van zelfstandigheid en kwaliteit van leven. Onze fysiotherapeuten hebben jarenlange ervaring in de begeleiding van Parkinson en zijn aangesloten bij ParkinsonNet: het landelijke netwerk van zorgverleners dat gespecialiseerd is in deze aandoening.
+                </span>
+                <span className="block mt-3">
+                    We kijken altijd nauwkeurig naar uw specifieke hulpvraag en stemmen het behandeltraject hierop af. U leert praktische bewegingsstrategieën en waardevolle tips voor alledaagse handelingen, zoals soepeler en veiliger lopen, makkelijker opstaan uit een stoel en vlotter omdraaien in bed. Ook wanneer u te maken heeft met plotseling ‘bevriezen’ (freezing), reiken wij effectieve handvatten en technieken aan om weer veilig in beweging te komen.
+                </span>
+                <span className="block mt-3">
+                    Qua behandeling zijn er verschillende mogelijkheden: individueel (zowel bij ons op de praktijk als bij u thuis indien nodig) én in groepsverband. Voor bewegen in groepsverband bieden we meerdere gespecialiseerde beweeggroepen, zoals{" "}
+                    <Link href="/gespecialiseerde-groepstraining?groep=neurologie&sub=neurofit" className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors">NeuroFit</Link>,{" "}
+                    <Link href="/gespecialiseerde-groepstraining?groep=neurologie&sub=trom" className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors">Trainen Op Muziek (TROM)</Link> en{" "}
+                    <Link href="/gespecialiseerde-groepstraining?groep=neurologie&sub=boksen" className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors">Non-contact boksen</Link>. Zo kiest u altijd een vorm die het beste bij uw situatie en wensen aansluit.
+                </span>
+            </>
+        )
     },
     {
         title: "Multiple Sclerose (MS)",
-        desc: "Bij Multiple Sclerose (MS) ontstaan vaak klachten als spierzwakte, vermoeidheid of problemen met balans en coördinatie. Een fysiotherapeutisch traject helpt u om de dagelijkse obstakels die hiermee gepaard gaan beter het hoofd te bieden. We focussen op functionele krachttraining en specifieke balansoefeningen om uw mobiliteit zo lang mogelijk te behouden. Omdat vermoeidheid een grote rol speelt, adviseren we u ook in het bewaken van uw grenzen en de energieverdeling over de dag. De behandeling is altijd maatwerk en wordt continu afgestemd op uw belastbaarheid van die week."
+        desc: (
+            <>
+                <span>
+                    Bij Multiple Sclerose (MS) helpt gerichte fysiotherapie om zo actief, soepel en zelfstandig mogelijk te blijven bewegen. We kijken vooral naar wat wél kan, met functionele oefeningen voor uw balans, spierkracht en loopvaardigheid.
+                </span>
+                <span className="block mt-3">
+                    Aangezien vermoeidheid een rol kan spelen, geven we u praktische tips voor een slimme energieverdeling over de dag en het vinden van de juiste balans tussen inspanning en rust. De begeleiding is altijd maatwerk en stemmen we af op hoe u zich op dat moment voelt.
+                </span>
+                <span className="block mt-3">
+                    U kunt bij ons zowel individueel terecht (op de praktijk of bij u thuis indien nodig) als in groepsverband. Binnen onze praktijk organiseren we verschillende gespecialiseerde neurologische beweeggroepen, zoals{" "}
+                    <Link href="/gespecialiseerde-groepstraining?groep=neurologie&sub=neurofit" className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors">NeuroFit</Link>,{" "}
+                    <Link href="/gespecialiseerde-groepstraining?groep=neurologie&sub=trom" className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors">Trainen Op Muziek (TROM)</Link> en{" "}
+                    <Link href="/gespecialiseerde-groepstraining?groep=neurologie&sub=boksen" className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors">Non-contact boksen</Link>.
+                </span>
+            </>
+        )
     },
     {
         title: "Beroerte (CVA)",
-        desc: "Na een beroerte (CVA) moet uw lichaam vaak veel bewegingen en vaardigheden helemaal opnieuw aanleren. Dit proces van neurorevalidatie vraagt om geduld en zeer gerichte en gespecialiseerde begeleiding. We oefenen intensief op het verbeteren van uw rompstabiliteit, loopvaardigheid en het functioneren van eventuele verlamde ledematen. Ons doel is altijd om u zo goed mogelijk terug te laten keren in de maatschappij. Indien reizen in het begin lastig is, komen wij voor de eerste fase van deze intensieve behandelingen ook bij u aan huis in Laren."
+        desc: "Na een beroerte (CVA) moet uw lichaam vaak veel bewegingen en vaardigheden helemaal opnieuw aanleren. Dit proces van neurorevalidatie vraagt om geduld en zeer gerichte en gespecialiseerde begeleiding. We oefenen intensief op het verbeteren van uw rompstabiliteit, loopvaardigheid en het functioneren van eventuele verlamde ledematen. Ons doel is altijd om u zo goed mogelijk terug te laten keren in de maatschappij. Indien reizen in het begin lastig is, komen wij voor de eerste fase van deze intensieve behandelingen ook bij u aan huis in Laren, Gld."
     },
     {
         title: "Artrose (Slijtage)",
@@ -151,7 +181,7 @@ const behandelingen = [
     },
     {
         title: "TENS behandeling",
-        desc: "TENS (Transcutane Elektrische Zenuwstimulatie) is een effectieve, externe vorm van pijnbestrijding via lichte elektrische stroompjes. Het apparaatje stuurt deze zachte stroompjes via elektroden op uw huid naar het onzichtbare zenuwstelsel, wat helpt bij het dempen van chronische pijnen (zoals in de rug of zenuwpiin). Omdat dit in de weefsels pijngeleiding kan onderbreken of geluksstofjes (endorfines) stimuleert, is de verlichting vaak ontzettend hoog, zeker gedurende en direct na uw zitting. Denkt u dat TENS iets voor u is? Vraag vrijblijvend om een kort intakegesprek over een mogelijke proefbehandeling."
+        desc: "TENS (Transcutane Elektrische Zenuwstimulatie) is een veilige, effectieve vorm van pijnbestrijding via milde elektrische stroompjes. Het apparaatje stuurt deze zachte stroompjes via elektroden op de huid naar het zenuwstelsel, wat helpt bij het dempen van pijn in het algemeen — van acute klachten tot langdurige pijn. Het is bovendien een van de weinige behandelingen die wetenschappelijk bewezen effectief helpt tegen zenuwpijn. Daarnaast kan TENS ook gericht worden gebruikt bij zenuwletsel om de spierkracht te verbeteren. Doordat TENS de pijngeleiding onderbreekt en de aanmaak van lichaamseigen pijnstillende stoffen (endorfines) stimuleert, biedt het niet alleen verlichting tijdens en direct na de behandeling, maar kan het ook een aanzienlijk langdurig effect hebben. Bij Fysio Laren krijgt u eerst een gerichte proefbehandeling en krijgt u het apparaat 7 tot 10 dagen mee naar huis om het in uw eigen leefomgeving uit te proberen. Als deze proefperiode goed verloopt, kan het TENS-apparaat definitief worden aangevraagd en wordt dit vaak vergoed door uw zorgverzekeraar."
     },
     {
         title: "Psychosomatiek",
@@ -163,7 +193,7 @@ const behandelingen = [
     },
     {
         title: "Hardloopanalyses",
-        desc: "Mensen die lopen of beginnen te sporten in en rondom de natuurgebieden in Laren krijgen nog al eens en keer blessures aan de achillespees, de meniscus, of irritaties rond de knieschijf. Een effectieve verandering van deze biomechanische overbelastingen kan gemaakt worden aan de hand van een gedegen loopband of video loop-analyse ter plekke. Op de weergave is perfect op micromomenten te ontleden waar heuplijnen afvlakken of enkels naar binnen over-proneren. Veel pijnreductie vergt vaak slechts 3 minuten aandacht aan loopcadans verhogingen of specifieke schoen adviezen."
+        desc: "Mensen die lopen of beginnen te sporten in en rondom de natuurgebieden in Laren, Gld krijgen nog al eens en keer blessures aan de achillespees, de meniscus, of irritaties rond de knieschijf. Een effectieve verandering van deze biomechanische overbelastingen kan gemaakt worden aan de hand van een gedegen loopband of video loop-analyse ter plekke. Op de weergave is perfect op micromomenten te ontleden waar heuplijnen afvlakken of enkels naar binnen over-proneren. Veel pijnreductie vergt vaak slechts 3 minuten aandacht aan loopcadans verhogingen of specifieke schoen adviezen."
     },
     {
         title: "Voetentraining",
@@ -171,7 +201,7 @@ const behandelingen = [
     },
     {
         title: "Medical taping",
-        desc: "Via zgn. 'Kinesio'-tape is het uitzonderlijk effectief om bindweefsel te beïnvloeden en uw bewegingsruimte te bekrachtigen zonder functioneel de regio af te dwingen in gips of onbewegelijke immobilisatie (sportbandage). Doordat de elastische sport-tape feitelijk direct de weefselhuid optilt richting hersenen (als soort voelbaar steunend exo-skelet in 24u-beschikking) geeft dit continu een verbeterde zenuwrespons in proprioceptie rond dat pijndossier. Met name bij zweepslagen of spierscheuring en vochtstagnatie reageren blessures significant en veilig effectief versnelt op deze toepassing."
+        desc: "Medical taping (ook wel Kinesiotaping) maakt gebruik van speciale elastische tape die uw spieren en gewrichten ondersteunt zonder uw bewegingsvrijheid te beperken. In tegenstelling tot traditionele stugge sporttape kunt u met deze tape gewoon vrij blijven bewegen. Afhankelijk van de manier waarop de tape wordt aangelegd, kan deze voor verschillende doelen worden ingezet. Zo kan de tape worden gebruikt om overbelaste spieren te laten ontspannen, verzwakte spieren juist te activeren, of om extra stabiliteit en sturing te geven aan gewrichtskapsels en banden. Daarnaast kan een liftende tape-techniek worden toegepast om de doorbloeding en vochtafvoer te stimuleren en druk op het weefsel te verminderen. Medical taping is daardoor breed toepasbaar bij onder andere spierblessures (zoals een zweepslag of verrekking), pees- en gewrichtsklachten, overbelasting en zwellingen."
     },
     {
         title: "Leefstijladvies",
@@ -182,6 +212,35 @@ const behandelingen = [
 export default function Fysiotherapie() {
     // State for the Behandelingen Split View (Option B)
     const [selectedTreatmentIndex, setSelectedTreatmentIndex] = useState<number>(0);
+    const [canScrollDown, setCanScrollDown] = useState(false);
+    const treatmentScrollRef = useRef<HTMLDivElement>(null);
+
+    const checkScroll = () => {
+        if (treatmentScrollRef.current) {
+            const { scrollTop, scrollHeight, clientHeight } = treatmentScrollRef.current;
+            setCanScrollDown(scrollHeight - scrollTop - clientHeight > 15);
+        }
+    };
+
+    const handleScrollDown = () => {
+        if (treatmentScrollRef.current) {
+            treatmentScrollRef.current.scrollTo({
+                top: treatmentScrollRef.current.scrollHeight,
+                behavior: "smooth"
+            });
+            setTimeout(checkScroll, 200);
+            setTimeout(checkScroll, 500);
+        }
+    };
+
+    useEffect(() => {
+        checkScroll();
+        if (treatmentScrollRef.current) {
+            treatmentScrollRef.current.scrollTop = 0;
+        }
+        const timer = setTimeout(checkScroll, 100);
+        return () => clearTimeout(timer);
+    }, [selectedTreatmentIndex]);
 
     return (
         <div className="max-w-7xl mx-auto px-6 md:px-12 pb-24">
@@ -252,21 +311,42 @@ export default function Fysiotherapie() {
                     </div>
 
                     {/* Right Column (Stage) */}
-                    <div className="lg:col-span-8 bg-primary/5 rounded-[3rem] p-10 md:p-14 h-[600px] flex flex-col justify-center items-center text-center shadow-inner relative overflow-hidden">
+                    <div className="lg:col-span-8 bg-primary/5 rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-14 h-[600px] flex flex-col items-center shadow-inner relative overflow-hidden">
                         {/* Decorative background element */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[url('/images/hero-praktijk.jpg')] bg-cover bg-center opacity-[0.03] pointer-events-none rounded-full blur-3xl"></div>
 
-                        <div className="relative z-10 max-w-lg">
-                            <div className="w-20 h-20 rounded-full bg-white text-blue-accent flex items-center justify-center mx-auto mb-8 shadow-sm">
-                                <Activity className="w-10 h-10" />
+                        {/* Scrollable Container with stable scrollbar */}
+                        <div 
+                            ref={treatmentScrollRef}
+                            onScroll={checkScroll}
+                            className="relative z-10 w-full max-w-xl flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-foreground/20 scrollbar-track-transparent flex flex-col items-center text-center my-auto py-4 px-2"
+                            style={{ scrollbarGutter: "stable" }}
+                        >
+                            <div className="w-16 h-16 rounded-full bg-white text-blue-accent flex items-center justify-center mx-auto mb-6 shadow-sm shrink-0">
+                                <Activity className="w-8 h-8" />
                             </div>
-                            <h3 className="text-3xl md:text-4xl font-black text-foreground mb-6">
+                            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 shrink-0">
                                 {behandelingen[selectedTreatmentIndex].title}
                             </h3>
-                            <p className="text-lg md:text-xl text-black font-light leading-relaxed mb-8">
+                            <div className="text-sm sm:text-base md:text-[16px] text-foreground/85 font-normal leading-relaxed pb-8">
                                 {behandelingen[selectedTreatmentIndex].desc}
-                            </p>
+                            </div>
                         </div>
+
+                        {/* ✨ Subtiele visuele scroll-indicator / klikbare knop (exact zoals op de teampagina) */}
+                        {canScrollDown && (
+                            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#FAF9F6] via-[#FAF9F6]/85 to-transparent flex items-end justify-center pb-4 z-20">
+                                <button
+                                    type="button"
+                                    onClick={handleScrollDown}
+                                    className="pointer-events-auto text-[11px] sm:text-xs font-bold uppercase tracking-wider text-blue-accent bg-white/95 hover:bg-blue-accent hover:text-white px-5 py-2 rounded-full border border-blue-accent/25 hover:border-blue-accent shadow-xs hover:shadow-md flex items-center gap-1.5 transition-all duration-200 cursor-pointer active:scale-95 group"
+                                    aria-label="Scroll naar beneden voor meer informatie"
+                                >
+                                    <span>Meer informatie</span>
+                                    <ChevronDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
