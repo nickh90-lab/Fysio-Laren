@@ -186,6 +186,11 @@ function BehandelingenContent() {
         const idx = behandelingen.findIndex((b) => b.slug === behandelingParam);
         return idx !== -1 ? idx : 0;
     });
+    const [mobileOpenIndex, setMobileOpenIndex] = useState<number | null>(() => {
+        if (!behandelingParam) return 0;
+        const idx = behandelingen.findIndex((b) => b.slug === behandelingParam);
+        return idx !== -1 ? idx : 0;
+    });
     const [canScrollDown, setCanScrollDown] = useState(false);
     const treatmentScrollRef = useRef<HTMLDivElement>(null);
     const splitViewRef = useRef<HTMLDivElement>(null);
@@ -216,6 +221,7 @@ function BehandelingenContent() {
             if (foundIdx !== -1) {
                 const timer = setTimeout(() => {
                     setSelectedTreatmentIndex(foundIdx);
+                    setMobileOpenIndex(foundIdx);
                     if (splitViewRef.current) {
                         splitViewRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
                     }
@@ -241,7 +247,7 @@ function BehandelingenContent() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 pb-24">
 
             {/* 1. HEADER & INTRO */}
-            <div className="text-center mb-16 md:mb-20 max-w-4xl mx-auto">
+            <div className="text-center mb-12 md:mb-16 lg:mb-20 max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground tracking-tight mb-6">
                     Behandelingen
                 </h1>
@@ -250,9 +256,10 @@ function BehandelingenContent() {
                 </p>
             </div>
 
-            {/* 2. BEHANDELINGEN INTERACTIEVE SPLIT VIEW */}
+            {/* 2. BEHANDELINGEN WEERGAVE (DESKTOP SPLIT VIEW & MOBIELE ACCORDEON) */}
             <div className="mb-20">
-                <div ref={splitViewRef} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start scroll-mt-28">
+                {/* A. DESKTOP INTERACTIEVE SPLIT VIEW (lg en groter) */}
+                <div ref={splitViewRef} className="hidden lg:grid lg:grid-cols-12 gap-8 items-start scroll-mt-28">
                     {/* Left Column (List) */}
                     <div className="lg:col-span-4 bg-white rounded-[2rem] p-4 shadow-sm border border-foreground/5 h-[620px] overflow-y-auto">
                         <div className="flex flex-col gap-1">
@@ -316,6 +323,83 @@ function BehandelingenContent() {
                             </div>
                         )}
                     </div>
+                </div>
+
+                {/* B. MOBIELE & TABLET WEERGAVE (ACCORDEON - uitklapbaar per behandeling) */}
+                <div className="lg:hidden flex flex-col gap-3">
+                    {behandelingen.map((item, idx) => {
+                        const isOpen = mobileOpenIndex === idx;
+                        return (
+                            <div
+                                key={`mobile-${item.slug}`}
+                                id={`behandeling-${item.slug}`}
+                                className={cn(
+                                    "rounded-2xl transition-all duration-200 overflow-hidden border",
+                                    isOpen
+                                        ? "bg-white border-blue-accent/30 shadow-md ring-2 ring-blue-accent/10"
+                                        : "bg-white/95 hover:bg-white border-foreground/8 shadow-xs"
+                                )}
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setMobileOpenIndex(isOpen ? null : idx);
+                                        setSelectedTreatmentIndex(idx);
+                                    }}
+                                    className={cn(
+                                        "w-full text-left px-5 py-4 flex items-center justify-between gap-3 transition-colors cursor-pointer",
+                                        isOpen ? "bg-blue-accent/[0.04]" : "hover:bg-foreground/[0.02]"
+                                    )}
+                                    aria-expanded={isOpen}
+                                >
+                                    <div className="flex items-center gap-3 min-w-0 pr-1">
+                                        <div className={cn(
+                                            "w-2 h-2 rounded-full transition-all shrink-0",
+                                            isOpen ? "bg-blue-accent scale-125" : "bg-foreground/25"
+                                        )} />
+                                        <span className={cn(
+                                            "font-semibold text-[15px] sm:text-base leading-snug transition-colors",
+                                            isOpen ? "text-blue-accent" : "text-foreground"
+                                        )}>
+                                            {item.title}
+                                        </span>
+                                    </div>
+                                    <div className={cn(
+                                        "w-8 h-8 rounded-full flex items-center justify-center transition-all shrink-0",
+                                        isOpen ? "bg-blue-accent text-white" : "bg-foreground/5 text-foreground/50"
+                                    )}>
+                                        <ChevronDown className={cn(
+                                            "w-4 h-4 transition-transform duration-300",
+                                            isOpen ? "rotate-180" : ""
+                                        )} />
+                                    </div>
+                                </button>
+
+                                {isOpen && (
+                                    <div className="px-5 pt-3 pb-6 border-t border-blue-accent/10 bg-gradient-to-b from-blue-accent/[0.02] to-transparent">
+                                        <div className="text-sm sm:text-[15px] text-foreground/85 font-normal leading-relaxed mb-5">
+                                            {item.desc}
+                                        </div>
+                                        <div className="pt-3 border-t border-foreground/8 flex flex-col sm:flex-row gap-2.5">
+                                            <Link
+                                                href="/afspraak-maken"
+                                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-blue-accent text-white font-semibold text-xs sm:text-sm shadow-xs hover:bg-blue-accent/90 transition-all cursor-pointer"
+                                            >
+                                                <span>Afspraak inplannen</span>
+                                                <ArrowRight className="w-3.5 h-3.5" />
+                                            </Link>
+                                            <Link
+                                                href="/contact"
+                                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground font-semibold text-xs sm:text-sm transition-all"
+                                            >
+                                                <span>Stel een vraag</span>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
 
