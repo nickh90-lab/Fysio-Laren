@@ -26,8 +26,6 @@ function TeamInteractiveContent() {
       </div>
   );
 
-  // Helper om te bepalen of een foto gespiegeld moet worden
-  const shouldMirror = (slug: string) => slug === "nick" || slug === "ingrid";
 
   // Splits de extendedBio op in alinea's voor mooie opmaak
   const bioParagraphs = (activeMember.extendedBio || activeMember.bio)
@@ -94,10 +92,7 @@ function TeamInteractiveContent() {
                       alt={member.name} 
                       fill 
                       sizes="(max-width: 768px) 80px, 96px"
-                      className={cn(
-                        "object-cover object-[center_12%]",
-                        shouldMirror(member.slug) && "scale-x-[-1]"
-                      )} 
+                      className="object-cover object-[center_12%]" 
                     />
                 ) : renderEmptyImage(member.name, 32, "text-2xl")}
               </button>
@@ -135,10 +130,7 @@ function TeamInteractiveContent() {
                   fill 
                   priority
                   sizes="(max-width: 768px) 100vw, 400px"
-                  className={cn(
-                    "object-contain md:object-cover object-bottom md:object-[center_10%] relative z-10",
-                    shouldMirror(activeMember.slug) && "scale-x-[-1]"
-                  )} 
+                  className="object-contain md:object-cover object-bottom md:object-[center_10%] relative z-10" 
                 />
               </div>
             ) : renderEmptyImage(activeMember.name, 64, "text-5xl")}
