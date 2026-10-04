@@ -24,10 +24,10 @@ export function SubHeaderBar({ isScrolled = false }: { isScrolled?: boolean }) {
           <span className="text-white/95">
             <span className="text-white/80 font-medium">Afspraak vóór 1 nov?</span>{" "}
             <a 
-              href="tel:0570685899" 
+              href="tel:0573401984" 
               className="font-bold text-white hover:text-white/80 transition-colors underline decoration-white/60 underline-offset-2 hover:decoration-white text-xs sm:text-[13px] md:text-sm"
             >
-              0570 - 68 58 99
+              0573 - 40 19 84
             </a>
           </span>
           <span className="text-white/35 hidden sm:inline">·</span>

@@ -101,7 +101,7 @@ export async function POST(request: Request) {
     } catch (error) {
         console.error("Fout bij verwerken contactformulier:", error);
         return NextResponse.json(
-            { error: "Er is een onverwachte fout opgetreden bij het versturen van uw bericht." },
+            { error: "Er is een onverwachte fout opgetreden bij het versturen van uw bericht. Neem alstublieft telefonisch contact met ons op via 0573 - 21 50 58 of stuur een e-mail naar info@fysio-laren.nl." },
             { status: 500 }
         );
     }

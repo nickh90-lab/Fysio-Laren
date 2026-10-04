@@ -15,7 +15,7 @@ export default function GespecialiseerdeGroepstrainingPage() {
                     {/* Header / Introductie */}
                     <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight">
-                            Beweeggroepen & Training.
+                            Beweeggroepen & Training
                         </h1>
                         <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-light">
                             Deskundige begeleiding, beweging op uw eigen niveau en trainen in onze oefenzaal in Laren. Van sporten bij FysioFit tot gespecialiseerde medische groepen.

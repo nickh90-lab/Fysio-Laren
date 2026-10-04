@@ -35,7 +35,7 @@ export default function FysiotherapieLaren() {
                     <div className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-3xl font-bold text-foreground mb-6">Waarom fysiotherapie bij Fysio Laren?</h2>
                         <p className="text-foreground/80 leading-relaxed mb-6">
-                            Heeft u last van fysieke klachten die u belemmeren in uw dagelijkse bezigheden, tijdens het werk of bij het sporten? Bij <strong>Fysio Laren</strong> bent u aan het juiste adres voor hoogwaardige, persoonlijke fysiotherapie. Ons ervaren team van specialisten helpt dagelijks tientallen patiënten uit Laren, Blaricum, Eemnes en omstreken om weer pijnvrij en vol vertrouwen te bewegen.
+                            Heeft u last van fysieke klachten die u belemmeren in uw dagelijkse bezigheden, tijdens het werk of bij het sporten? Bij <strong>Fysio Laren</strong> bent u aan het juiste adres voor hoogwaardige, persoonlijke fysiotherapie. Ons ervaren team van specialisten helpt dagelijks patiënten uit Laren (Gelderland), Lochem, Barchem, Almen en omstreken om weer pijnvrij en vol vertrouwen te bewegen.
                         </p>
                         <p className="text-foreground/80 leading-relaxed mb-10">
                             Wij geloven niet in symptoombestrijding. We nemen de tijd om de échte oorzaak van uw lichamelijke pijn te achterhalen. Met moderne onderzoeksmethoden, waaronder desgewenst echografie, brengen we uw klacht exact in kaart voordat we met de behandeling starten.
@@ -89,7 +89,10 @@ export default function FysiotherapieLaren() {
                         Bij Fysio Laren garanderen wij dat u snel, en vaak nog dezelfde week, terecht kunt voor uw eerste consult fysiotherapie.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/20 pt-10">
-                        <Link href="/afspraak-maken" className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center">
+                        <Link 
+                            href="/afspraak-maken" 
+                            className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center cursor-pointer"
+                        >
                             Plan direct uw intake <ChevronRight size={20} className="ml-2" />
                         </Link>
                     </div>

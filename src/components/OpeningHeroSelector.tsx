@@ -21,13 +21,16 @@ export default function OpeningHeroSelector() {
           {/* Linkerzijde - Originele tekst */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left items-center lg:items-start z-10">
             <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 leading-[1.1] lg:leading-[1.05]">
-              Samen werken<br className="hidden md:block" /> aan uw<br className="hidden md:block" /> gezondheid.
+              Samen werken<br className="hidden md:block" /> aan uw<br className="hidden md:block" /> gezondheid
             </h1>
             <p className="text-foreground/70 text-lg md:text-xl max-w-md font-light leading-relaxed mx-auto lg:mx-0">
               Persoonlijke aandacht, duidelijke uitleg en een behandeling die bij u past. Samen werken we aan herstel en blijvend resultaat.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10 items-center lg:items-start w-full sm:w-auto">
-              <Link href="/afspraak-maken" className="w-full sm:w-auto px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg hover:shadow-blue-accent/20 md:text-lg">
+              <Link 
+                href="/afspraak-maken" 
+                className="w-full sm:w-auto px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg hover:shadow-blue-accent/20 md:text-lg cursor-pointer"
+              >
                 Maak een afspraak
               </Link>
               <Link href="/ons-team" className="w-full sm:w-auto px-8 py-4 bg-white/80 hover:bg-white text-foreground font-bold rounded-full border border-foreground/10 shadow-sm transition-all flex items-center justify-center md:text-lg">
@@ -68,13 +71,13 @@ export default function OpeningHeroSelector() {
           </h1>
 
           <p className="text-foreground/80 text-lg md:text-xl max-w-xl font-light leading-relaxed mx-auto text-center">
-            Vanaf 1 november starten wij aan de Rengersweg 2 en vanaf 1 januari aan de Huenderstraat 3. Onze agenda voor behandelingen is geopend vanaf 1 november. Wilt u een afspraak vóór 1 november? Bel dan naar <a href="tel:0570685899" className="font-semibold text-blue-accent underline hover:text-blue-accent/80 transition-colors">0570 - 68 58 99</a>. Voor afspraken vanaf 1 november kunt u alvast online plannen of bellen naar <a href="tel:0573215058" className="font-semibold text-blue-accent underline hover:text-blue-accent/80 transition-colors">0573 - 21 50 58</a>.
+            Vanaf 1 november starten wij aan de Rengersweg 2 en vanaf 1 januari aan de Huenderstraat 3. Onze agenda voor behandelingen is geopend vanaf 1 november. Wilt u een afspraak vóór 1 november? Bel dan naar <a href="tel:0573401984" className="font-semibold text-blue-accent underline hover:text-blue-accent/80 transition-colors">0573 - 40 19 84</a>. Voor afspraken vanaf 1 november kunt u alvast online plannen of bellen naar <a href="tel:0573215058" className="font-semibold text-blue-accent underline hover:text-blue-accent/80 transition-colors">0573 - 21 50 58</a>.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-10 items-center justify-center w-full sm:w-auto">
             <Link
               href="/afspraak-maken"
-              className="w-full sm:w-auto px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg hover:shadow-blue-accent/20 md:text-lg hover:scale-102"
+              className="w-full sm:w-auto px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg hover:shadow-blue-accent/20 md:text-lg hover:scale-102 cursor-pointer"
             >
               Plan alvast uw afspraak
             </Link>

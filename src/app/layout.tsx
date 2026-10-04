@@ -11,6 +11,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fysio-laren.nl"),
+  alternates: {
+    canonical: "./",
+  },
   title: {
     default: "Fysio Laren | Specialist in Fysiotherapie, Manuele Therapie & FysioFit",
     template: "%s | Fysio Laren"
@@ -19,13 +22,17 @@ export const metadata: Metadata = {
   keywords: [
     "Fysiotherapie Laren, Gld",
     "Fysio Laren",
+    "Fysiotherapeut Laren Gelderland",
     "Manuele therapie Laren",
     "FysioFit Laren",
     "Fysiotherapeut Lochem",
+    "Fysio Barchem",
+    "Fysiotherapie Almen",
     "Revalidatie Laren",
     "Dry needling Laren",
     "Sportfysiotherapie Laren Gelderland",
-    "Oedeemtherapie Laren"
+    "Oedeemtherapie Laren",
+    "Ontspanning- en ademhalingstherapie"
   ],
   authors: [{ name: "Fysio Laren" }],
   creator: "Fysio Laren",
@@ -72,13 +79,17 @@ export const metadata: Metadata = {
 
 const clinicSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalClinic",
+  "@type": ["MedicalClinic", "LocalBusiness"],
   "name": "Fysio Laren",
+  "alternateName": ["Fysiotherapie Laren", "Fysio Laren Gld"],
   "image": "https://www.fysio-laren.nl/images/Teamfoto_v2.jpg",
-  "@id": "https://www.fysio-laren.nl",
+  "@id": "https://www.fysio-laren.nl/#clinic",
   "url": "https://www.fysio-laren.nl",
   "telephone": "+31573215058",
   "email": "info@fysio-laren.nl",
+  "priceRange": "$$",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "PIN, Zorgverzekering, Factuur",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Huenderstraat 3",
@@ -92,6 +103,13 @@ const clinicSchema = {
     "latitude": 52.1931,
     "longitude": 6.3683
   },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Laren (Gelderland)" },
+    { "@type": "AdministrativeArea", "name": "Lochem" },
+    { "@type": "AdministrativeArea", "name": "Barchem" },
+    { "@type": "AdministrativeArea", "name": "Almen" },
+    { "@type": "AdministrativeArea", "name": "Harfsen" }
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -121,6 +139,10 @@ const clinicSchema = {
   "medicalSpecialty": [
     "Physiotherapy",
     "PhysicalTherapy"
+  ],
+  "sameAs": [
+    "https://www.instagram.com/fysiolaren",
+    "https://www.facebook.com/people/Fysio-Laren-Gld/61592226100408/"
   ]
 };
 

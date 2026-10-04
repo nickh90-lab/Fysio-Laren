@@ -14,10 +14,10 @@ export default function NeurologiePage() {
                     {/* Header / Introductie */}
                     <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight">
-                            Neurologie Groepstrainingen.
+                            Neurologie Groepstrainingen
                         </h1>
                         <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-light">
-                            Gespecialiseerde beweeggroepen gericht op het behoud van mobiliteit, balans en zelfvertrouwen bij neurologische aandoeningen in Laren, Gld.
+                            Gespecialiseerde beweeggroepen gericht op het behoud van mobiliteit, balans en zelfvertrouwen bij neurologische aandoeningen in Laren.
                         </p>
                     </div>
 

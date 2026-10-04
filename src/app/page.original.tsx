@@ -21,7 +21,7 @@ export default function Home() {
         <div className="max-w-screen-2xl mx-auto w-full flex flex-col lg:flex-row items-center px-6 lg:px-12 xl:px-24 gap-12 lg:gap-24">
           <div className="w-full lg:w-1/2 flex flex-col justify-center py-12 lg:py-24 z-10 text-center lg:text-left items-center lg:items-start">
             <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 leading-[1.1] lg:leading-[1.05]">
-              Samen werken<br className="hidden md:block" /> aan uw<br className="hidden md:block" /> gezondheid.
+              Samen werken<br className="hidden md:block" /> aan uw<br className="hidden md:block" /> gezondheid
             </h1>
             <p className="text-foreground/70 text-lg md:text-xl max-w-md font-light leading-relaxed mx-auto lg:mx-0">
               Persoonlijke aandacht, duidelijke uitleg en een behandeling die bij u past.<br className="hidden lg:block lg:mb-2" /> Samen werken we aan herstel en blijvend resultaat.

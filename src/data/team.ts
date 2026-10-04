@@ -1,3 +1,8 @@
+export interface SpecialtyItem {
+    name: string;
+    href?: string;
+}
+
 export interface TeamMember {
     slug: string;
     name: string;
@@ -5,7 +10,7 @@ export interface TeamMember {
     image: string | null;
     bio: string;
     extendedBio: string;
-    specialties: string[];
+    specialties: SpecialtyItem[];
     networks?: string[];
     big: string;
     education: string;
@@ -19,8 +24,8 @@ export const team: TeamMember[] = [
         name: "Marloes",
         role: "Fysiotherapeut en maatschapslid",
         image: "/team/Marloes.jpg",
-        bio: "Nadat ik meerdere jaren als fysiotherapeut in het ziekenhuis heb gewerkt, werk ik sinds 2007 met veel plezier in Laren, Gld. Ik vind het belangrijk om goed te luisteren en samen te kijken naar wat iemand nodig heeft.",
-        extendedBio: `Nadat ik meerdere jaren als fysiotherapeut in het ziekenhuis heb gewerkt, werk ik sinds 2007 met veel plezier in Laren, Gld.
+        bio: "Nadat ik meerdere jaren als fysiotherapeut in het ziekenhuis heb gewerkt, werk ik sinds 2007 met veel plezier in Laren. Ik vind het belangrijk om goed te luisteren en samen te kijken naar wat iemand nodig heeft.",
+        extendedBio: `Nadat ik meerdere jaren als fysiotherapeut in het ziekenhuis heb gewerkt, werk ik sinds 2007 met veel plezier in Laren.
 
 Ik vind het belangrijk om goed te luisteren en samen te kijken naar wat iemand nodig heeft en aan te sluiten bij wat voor die persoon echt zinvol is. Geen mens en geen hulpvraag is hetzelfde. Juist die persoonlijke benadering maakt mijn vak zo mooi.
 
@@ -31,18 +36,16 @@ Ik werk veel samen met andere zorgverleners en zit in verschillende netwerken. V
 
 Ik woon samen met Nick en heb drie kinderen. In mijn vrije tijd geniet ik van tijd met familie en vrienden. Daarnaast houd ik van reizen en vind ik het leuk om nieuwe plekken in de wereld te ontdekken.
 
-Ik kijk ernaar uit om je te ontmoeten bij Fysio Laren.`,
+Ik kijk ernaar uit om u te ontmoeten bij Fysio Laren.`,
         specialties: [
-            "Parkinson",
-            "MS",
-            "CVA/beroerte",
-            "COPD",
-            "Reuma",
-            "TENS",
-            "Leefstijlcoaching",
-            "Dry Needling",
-            "Osteoporose",
-            "Etalagebenen"
+            { name: "Parkinson", href: "/behandelingen?behandeling=parkinson" },
+            { name: "MS (Multiple Sclerose)", href: "/behandelingen?behandeling=ms" },
+            { name: "Beroerte (CVA)", href: "/behandelingen?behandeling=cva" },
+            { name: "COPD", href: "/behandelingen?behandeling=copd" },
+            { name: "Etalagebenen", href: "/behandelingen?behandeling=etalagebenen" },
+            { name: "Osteoporose", href: "/behandelingen?behandeling=osteoporose" },
+            { name: "Dry Needling", href: "/behandelingen?behandeling=dry-needling" },
+            { name: "TENS", href: "/behandelingen?behandeling=tens" }
         ],
         networks: [
             "Kwaliteitsregister Fysiotherapie",
@@ -65,19 +68,15 @@ Ik kijk ernaar uit om je te ontmoeten bij Fysio Laren.`,
         bio: "Al ruim 35 jaar werk ik met plezier als fysiotherapeute. Nog steeds geeft het me veel voldoening mensen te helpen beter te functioneren. In al die jaren heb ik het vak behoorlijk zien veranderen.",
         extendedBio: `Al ruim 35 jaar werk ik met plezier als fysiotherapeute. Nog steeds geeft het me veel voldoening mensen te helpen beter te functioneren. In al die jaren heb ik het vak behoorlijk zien veranderen. Van vooral hands-on behandelen naar samen werken aan herstel, waarbij een actieve rol steeds belangrijker is geworden. Herstellen, of leren omgaan met een klacht of beperking, doen we wat mij betreft samen.
 
-Als fysiotherapeute vind ik het belangrijk dat mensen zich bij mij op hun gemak voelen. Openheid en vertrouwen horen daar voor mij bij. Ik kijk graag wat verder dan alleen de klacht en heb oog voor verschillende factoren die een rol kunnen spelen bij het ontstaan of aanhouden ervan.
+Als fysiotherapeute vind ik het belangrijk dat mensen zich op hun gemak voelen. Betrokkenheid, vertrouwen en openheid vormen voor mij de basis van een goede samenwerking. Ik kijk graag wat verder dan alleen de klacht en heb oog voor verschillende factoren die een rol kunnen spelen bij het ontstaan of aanhouden ervan.
 
 Privé ‘scharrel’ ik graag in en om het huis en ben ik altijd wel ergens mee bezig. Samen met mijn man zorg ik met veel plezier voor onze dieren. Honden nemen daarbij een belangrijke plaats in.`,
         specialties: [
-            "Herstel na operaties",
-            "Oedeemtherapie",
-            "Ontspanning",
-            "Ademhaling",
-            "COPD",
-            "Valpreventie (Otago)",
-            "CVA",
-            "Oncologie",
-            "Psychosomatiek"
+            { name: "Oedeemtherapie", href: "/behandelingen?behandeling=oedeemtherapie" },
+            { name: "Oncologische fysiotherapie", href: "/behandelingen?behandeling=oncologische-fysiotherapie" },
+            { name: "Ontspanning- en ademhalingstherapie", href: "/behandelingen?behandeling=ademhalingstherapie" },
+            { name: "COPD", href: "/behandelingen?behandeling=copd" },
+            { name: "Valpreventie en Otago", href: "/behandelingen?behandeling=valpreventie" }
         ],
         networks: [
             "Kwaliteitsregister Fysiotherapie",
@@ -95,14 +94,20 @@ Privé ‘scharrel’ ik graag in en om het huis en ben ik altijd wel ergens mee
         role: "Fysio-/manueeltherapeut en maatschapslid",
         image: "/team/Nick.jpg",
         bio: "Wat ik mooi vind aan mijn werk als fysiotherapeut, is dat ik samen met mensen kan werken aan hun doelen en op zoek kan gaan naar de kern van hun klachten.",
-        extendedBio: `Sinds 2018 werk ik als fysiotherapeut in Laren, Gld. Na mijn afstuderen in 2013 heb ik in 2018 mijn masteropleiding tot manueel therapeut afgerond. Ik begon bij Solis (voorheen Ortis) en sinds 2026 doe ik dat met heel veel plezier vanuit onze eigen praktijk Fysio Laren.
+        extendedBio: `Sinds 2018 werk ik als fysiotherapeut in Laren. Na mijn afstuderen in 2013 heb ik in 2018 mijn masteropleiding tot manueel therapeut afgerond. Ik begon bij Solis (voorheen Ortis) en sinds 2026 doe ik dat met heel veel plezier vanuit onze eigen praktijk Fysio Laren.
 
 Wat ik mooi vind aan mijn werk als fysiotherapeut, is dat ik samen met mensen kan werken aan hun doelen en op zoek kan gaan naar de kern van hun klachten. Ik richt me voornamelijk op orthopedisch gerelateerde klachten, waarbij ik hands-on behandelingen combineer met actieve oefentherapie.
 
-Ik neem graag de tijd om samen te kijken waar klachten vandaan komen en wat iemand nodig heeft om verder te kunnen. Ik vind het belangrijk dat je begrijpt wat we doen én waarom. Zo kun je zelf actief aan de slag en werken we samen aan herstel én het voorkomen van nieuwe klachten.
+Ik neem graag de tijd om samen te kijken waar klachten vandaan komen en wat iemand nodig heeft om verder te kunnen. Ik vind het belangrijk dat u begrijpt wat we doen én waarom. Zo kunt u zelf actief aan de slag en werken we samen aan herstel én het voorkomen van nieuwe klachten.
 
 Samen met Marloes woon ik in Lochem. We reizen graag samen en ontdekken het liefst nieuwe plekken. Daarnaast luister ik veel naar muziek en ben ik regelmatig te vinden aan de keukentafel voor een goed bordspel met vrienden of familie.`,
-        specialties: ["Manuele therapie", "Orthopedie", "Wervelkolom", "Sportblessures", "Duizeligheidsklachten"],
+        specialties: [
+            { name: "Manuele therapie", href: "/behandelingen?behandeling=manuele-therapie" },
+            { name: "Sport & Blessures", href: "/behandelingen?behandeling=sportfysiotherapie" },
+            { name: "Wervelkolom (Rug & Nek)", href: "/behandelingen?behandeling=manuele-therapie" },
+            { name: "Orthopedische revalidatie", href: "/behandelingen?behandeling=orthopedische-revalidatie" },
+            { name: "Duizeligheidsklachten", href: "/aandoeningen" }
+        ],
         networks: [
             "Kwaliteitsregister Fysiotherapie"
         ],
@@ -125,13 +130,10 @@ In de loop der jaren is mijn vak sterk veranderd. Ik kijk niet alleen naar de kl
 
 In mijn vrije tijd zit ik graag op de mountainbike of te paard. Ik woon samen met mijn man en hond. We hebben twee volwassen kinderen.`,
         specialties: [
-            "Voet/enkelklachten",
-            "(Hard-)loopanalyse",
-            "Groepstraining",
-            "Houdingsverbetering",
-            "Jongeren en kinderen",
-            "Medical Taping",
-            "Revalidatie na total hip/total knee"
+            { name: "Voet- & enkelklachten", href: "/behandelingen?behandeling=voetentraining" },
+            { name: "(Hard-)loopanalyse", href: "/behandelingen?behandeling=hardloopanalyses" },
+            { name: "Medical taping", href: "/behandelingen?behandeling=medical-taping" },
+            { name: "Jongeren en kinderen" }
         ],
         networks: [
             "Kwaliteitsregister Fysiotherapie",
@@ -148,16 +150,16 @@ In mijn vrije tijd zit ik graag op de mountainbike of te paard. Ik woon samen me
         name: "Jacob",
         role: "Fysiotherapeut",
         image: "/team/Jacob.jpg",
-        bio: "Als fysiotherapeut vind ik het belangrijk dat je je gehoord en op je gemak voelt. Persoonlijke aandacht en vertrouwen vormen de basis. Ik luister naar jouw verhaal, kijk verder dan alleen de klacht en stem de behandeling af op wat jij wilt bereiken.",
-        extendedBio: `Als fysiotherapeut vind ik het belangrijk dat je je gehoord en op je gemak voelt. Persoonlijke aandacht en vertrouwen vormen de basis. Ik luister naar jouw verhaal, kijk verder dan alleen de klacht en stem de behandeling af op wat jij wilt bereiken.
+        bio: "Als fysiotherapeut vind ik het belangrijk dat u zich gehoord en op uw gemak voelt. Persoonlijke aandacht en vertrouwen vormen de basis. Ik luister naar uw verhaal, kijk verder dan alleen de klacht en stem de behandeling af op wat u wilt bereiken.",
+        extendedBio: `Als fysiotherapeut vind ik het belangrijk dat u zich gehoord en op uw gemak voelt. Persoonlijke aandacht en vertrouwen vormen de basis. Ik luister naar uw verhaal, kijk verder dan alleen de klacht en stem de behandeling af op wat u wilt bereiken.
 
-Bewegen loopt als een rode draad door mijn leven. Met mijn achtergrond in sport neem ik die passie mee in mijn werk. Ik kijk niet alleen naar herstel, maar ook naar hoe je duurzaam en met vertrouwen actief kunt blijven. Voor mij vormt bewegen de basis van een vitaal leven.
+Bewegen loopt als een rode draad door mijn leven. Met mijn achtergrond in sport neem ik die passie mee in mijn werk. Ik kijk niet alleen naar herstel, maar ook naar hoe u duurzaam en met vertrouwen actief kunt blijven. Voor mij vormt bewegen de basis van een vitaal leven.
 
 In mijn vrije tijd zoek ik graag de rust en ruimte van het bos op voor een trailrun of fietstocht. Bewegen en buiten zijn geven mij energie en zorgen voor een fijne balans.`,
         specialties: [
-            "Ouderenzorg",
-            "Leefstijl en preventie",
-            "Stress-, spannings- en overprikkelingsklachten"
+            { name: "Ouderenzorg", href: "/behandelingen?behandeling=ouderenzorg" },
+            { name: "Ontspanning- en ademhalingstherapie", href: "/behandelingen?behandeling=ademhalingstherapie" },
+            { name: "Leefstijladvies & Preventie", href: "/behandelingen?behandeling=leefstijladvies" }
         ],
         networks: [
             "Kwaliteitsregister Fysiotherapie"

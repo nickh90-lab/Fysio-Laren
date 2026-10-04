@@ -17,6 +17,8 @@ const PUBLIC_PATHS = [
   "/api",
   "/coming-soon",
   "/preview",
+  "/robots.txt",
+  "/sitemap.xml",
   "/_next",
   "/favicon.ico",
   "/images",
@@ -27,6 +29,11 @@ const PUBLIC_PATHS = [
 
 export function middleware(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
+
+  // 0. De website is nu officieel live: alle bezoekers en zoekmachines hebben direct toegang
+  if (process.env.NEXT_PUBLIC_SITE_LAUNCHED !== "false") {
+    return NextResponse.next();
+  }
 
   // 1. Allow API routes immediately (API routes handle their own auth & cookies)
   if (pathname.startsWith("/api")) {
@@ -61,8 +68,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 4. Allow static asset files directly in /public (like .svg, .png, .jpg)
-  if (/\.(svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot)$/i.test(pathname)) {
+  // 4. Allow static asset files directly in /public (like .svg, .png, .jpg, .xml, .txt)
+  if (/\.(svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot|xml|txt)$/i.test(pathname)) {
     return NextResponse.next();
   }
 

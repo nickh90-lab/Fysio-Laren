@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Activity, Bone, Brain, Sparkles, HeartPulse, Wind, ShieldCheck, Heart } from "lucide-react";
+import { ArrowRight, Activity, Bone, Brain, Sparkles, HeartPulse, Wind, ShieldCheck, Heart, Footprints } from "lucide-react";
 
 export default function SpecialtiesSelector() {
     const balloonClusters = [
@@ -18,6 +18,12 @@ export default function SpecialtiesSelector() {
             items: ["Artrose (slijtage)", "Osteoporose", "Reumatische klachten", "Manuele therapie/Mulligan", "Heup- en knieklachten"]
         },
         {
+            id: "voetentraining",
+            title: "Voetentraining",
+            icon: <Footprints size={40} />,
+            items: ["Hallux valgus", "Hielspoor", "Platvoeten", "Voorvoetpijn", "Klauw- en hamertenen", "Mortons neuroom", "Neuropathie"]
+        },
+        {
             id: "revalidatie",
             title: "Revalidatie (Na Operatie)",
             icon: <HeartPulse size={40} />,
@@ -27,7 +33,7 @@ export default function SpecialtiesSelector() {
             id: "sport",
             title: "Sport & Blessures",
             icon: <Activity size={40} />,
-            items: ["Acute sportblessures", "Sport-specifieke training", "Hardloopanalyses", "Medical taping", "Voetentraining"]
+            items: ["Acute sportblessures", "Sport-specifieke training", "Hardloopanalyses", "Medical taping"]
         },
         {
             id: "neurologie",
@@ -45,13 +51,13 @@ export default function SpecialtiesSelector() {
             id: "pijn-mentaal",
             title: "Pijn & Mentale Balans",
             icon: <Heart size={40} />,
-            items: ["Chronische aanhoudende pijn", "Psychosomatiek", "Ademhalings-/ontspanningstherapie", "TENS pijnbestrijding"]
+            items: ["Chronische aanhoudende pijn", "Psychosomatiek", "Ontspanning- en ademhalingstherapie", "TENS pijnbestrijding"]
         },
         {
             id: "ouderenzorg",
             title: "Ouderenzorg & Preventie",
             icon: <ShieldCheck size={40} />,
-            items: ["Valpreventie", "Behoud van mobiliteit", "Fysiotherapie aan huis"]
+            items: ["Valpreventie en Otago", "Behoud van mobiliteit", "Fysiotherapie aan huis"]
         }
     ];
 
@@ -62,10 +68,10 @@ export default function SpecialtiesSelector() {
                 {/* Header: Gecentreerde titel & toelichting */}
                 <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 relative z-20">
                     <h2 className="text-3xl md:text-5xl font-black mb-6 text-foreground tracking-tight">
-                        Onze expertises & behandelingen.
+                        Onze expertises & behandelingen
                     </h2>
                     <p className="text-foreground/70 text-lg md:text-xl leading-relaxed font-light">
-                        Van reguliere fysiotherapie tot complexe revalidatietrajecten en gespecialiseerde technieken. Ontdek aan welke klachten wij werken en met welke methodes wij u in Laren, Gld gericht kunnen helpen.
+                        Van reguliere fysiotherapie tot complexe revalidatietrajecten en gespecialiseerde technieken. Ontdek aan welke klachten wij werken en met welke methodes wij u in Laren gericht kunnen helpen.
                     </p>
                 </div>
 
@@ -102,7 +108,7 @@ export default function SpecialtiesSelector() {
 
                 {/* Algemene Call-to-action */}
                 <div className="flex justify-center mt-20 relative z-10">
-                    <Link href="/fysiotherapie" className="inline-flex items-center text-white font-bold hover:gap-3 transition-all bg-blue-accent px-8 md:px-10 py-4 md:py-5 rounded-full shadow-lg hover:shadow-xl hover:bg-blue-accent/90 text-lg">
+                    <Link href="/aandoeningen" className="inline-flex items-center text-white font-bold hover:gap-3 transition-all bg-blue-accent px-8 md:px-10 py-4 md:py-5 rounded-full shadow-lg hover:shadow-xl hover:bg-blue-accent/90 text-lg">
                         Bekijk het volledige overzicht <ArrowRight size={22} className="ml-3" />
                     </Link>
                 </div>

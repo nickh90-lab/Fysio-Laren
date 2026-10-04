@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  compress: true,
+  poweredByHeader: false,
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -39,16 +42,7 @@ const nextConfig: NextConfig = {
         destination: '/gespecialiseerde-groepstraining',
         permanent: true,
       },
-      {
-        source: '/behandelingen',
-        destination: '/fysiotherapie',
-        permanent: true,
-      },
-      {
-        source: '/behandelingen/:slug*',
-        destination: '/fysiotherapie',
-        permanent: true,
-      },
+
       {
         source: '/klachten',
         destination: '/fysiotherapie',

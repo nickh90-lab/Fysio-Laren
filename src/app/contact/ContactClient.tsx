@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowRight, MessageCircle } from "lucide-react";
 
 const MapEmbed = ({ height = "h-[400px]", rounded = "rounded-[2.5rem]" }) => (
     <div className={`w-full ${height} overflow-hidden shadow-xl border border-foreground/5 ${rounded} relative z-10 bg-white/50 backdrop-blur-sm`}>
@@ -178,6 +178,24 @@ export default function ContactClient() {
                                 <div>
                                     <h4 className="text-sm font-bold uppercase tracking-widest text-foreground/50 mb-1">Telefoon</h4>
                                     <p className="text-xl font-bold text-foreground leading-snug group-hover:text-blue-accent transition-colors">{contactInfo.phone}</p>
+                                </div>
+                            </a>
+
+                            <a 
+                                href="https://wa.me/31573215058" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="flex gap-6 group items-center"
+                            >
+                                <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors shrink-0 flex items-center justify-center">
+                                    <MessageCircle size={24} />
+                                </div>
+                                <div>
+                                    <h4 className="text-sm font-bold uppercase tracking-widest text-foreground/50 mb-1 flex items-center gap-2">
+                                        <span>WhatsApp</span>
+                                        <span className="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full tracking-normal lowercase">bericht sturen</span>
+                                    </h4>
+                                    <p className="text-xl font-bold text-foreground leading-snug group-hover:text-emerald-700 transition-colors">{contactInfo.phone}</p>
                                 </div>
                             </a>
 

@@ -14,8 +14,9 @@ export const PRACTICE_INFO = {
   address: "Huenderstraat 3, 7245 BG Laren, Gld",
   temporaryAddressNote: "Let op: Vanaf 1 oktober wordt ons pand aan de Huenderstraat verbouwd. Wij behandelen tijdelijk in het huidige pand van Solis (Huenderstraat 3). Vanaf 1 januari 2027 verwelkomen we u in ons compleet vernieuwde pand!",
   phone: "0573 - 21 50 58",
+  whatsapp: "0573 - 21 50 58",
   phoneSolis: "0573 - 401984",
-  phoneNotice: "U kunt ons bereiken op 0573 - 21 50 58. Tot 1 november kunt u voor afspraken contact opnemen met Solis via 0573 - 401984.",
+  phoneNotice: "U kunt ons bereiken op 0573 - 21 50 58 (telefonisch of via WhatsApp). Tot 1 november kunt u voor afspraken contact opnemen met Solis via 0573 - 401984.",
   email: "info@fysio-laren.nl",
   hours: [
     "Maandag: 08:00 – 21:00",
@@ -45,7 +46,10 @@ export const MEDICAL_ADVICE_TRIGGERS = [
   "pijnstillers",
   "zelf behandelen",
   "kraakt",
-  "gebroken"
+  "gebroken",
+  "opereren",
+  "operatie",
+  "diagnose"
 ];
 
 // Veiligheidsdetectie voor irrelevante / off-topic vragen
@@ -110,16 +114,18 @@ Vanaf 1 oktober wordt ons pand verbouwd. Tijdens de verbouwing behandelen wij ti
   },
   {
     id: "contact_telefoon",
-    keywords: ["telefoon", "bellen", "nummer", "contact", "bereikbaar", "mail", "email", "telefoonnummer", "solis bellen"],
-    intentPatterns: [/telefoon/i, /nummer/i, /bellen/i, /contact opnemen/i, /e-mail/i],
+    keywords: ["telefoon", "bellen", "nummer", "contact", "bereikbaar", "mail", "email", "telefoonnummer", "solis bellen", "whatsapp", "appen"],
+    intentPatterns: [/telefoon/i, /nummer/i, /bellen/i, /contact opnemen/i, /e-mail/i, /whatsapp/i, /appen/i],
     title: "Contact & Bereikbaarheid",
     answer: `U kunt Fysio Laren rechtstreeks bereiken via:
 • Telefoon: 0573 - 21 50 58
+• WhatsApp: 0573 - 21 50 58
 • E-mail: info@fysio-laren.nl
 
 Let op tijdens de overgangsperiode:
 Tot 1 november 2026 kunt u voor afspraken contact opnemen met Solis via 0573 - 401984. Vanaf 1 november zijn wij rechtstreeks bereikbaar op 0573 - 21 50 58.`,
     quickLinks: [
+      { label: "WhatsApp sturen", href: "https://wa.me/31573215058" },
       { label: "Naar contactformulier", href: "/contact" },
       { label: "Direct online afspraak", href: "/afspraak-maken" }
     ],
@@ -182,18 +188,20 @@ Tarieven FysioFit (abonnementsvorm, geen verwijsbrief nodig):
   },
   {
     id: "beweeggroepen",
-    keywords: ["groep", "beweeggroep", "groepen", "groepstraining", "neurofit", "trom", "muziek", "boksen", "parkinson", "ms", "cva", "copd", "long"],
-    intentPatterns: [/beweeggroep/i, /groepstraining/i, /neurofit/i, /trom/i, /boksen/i, /copd groep/i],
+    keywords: ["groep", "beweeggroep", "groepen", "groepstraining", "rugfit", "rugtriathlon", "rug groep", "rug training", "neurofit", "trom", "muziek", "boksen", "parkinson", "ms", "cva", "copd", "long"],
+    intentPatterns: [/beweeggroep/i, /groepstraining/i, /rugfit/i, /rugtriathlon/i, /rug.*groep/i, /neurofit/i, /trom/i, /boksen/i, /copd groep/i],
     title: "Gespecialiseerde Beweeggroepen",
     answer: `Naast individuele fysiotherapie bieden wij gespecialiseerde medische beweeggroepen in kleine groepen onder deskundige fysiotherapeutische begeleiding:
 
 1. FysioFit: Verantwoord fitnessen met continue deskundige ondersteuning.
-2. COPD Beweeggroep: Werken aan conditie, uithoudingsvermogen en ademhalingstechnieken.
-3. NeuroFit: Balans- en looptraining, kracht- en conditieopbouw voor mensen met o.a. Parkinson, MS of na een CVA.
-4. TROM (Trainen Op Muziek): Bewegen op het ritme van stimulerende muziek voor coördinatie en soepelheid.
-5. Non-contact boksen: Veilige neuro-motorische bokstraining zonder fysiek contact.`,
+2. RugFit: Individueel trainen met een schema op maat (rompstabiliteit, kracht en mobiliteit) speciaal voor mensen met rugklachten (max. 8 deelnemers).
+3. COPD Beweeggroep: Werken aan conditie, uithoudingsvermogen en ademhalingstechnieken.
+4. NeuroFit: Balans- en looptraining, kracht- en conditieopbouw voor mensen met o.a. Parkinson, MS of na een CVA.
+5. TROM (Trainen Op Muziek): Bewegen op het ritme van stimulerende muziek voor coördinatie en soepelheid.
+6. Non-contact boksen: Veilige neuro-motorische bokstraining zonder fysiek contact.`,
     quickLinks: [
-      { label: "Ontdek alle beweeggroepen", href: "/gespecialiseerde-groepstraining" }
+      { label: "Ontdek alle beweeggroepen", href: "/gespecialiseerde-groepstraining" },
+      { label: "Direct naar RugFit", href: "/gespecialiseerde-groepstraining?groep=rugfit" }
     ],
     suggestedFollowups: ["FysioFit tarieven", "Afspraak maken"]
   },
@@ -212,7 +220,7 @@ Tarieven FysioFit (abonnementsvorm, geen verwijsbrief nodig):
 • Echografie & Shockwave therapie
 • Gespecialiseerde begeleiding bij Parkinson, MS, CVA, COPD, Claudicatio Intermittens (etalagebenen) en Oncologie.`,
     quickLinks: [
-      { label: "Bekijk alle expertises", href: "/fysiotherapie" },
+      { label: "Bekijk alle behandelingen", href: "/behandelingen" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
     suggestedFollowups: ["Ons team", "Tarieven"]
@@ -226,7 +234,7 @@ Tarieven FysioFit (abonnementsvorm, geen verwijsbrief nodig):
 
 Bij Fysio Laren krijgt u eerst een gerichte proefbehandeling en krijgt u het apparaat 7 tot 10 dagen mee naar huis om het in uw eigen leefomgeving te testen. Verloopt deze proefperiode goed, dan kan het TENS-apparaat definitief worden aangevraagd en wordt dit vaak vergoed door uw zorgverzekeraar.`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
     suggestedFollowups: ["Behandelingen", "Contact"]
@@ -246,7 +254,7 @@ Afhankelijk van de manier waarop de tape wordt aangelegd, kan deze voor verschil
 
 Medical taping is breed toepasbaar bij onder andere spierblessures (zoals een zweepslag of verrekking), pees- en gewrichtsklachten, overbelasting en zwellingen.`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
     suggestedFollowups: ["Behandelingen", "TENS", "Contact"]
@@ -265,7 +273,7 @@ Wat we voor u kunnen betekenen:
 • Behandeling individueel (op de praktijk of bij u thuis) én in groepsverband
 • Gespecialiseerde beweeggroepen: NeuroFit, Trainen Op Muziek (TROM) en Non-contact boksen`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Neurologie beweeggroepen", href: "/gespecialiseerde-groepstraining?groep=neurologie" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
@@ -284,7 +292,7 @@ Wat we voor u kunnen betekenen:
 • Behandeling individueel (op de praktijk of aan huis) én in groepsverband
 • Gespecialiseerde beweeggroepen zoals NeuroFit, Trainen Op Muziek (TROM) en Non-contact boksen`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Neurologie beweeggroepen", href: "/gespecialiseerde-groepstraining?groep=neurologie" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
@@ -303,7 +311,7 @@ Wat we voor u kunnen betekenen:
 • Behandeling op de praktijk of in de beginfase bij u aan huis in Laren en omgeving
 • Mogelijkheid tot doorstroom naar gespecialiseerde beweeggroepen zoals NeuroFit`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Neurologie beweeggroepen", href: "/gespecialiseerde-groepstraining?groep=neurologie" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
@@ -322,7 +330,7 @@ U ontvangt persoonlijk advies over:
 • Verantwoorde opbouw van uw trainingsschema
 • Passend schoen- en inlegzooladvies`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Sportfysiotherapie", href: "/behandelingen/sportfysiotherapie-laren" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
@@ -341,7 +349,7 @@ Wat we voor u kunnen betekenen:
 • Methodes om slijm makkelijker op te hoesten en spanning rond de borstkas te verminderen
 • Begeleiding individueel én in onze gespecialiseerde COPD-beweeggroep`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "COPD beweeggroep", href: "/copd" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
@@ -360,7 +368,7 @@ Wat we voor u kunnen betekenen:
 • Begeleiding bij een gezonde, actieve leefstijl
 • Voorkomen of uitstellen van een operatieve vaatingreep`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
     suggestedFollowups: ["Behandelingen", "Vergoedingen", "Contact"]
@@ -378,7 +386,7 @@ Waar we u mee kunnen helpen:
 • Slimme beweeggewoonten door de dag heen
 • Balans tussen dagelijkse belasting en rust om terugkerende klachten te voorkomen`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
     suggestedFollowups: ["Behandelingen", "Ons team", "Contact"]
@@ -396,7 +404,7 @@ Wat we voor u kunnen betekenen:
 • Verminderen van overbelasting en compensatie in enkels, knieën en heupen
 • Praktische oefeningen voor thuis en advies over schoeisel`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
     suggestedFollowups: ["Hardloopanalyse", "Behandelingen", "Contact"]
@@ -414,10 +422,27 @@ Wat we voor u kunnen betekenen:
 • Duidelijke voorlichting en praktisch advies over wat u het beste wel én niet kunt doen
 • Praktische handvatten voor het versterken van de rugspieren en een veilige, actieve lichaamshouding`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
     suggestedFollowups: ["Behandelingen", "Ons team", "Contact"]
+  },
+  {
+    id: "valpreventie-otago",
+    keywords: ["valpreventie", "otago", "otago-oefenprogramma", "vallen", "evenwicht", "balans", "valangst", "struikelen", "senioren valrisico"],
+    intentPatterns: [/valpreventie/i, /otago/i, /valrisico/i, /vallen.*voorkomen/i],
+    title: "Valpreventie & Otago-oefenprogramma",
+    answer: `Bij het ouder worden kunnen spierkracht en evenwicht afnemen, wat het risico op vallen vergroot. Met gerichte valpreventie werken we doelgericht aan uw spierkracht, balans en het herwinnen van vertrouwen in bewegen.
+
+Binnen onze praktijk bieden we hiervoor het wetenschappelijk bewezen Otago-oefenprogramma voor 65-plussers aan:
+• Begeleid door een gecertificeerde fysiotherapeut
+• In een kleine groep inclusief oefeningen voor thuis
+• Of individueel in de thuissituatie (1 jaar begeleiding met huisbezoeken en consulten op maat)`,
+    quickLinks: [
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen?behandeling=valpreventie" },
+      { label: "Afspraak maken", href: "/afspraak-maken" }
+    ],
+    suggestedFollowups: ["Ouderenzorg", "Behandelingen", "Contact"]
   },
   {
     id: "artrose",
@@ -432,7 +457,7 @@ Wat we voor u kunnen betekenen:
 • Vinden van de juiste balans tussen belasting en herstel in het dagelijks leven
 • Voorkomen of langdurig uitstellen van operaties`,
     quickLinks: [
-      { label: "Bekijk bij Fysiotherapie", href: "/fysiotherapie" },
+      { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Afspraak maken", href: "/afspraak-maken" }
     ],
     suggestedFollowups: ["Behandelingen", "Osteoporose", "Contact"]
@@ -443,10 +468,10 @@ Wat we voor u kunnen betekenen:
     intentPatterns: [/wie werken er/i, /wie is/i, /ons team/i, /marloes/i, /karin/i, /nick/i, /ingrid/i],
     title: "Het Team van Fysio Laren",
     answer: `Ons vaste team bestaat uit ervaren, betrokken fysiotherapeuten met diverse specialisaties:
-• Marloes: Fysiotherapeut en maatschapslid (gespecialiseerd in o.a. ParkinsonNet, MS, CVA, COPD, Dry Needling)
-• Karin: Fysiotherapeut en maatschapslid (gespecialiseerd in o.a. herstel na operaties, oedeemtherapie, oncologie, COPD, CVA en psychosomatiek)
+• Marloes: Fysiotherapeut en maatschapslid (gespecialiseerd in o.a. ParkinsonNet, MS, CVA, COPD, Dry Needling, TENS)
+• Karin: Fysiotherapeut en maatschapslid (gespecialiseerd in o.a. herstel na operaties, oedeemtherapie, oncologie, COPD, CVA en ontspanning- en ademhalingstherapie)
 • Nick: Fysiotherapeut en maatschapslid (gespecialiseerd in manuele therapie, sportfysiotherapie en revalidatie)
-• Ingrid: Fysiotherapeut (gespecialiseerd in algemene fysiotherapie en beweeggroepen)
+• Ingrid: Fysiotherapeut (gespecialiseerd in o.a. voet- en enkelklachten, hardloopanalyse en medical taping)
 
 Op onze teampagina kunt u meer lezen over de achtergrond en werkwijze van elk teamlid.`,
     quickLinks: [
@@ -491,10 +516,10 @@ Onze fysiotherapeuten helpen u graag persoonlijk tijdens een intake op de prakti
 
 Heeft u een vraag over onze zorg of praktijk? Stel hem gerust!`,
       quickLinks: [
-        { label: "Overzicht behandelingen", href: "/fysiotherapie" },
+        { label: "Overzicht behandelingen", href: "/behandelingen" },
         { label: "Contact opnemen", href: "/contact" }
       ],
-      suggestedQuestions: ["Wat zijn de openingstijden?", "Wat kost een behandeling?", "Waar zijn jullie gevestigd?"]
+      suggestedQuestions: ["Wat zijn de openingstijden?", "Wat kost een behandeling?", "Waar is de praktijk gevestigd?"]
     };
   }
 
@@ -557,9 +582,9 @@ Wij helpen u graag persoonlijk verder! Neem gerust telefonisch contact met ons o
     ],
     suggestedQuestions: [
       "Wat zijn de openingstijden?",
-      "Waar zijn jullie gevestigd?",
+      "Waar is de praktijk gevestigd?",
       "Wat zijn de tarieven?",
-      "Welke behandelingen bieden jullie?"
+      "Welke behandelingen biedt Fysio Laren?"
     ]
   };
 }

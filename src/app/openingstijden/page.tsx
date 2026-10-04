@@ -25,7 +25,7 @@ export default function OpeningstijdenPage() {
           {/* Header */}
           <div className="text-center mb-8 sm:mb-10">
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Onze Openingstijden.
+              Onze Openingstijden
             </h1>
             <p className="text-sm sm:text-base text-foreground/65 leading-relaxed font-light max-w-lg mx-auto">
               Bekijk hieronder onze actuele openingstijden. Behandelingen en trainingen vinden plaats volgens afspraak.

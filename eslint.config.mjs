@@ -22,6 +22,7 @@ const eslintConfig = defineConfig([
     "check_pixel.js",
     "screens.spec.ts",
     "device-audit.spec.ts",
+    "screenshot_mobile.spec.ts",
   ]),
 ]);
 

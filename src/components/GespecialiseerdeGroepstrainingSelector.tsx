@@ -13,7 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
-export type HoofdCategorie = "fysiofit" | "neurologie" | "copd";
+export type HoofdCategorie = "fysiofit" | "rugfit" | "neurologie" | "copd";
 export type NeuroSubtype = "neurofit" | "trom" | "boksen";
 
 interface GroepContent {
@@ -30,9 +30,9 @@ interface GroepContent {
 const fysiofitContent: GroepContent = {
     title: "FysioFit",
     subtitle: "Verantwoord bewegen en fitnessen onder deskundige fysiotherapeutische begeleiding",
-    intro: "Voor iedereen die fit wil blijven, wil werken aan herstel of een deskundige stok achter de deur zoekt. Bij FysioFit traint u in onze oefenzaal op uw eigen tempo en niveau, met de zekerheid dat er altijd een professionele fysiotherapeut aanwezig is om u te adviseren en de juiste oefeningen aan te reiken.",
+    intro: "Voor iedereen die fit wil blijven, wil werken aan herstel of een deskundige stok achter de deur zoekt. Bij FysioFit traint u in onze oefenzaal op uw eigen tempo en niveau, met de zekerheid dat er altijd een fysiotherapeut aanwezig is om u te adviseren en de juiste oefeningen aan te reiken.",
     highlights: [
-        "Trainen in een professioneel ingerichte oefenzaal in hartje Laren, Gld",
+        "Trainen in een professioneel ingerichte oefenzaal in hartje Laren",
         "Deskundige begeleiding en toezicht van onze fysiotherapeuten",
         "Persoonlijk afgestemd trainingsschema op uw doelen en belastbaarheid",
         "Zowel overdag als 's avonds meerdere trainingsmogelijkheden",
@@ -41,6 +41,22 @@ const fysiofitContent: GroepContent = {
     opzet: "Wekelijks trainen in blokken van 30 of 60 minuten. We stemmen samen met u het trainingsschema en het meest geschikte tijdstip af.",
     vergoeding: "FysioFit is een abonnementsvorm (geen verwijsbrief nodig). U kiest zelf voor 30 of 60 minuten en 1 of 2 keer per week.",
     ctaText: "Aanmelden voor FysioFit",
+};
+
+const rugfitContent: GroepContent = {
+    title: "RugFit",
+    subtitle: "Individueel trainen met een schema op maat voor mensen met rugklachten",
+    intro: "Heeft u last van aanhoudende rugklachten, revalideert u na een rugoperatie of wilt u klachten in de toekomst juist voorkomen? Binnen RugFit traint u individueel in onze oefenzaal aan de hand van een persoonlijk oefenschema op maat. In de training combineren we rompstabiliteit (core), spierversterkende oefeningen en mobiliteitsoefeningen – onder begeleiding van onze fysiotherapeuten in kleine groepen van maximaal 8 personen.",
+    highlights: [
+        "Persoonlijk trainingsschema op maat, afgestemd op uw belastbaarheid",
+        "Oefeningen gericht op rompstabiliteit, spierversterking en mobiliteit",
+        "Onder begeleiding van onze fysiotherapeuten in de oefenzaal",
+        "Kleine groepen (maximaal 8 deelnemers) met volop persoonlijke aandacht",
+    ],
+    voorWie: "Voor alle mensen met rugproblemen: na een operatie, bij aanhoudende of terugkerende klachten, maar zeker ook preventief om de rug krachtig, mobiel en sterk te houden.",
+    opzet: "Wekelijks individueel trainen op uw eigen schema in een kleine groep van maximaal 8 personen, onder begeleiding van onze fysiotherapeuten. Neem contact met ons op voor de actuele tijden en plaatsing.",
+    vergoeding: "Abonnementsvorm: u kiest zelf voor 30 of 60 minuten en 1 of 2 keer per week.",
+    ctaText: "Aanmelden voor RugFit",
 };
 
 const copdContent: GroepContent = {
@@ -119,6 +135,7 @@ export default function GespecialiseerdeGroepstrainingSelector() {
     const [hoofdcategorie, setHoofdcategorie] = useState<HoofdCategorie>(() => {
         if (paramGroep === "copd") return "copd";
         if (paramGroep === "neurologie") return "neurologie";
+        if (paramGroep === "rugfit" || paramGroep === "rugtriathlon") return "rugfit";
         return "fysiofit";
     });
     const [neuroSubtype, setNeuroSubtype] = useState<NeuroSubtype>(() => {
@@ -135,6 +152,8 @@ export default function GespecialiseerdeGroepstrainingSelector() {
             if (paramSub === "trom" || paramSub === "boksen" || paramSub === "neurofit") {
                 setNeuroSubtype(paramSub);
             }
+        } else if (paramGroep === "rugfit" || paramGroep === "rugtriathlon") {
+            setHoofdcategorie("rugfit");
         } else if (paramGroep === "fysiofit") {
             setHoofdcategorie("fysiofit");
         }
@@ -143,19 +162,21 @@ export default function GespecialiseerdeGroepstrainingSelector() {
     const activeContent = 
         hoofdcategorie === "fysiofit"
             ? fysiofitContent
-            : hoofdcategorie === "copd"
-                ? copdContent
-                : neuroContent[neuroSubtype];
+            : hoofdcategorie === "rugfit"
+                ? rugfitContent
+                : hoofdcategorie === "copd"
+                    ? copdContent
+                    : neuroContent[neuroSubtype];
 
     return (
         <div className="w-full">
-            {/* Hoofd Selector: FysioFit, Neurologie en COPD */}
+            {/* Hoofd Selector: FysioFit, RugFit, Neurologie en COPD */}
             <div className="mb-6 flex justify-center">
-                <div className="inline-flex p-1.5 sm:p-2 bg-foreground/5 rounded-[2.5rem] border border-foreground/5 w-full max-w-xl">
+                <div className="grid grid-cols-2 sm:flex p-1.5 sm:p-2 bg-foreground/5 rounded-[2rem] sm:rounded-[2.5rem] border border-foreground/5 w-full max-w-2xl gap-1 sm:gap-0">
                     <button
                         onClick={() => setHoofdcategorie("fysiofit")}
                         className={cn(
-                            "flex-1 py-3.5 sm:py-4 px-3 sm:px-6 rounded-[2rem] font-bold text-sm sm:text-base md:text-lg transition-all duration-300 relative cursor-pointer text-center whitespace-nowrap",
+                            "flex-1 py-3 sm:py-4 px-2 sm:px-5 rounded-[1.75rem] sm:rounded-[2rem] font-bold text-xs sm:text-base md:text-lg transition-all duration-300 relative cursor-pointer text-center whitespace-nowrap",
                             hoofdcategorie === "fysiofit"
                                 ? "bg-white text-foreground shadow-md shadow-black/5"
                                 : "text-foreground/70 hover:text-foreground hover:bg-white/50"
@@ -164,9 +185,20 @@ export default function GespecialiseerdeGroepstrainingSelector() {
                         FysioFit
                     </button>
                     <button
+                        onClick={() => setHoofdcategorie("rugfit")}
+                        className={cn(
+                            "flex-1 py-3 sm:py-4 px-2 sm:px-5 rounded-[1.75rem] sm:rounded-[2rem] font-bold text-xs sm:text-base md:text-lg transition-all duration-300 relative cursor-pointer text-center whitespace-nowrap",
+                            hoofdcategorie === "rugfit"
+                                ? "bg-white text-foreground shadow-md shadow-black/5"
+                                : "text-foreground/70 hover:text-foreground hover:bg-white/50"
+                        )}
+                    >
+                        RugFit
+                    </button>
+                    <button
                         onClick={() => setHoofdcategorie("neurologie")}
                         className={cn(
-                            "flex-1 py-3.5 sm:py-4 px-3 sm:px-6 rounded-[2rem] font-bold text-sm sm:text-base md:text-lg transition-all duration-300 relative cursor-pointer text-center whitespace-nowrap",
+                            "flex-1 py-3 sm:py-4 px-2 sm:px-5 rounded-[1.75rem] sm:rounded-[2rem] font-bold text-xs sm:text-base md:text-lg transition-all duration-300 relative cursor-pointer text-center whitespace-nowrap",
                             hoofdcategorie === "neurologie"
                                 ? "bg-white text-foreground shadow-md shadow-black/5"
                                 : "text-foreground/70 hover:text-foreground hover:bg-white/50"
@@ -177,7 +209,7 @@ export default function GespecialiseerdeGroepstrainingSelector() {
                     <button
                         onClick={() => setHoofdcategorie("copd")}
                         className={cn(
-                            "flex-1 py-3.5 sm:py-4 px-3 sm:px-6 rounded-[2rem] font-bold text-sm sm:text-base md:text-lg transition-all duration-300 relative cursor-pointer text-center whitespace-nowrap",
+                            "flex-1 py-3 sm:py-4 px-2 sm:px-5 rounded-[1.75rem] sm:rounded-[2rem] font-bold text-xs sm:text-base md:text-lg transition-all duration-300 relative cursor-pointer text-center whitespace-nowrap",
                             hoofdcategorie === "copd"
                                 ? "bg-white text-foreground shadow-md shadow-black/5"
                                 : "text-foreground/70 hover:text-foreground hover:bg-white/50"
@@ -295,11 +327,11 @@ export default function GespecialiseerdeGroepstrainingSelector() {
                                     <div className="flex items-center gap-3 mb-4">
                                         <ShieldCheck className="w-6 h-6 text-blue-accent" />
                                         <h4 className="text-lg font-bold text-foreground">
-                                            {hoofdcategorie === "fysiofit" ? "Tarieven FysioFit" : "Verwijzing & Vergoeding"}
+                                            {(hoofdcategorie === "fysiofit" || hoofdcategorie === "rugfit") ? "Tarieven" : "Verwijzing & Vergoeding"}
                                         </h4>
                                     </div>
 
-                                    {hoofdcategorie === "fysiofit" ? (
+                                    {(hoofdcategorie === "fysiofit" || hoofdcategorie === "rugfit") ? (
                                         <div className="space-y-3 mb-4">
                                             <div className="grid grid-cols-2 gap-2.5">
                                                 <div className="bg-white p-3 rounded-2xl border border-foreground/5 shadow-2xs">
@@ -319,9 +351,6 @@ export default function GespecialiseerdeGroepstrainingSelector() {
                                                     <span className="text-lg font-black text-foreground">€82<span className="text-xs font-normal text-foreground/50">/mnd</span></span>
                                                 </div>
                                             </div>
-                                            <p className="text-xs text-foreground/60 leading-relaxed pt-1">
-                                                Geen verwijsbrief nodig. Instromen kan op elk moment na een vrijblijvende intake.
-                                            </p>
                                         </div>
                                     ) : (
                                         <p className="text-sm md:text-base text-foreground/70 font-light leading-relaxed mb-4">
@@ -329,7 +358,7 @@ export default function GespecialiseerdeGroepstrainingSelector() {
                                         </p>
                                     )}
 
-                                    {hoofdcategorie !== "fysiofit" && (
+                                    {hoofdcategorie !== "fysiofit" && hoofdcategorie !== "rugfit" && (
                                         <div className="flex items-center gap-2 text-xs font-semibold text-foreground/60 bg-white p-3 rounded-xl border border-foreground/5">
                                             <FileText className="w-4 h-4 text-blue-accent shrink-0" />
                                             <span>Heeft u een verwijsbrief van uw specialist of huisarts? Neem deze mee naar de intake.</span>

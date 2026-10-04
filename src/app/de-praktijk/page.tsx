@@ -10,9 +10,9 @@ export default function DePraktijk() {
                 <div className="bg-transparent">
                     {/* Title / Intro */}
                     <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight">Onze Praktijk.</h1>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight">Onze Praktijk</h1>
                         <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-light">
-                            Deskundig en betrokken, dichtbij in Laren, Gld.
+                            Deskundig en betrokken, dichtbij in Laren.
                         </p>
                     </div>
 
@@ -28,7 +28,7 @@ export default function DePraktijk() {
                                     Onze praktijk ligt centraal gelegen, is laagdrempelig toegankelijk en biedt voldoende gratis parkeergelegenheid. U bent altijd welkom, of u nu komt voor een afspraak of een vraag.
                                 </p>
                                 <ul className="space-y-4">
-                                    <li className="flex items-center gap-3 text-foreground/80 font-medium"><CheckCircle2 className="text-blue-accent w-5 h-5 flex-shrink-0" /> Centraal gelegen in Laren, Gld</li>
+                                    <li className="flex items-center gap-3 text-foreground/80 font-medium"><CheckCircle2 className="text-blue-accent w-5 h-5 flex-shrink-0" /> Centraal gelegen in Laren</li>
                                     <li className="flex items-center gap-3 text-foreground/80 font-medium"><CheckCircle2 className="text-blue-accent w-5 h-5 flex-shrink-0" /> Voldoende parkeergelegenheid</li>
                                     <li className="flex items-center gap-3 text-foreground/80 font-medium"><CheckCircle2 className="text-blue-accent w-5 h-5 flex-shrink-0" /> Drempelvrije toegang</li>
                                 </ul>

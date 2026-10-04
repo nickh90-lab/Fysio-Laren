@@ -49,7 +49,7 @@ export default function InstagramFeed() {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Een kijkje in de praktijk.</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Een kijkje in de praktijk</h2>
                         <p className="text-foreground/70 text-lg font-light">Volg ons op Instagram voor nieuws, oefeningen en updates.</p>
                     </div>
                     <Link 

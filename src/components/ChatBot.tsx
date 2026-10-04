@@ -24,7 +24,7 @@ interface Message {
 
 const INITIAL_SUGGESTIONS = [
   "Wat zijn de openingstijden?",
-  "Waar zijn jullie gevestigd?",
+  "Waar is de praktijk gevestigd?",
   "Wat kost een behandeling?",
   "Hoe kan ik een afspraak maken?",
   "Wat is FysioFit?"
@@ -236,7 +236,9 @@ export default function ChatBot() {
                           <a
                             key={idx}
                             href={link.href}
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-accent bg-white hover:bg-blue-accent hover:text-white border border-blue-accent/25 hover:border-blue-accent px-3.5 py-1.5 rounded-full shadow-2xs transition-all"
+                            target={link.href.startsWith("http") ? "_blank" : undefined}
+                            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-accent bg-white hover:bg-blue-accent hover:text-white border border-blue-accent/25 hover:border-blue-accent px-3.5 py-1.5 rounded-full shadow-2xs transition-all cursor-pointer"
                           >
                             <span>{link.label}</span>
                             <ArrowRight className="w-3 h-3" />

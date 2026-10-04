@@ -86,7 +86,10 @@ export default function SportblessuresLaren() {
                         Wacht The The the The the The niet The the tót the the weefsel The onherroepelijk schade in het Laren the The the of The the landelijke the the sportseizoen heeft The the gedaan. Plan The The the een the The afspraak. The The The
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/20 pt-10">
-                        <Link href="/afspraak-maken" className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center">
+                        <Link 
+                            href="/afspraak-maken" 
+                            className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center cursor-pointer"
+                        >
                             Plan een intakescreening <ChevronRight size={20} className="ml-2" />
                         </Link>
                     </div>

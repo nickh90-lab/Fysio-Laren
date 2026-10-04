@@ -34,7 +34,7 @@ export default function ComingSoon() {
 
             {/* Titel */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight tracking-tight">
-              Hier komt binnenkort onze nieuwe website.
+              Hier komt binnenkort onze nieuwe website
             </h1>
 
             {/* 2 Kolommen met locaties & fasering */}

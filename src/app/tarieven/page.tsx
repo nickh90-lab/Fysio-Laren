@@ -35,7 +35,7 @@ export default function TarievenPage() {
 
                     {/* Header: Rustig & Ingetogen */}
                     <div className="text-center mb-8 sm:mb-10">
-                        <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">Onze Tarieven.</h1>
+                        <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">Onze Tarieven</h1>
                         <p className="text-sm sm:text-base text-foreground/65 leading-relaxed font-light max-w-lg mx-auto">
                             Onderstaande particuliere tarieven gelden wanneer u niet of onvoldoende aanvullend verzekerd bent voor fysiotherapie in het huidige kalenderjaar.
                         </p>
@@ -57,7 +57,7 @@ export default function TarievenPage() {
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 text-sm font-semibold">
                         <Link
                             href="/afspraak-maken"
-                            className="bg-blue-accent text-white rounded-full py-3 px-6 flex items-center justify-center gap-2 group hover:bg-blue-accent/90 transition-all shadow-xs w-full sm:w-auto"
+                            className="bg-blue-accent text-white rounded-full py-3 px-6 flex items-center justify-center gap-2 group hover:bg-blue-accent/90 transition-all shadow-xs w-full sm:w-auto cursor-pointer"
                         >
                             Afspraak inplannen <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>

@@ -22,7 +22,7 @@ export default function COPDPage() {
                     {/* Header / Introductie */}
                     <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight">
-                            COPD Groepstraining.
+                            COPD Groepstraining
                         </h1>
                         <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-light">
                             Verantwoord werken aan uw longconditie, uithoudingsvermogen en ademhaling onder deskundige fysiotherapeutische begeleiding in Laren.

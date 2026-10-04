@@ -27,13 +27,13 @@ const complaints = [
     {
         title: "Knieklachten",
         path: "/klachten/knieklachten-fysiotherapie-laren",
-        desc: "Pijn bij traplopen, sporten of na een val? Onze knie-experts in Laren, Gld analyseren uw beweegpatroon voor een snel en blijvend resultaat.",
+        desc: "Pijn bij traplopen, sporten of na een val? Onze knie-experts in Laren analyseren uw beweegpatroon voor een snel en blijvend resultaat.",
         icon: Sparkles
     },
     {
         title: "Sportblessures",
         path: "/klachten/sportblessures-fysiotherapie-laren",
-        desc: "Van enkelverstuikingen en zweepslag tot overbelasting, wij zorgen dat u snel weer veilig op het sportveld staat in regio Laren, Gld.",
+        desc: "Van enkelverstuikingen en zweepslag tot overbelasting, wij zorgen dat u snel weer veilig op het sportveld staat in regio Laren.",
         icon: MoveUpRight
     }
 ];
@@ -53,7 +53,7 @@ export default function KlachtenOverview() {
                             Veelvoorkomende Lichamelijke Klachten
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-foreground leading-tight">
-                            Waar heeft u pijn?<br />Wij bieden de oplosing.
+                            Waar heeft u pijn?<br />Wij bieden de oplossing
                         </h1>
                         <p className="text-foreground/80 text-lg leading-relaxed mb-8">
                             Pijnklachten uiten zich bij iedereen anders, of het nu ontstaat door overbelasting op werk, tijdens het sporten of een plotselinge verkeerde beweging. Bij Fysio Laren vinden we de bron van uw pijn en stellen we een klachtspecifiek behandelplan op.
@@ -78,7 +78,7 @@ export default function KlachtenOverview() {
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Kies de regio van uw klacht</h2>
                         <p className="text-lg text-foreground/70 leading-relaxed">
-                            Klik hieronder op uw specifieke pijngebied. Ontdek meer over de symptomen, mogelijke oorzaken en hoe onze fysiotherapeuten in Laren, Gld u snel en veilig van de last en pijn afhelpen.
+                            Klik hieronder op uw specifieke pijngebied. Ontdek meer over de symptomen, mogelijke oorzaken en hoe onze fysiotherapeuten in Laren u snel en veilig van de last en pijn afhelpen.
                         </p>
                     </div>
 
@@ -132,8 +132,11 @@ export default function KlachtenOverview() {
                         <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
                             Maakt u zich geen zorgen. Het bewegingsapparaat is complex en pijn kan breed uitstralen. Neem contact op; in 99% van de gevallen kunnen onze specialisten de knoop ontrafelen.
                         </p>
-                        <Link href="/afspraak-maken" className="inline-block px-8 py-4 bg-primary text-foreground font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                            Neem direct contact op of bel
+                        <Link 
+                            href="/afspraak-maken" 
+                            className="inline-block px-8 py-4 bg-primary text-foreground font-bold rounded-full hover:scale-105 transition-transform shadow-lg cursor-pointer"
+                        >
+                            Neem direct contact op of plan een afspraak
                         </Link>
                     </div>
                 </div>

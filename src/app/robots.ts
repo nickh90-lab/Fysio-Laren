@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: ['/api/'],
+            disallow: ['/api/', '/preview/', '/coming-soon'],
         },
         sitemap: 'https://www.fysio-laren.nl/sitemap.xml',
     };

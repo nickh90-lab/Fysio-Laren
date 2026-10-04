@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook, MessageCircle } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -37,7 +37,8 @@ export default function Footer() {
                     <ul className="space-y-4">
                         {[
                             { name: "Home", href: "/" },
-                            { name: "Fysiotherapie", href: "/fysiotherapie" },
+                            { name: "Aandoeningen", href: "/aandoeningen" },
+                            { name: "Behandelingen", href: "/behandelingen" },
                             { name: "Beweeggroepen & FysioFit", href: "/gespecialiseerde-groepstraining" },
                             { name: "Ons team", href: "/ons-team" },
                             { name: "De praktijk", href: "/de-praktijk" },
@@ -90,6 +91,19 @@ export default function Footer() {
                                     <Phone size={16} />
                                 </div>
                                 <span className="text-sm text-white/80 group-hover:text-white">0573 - 21 50 58</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://wa.me/31573215058" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="flex items-center space-x-3 group hover:text-white transition-colors"
+                            >
+                                <div className="p-2 bg-emerald-500/20 text-emerald-400 rounded-full group-hover:bg-emerald-500 group-hover:text-white transition-all shrink-0">
+                                    <MessageCircle size={16} />
+                                </div>
+                                <span className="text-sm text-white/80 group-hover:text-white">WhatsApp: 0573 - 21 50 58</span>
                             </a>
                         </li>
                         <li>

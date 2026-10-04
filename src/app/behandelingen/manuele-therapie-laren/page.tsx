@@ -43,7 +43,7 @@ export default function ManueleTherapieLaren() {
 
                         <h3 className="text-2xl font-bold text-foreground mb-4">Voor welke klachten?</h3>
                         <p className="text-foreground/80 leading-relaxed mb-6">
-                            Manuele therapie is bij uitstek geschikt voor klachten die gepaard gaan met pijn en het slechter kunnen bewegen van een of meerdere gewrichten. Typische klachten waarmee patiënten uit Laren, Blaricum en Huizen onze praktijk bezoeken zijn:
+                            Manuele therapie is bij uitstek geschikt voor klachten die gepaard gaan met pijn en het slechter kunnen bewegen van een of meerdere gewrichten. Typische klachten waarmee patiënten uit Laren (Gld), Lochem, Barchem en omstreken onze praktijk bezoeken zijn:
                         </p>
                         <ul className="space-y-4 mb-10 list-none pl-0">
                             {[
@@ -89,7 +89,10 @@ export default function ManueleTherapieLaren() {
                         Heeft u veel last van een stijve rug of een vastzittende nek? Tijd voor de Master specialistische focus in manuele therapie.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/20 pt-10">
-                        <Link href="/afspraak-maken" className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center">
+                        <Link 
+                            href="/afspraak-maken" 
+                            className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center cursor-pointer"
+                        >
                             Maak een afspraak <ChevronRight size={20} className="ml-2" />
                         </Link>
                     </div>

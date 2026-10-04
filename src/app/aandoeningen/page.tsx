@@ -1,18 +1,18 @@
 import { Metadata } from "next";
-import Behandelingen from "@/components/Behandelingen";
+import Aandoeningen from "@/components/Aandoeningen";
 
 export const metadata: Metadata = {
-    title: "Behandelingen & Specialisaties | Fysio Laren",
-    description: "Overzicht van alle gespecialiseerde fysiotherapie behandelingen bij Fysio Laren: manuele therapie, revalidatie, oedeemtherapie, dry needling en meer.",
+    title: "Aandoeningen & Klachten | Fysio Laren",
+    description: "Ontdek bij welke aandoeningen en klachten Fysio Laren u kan helpen. Van rug-, nek- en schouderklachten tot artrose, revalidatie en neurologische zorg in Laren.",
 };
 
-export default function BehandelingenPage() {
+export default function AandoeningenPage() {
     const schemaOrgData = {
         "@context": "https://schema.org",
         "@type": "MedicalClinic",
         "name": "Fysio Laren",
         "description": "Specialist in fysiotherapie, manuele therapie en revalidatie in Laren en omstreken.",
-        "url": "https://www.fysio-laren.nl/behandelingen",
+        "url": "https://www.fysio-laren.nl/aandoeningen",
         "telephone": "+31573215058",
         "address": {
             "@type": "PostalAddress",
@@ -33,7 +33,7 @@ export default function BehandelingenPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrgData) }}
             />
-            <Behandelingen />
+            <Aandoeningen />
         </main>
     );
 }

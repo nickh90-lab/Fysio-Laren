@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Activity, Bone, Brain, Sparkles, HeartPulse, Wind, ShieldCheck, Heart } from "lucide-react";
+import { ArrowRight, Activity, Bone, Brain, Sparkles, HeartPulse, Wind, ShieldCheck, Heart, Footprints } from "lucide-react";
 
 const balloonClusters = [
     {
@@ -19,25 +19,32 @@ const balloonClusters = [
         bgClass: "bg-primary/20"
     },
     {
+        id: "voetentraining",
+        title: "Voetentraining",
+        icon: <Footprints size={40} />,
+        items: ["Hallux valgus", "Hielspoor", "Platvoeten", "Voorvoetpijn", "Klauw- en hamertenen", "Mortons neuroom", "Neuropathie"],
+        bgClass: "bg-white"
+    },
+    {
         id: "revalidatie",
         title: "Revalidatie (Na Operatie)",
         icon: <HeartPulse size={40} />,
         items: ["Orthopedische ingrepen", "Nieuwe heup of knie", "Oncologie", "Herstel na botbreuken"],
-        bgClass: "bg-white"
+        bgClass: "bg-primary/20"
     },
     {
         id: "sport",
         title: "Sport & Blessures",
         icon: <Activity size={40} />,
-        items: ["Acute sportblessures", "Sport-specifieke training", "Hardloopanalyses", "Medical taping", "Voetentraining"],
-        bgClass: "bg-primary/20"
+        items: ["Acute sportblessures", "Sport-specifieke training", "Hardloopanalyses", "Medical taping"],
+        bgClass: "bg-white"
     },
     {
         id: "neurologie",
         title: "Neurologie",
         icon: <Brain size={40} />,
         items: ["Parkinson", "Multiple Sclerose (MS)", "Beroerte (CVA)"],
-        bgClass: "bg-white"
+        bgClass: "bg-primary/20"
     },
     {
         id: "vaten-oedeem",
@@ -50,14 +57,14 @@ const balloonClusters = [
         id: "pijn-mentaal",
         title: "Pijn & Mentale Balans",
         icon: <Heart size={40} />,
-        items: ["Chronische aanhoudende pijn", "Psychosomatiek", "Ademhalings-/ontspanningstherapie", "TENS pijnbestrijding"],
+        items: ["Chronische aanhoudende pijn", "Psychosomatiek", "Ontspanning- en ademhalingstherapie", "TENS pijnbestrijding"],
         bgClass: "bg-white"
     },
     {
         id: "ouderenzorg",
         title: "Ouderenzorg & Preventie",
         icon: <ShieldCheck size={40} />,
-        items: ["Valpreventie", "Behoud van mobiliteit", "Fysiotherapie aan huis"],
+        items: ["Valpreventie en Otago", "Behoud van mobiliteit", "Fysiotherapie aan huis"],
         bgClass: "bg-primary/20"
     }
 ];
@@ -67,9 +74,9 @@ export default function Specialties() {
         <section className="py-24 md:py-32 px-6 md:px-12 bg-background flex flex-col items-center overflow-hidden">
             <div className="max-w-7xl w-full">
                 <div className="text-center mb-16 md:mb-24 max-w-3xl mx-auto relative z-10">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground tracking-tight">Onze expertises <br className="hidden md:block" />& behandelingen.</h2>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground tracking-tight">Onze expertises <br className="hidden md:block" />& behandelingen</h2>
                     <p className="text-foreground/70 text-lg md:text-xl leading-relaxed font-light">
-                        Van reguliere fysiotherapie tot complexe revalidatietrajecten en gespecialiseerde technieken. Ontdek aan welke klachten wij werken en met welke methodes wij u in Laren, Gld gericht kunnen helpen.
+                        Van reguliere fysiotherapie tot complexe revalidatietrajecten en gespecialiseerde technieken. Ontdek aan welke klachten wij werken en met welke methodes wij u in Laren gericht kunnen helpen.
                     </p>
                 </div>
 
@@ -101,7 +108,7 @@ export default function Specialties() {
 
                 {/* Algemene Call-to-action */}
                 <div className="flex justify-center mt-20 relative z-10">
-                    <Link href="/fysiotherapie" className="inline-flex items-center text-white font-bold hover:gap-3 transition-all bg-blue-accent px-8 md:px-10 py-4 md:py-5 rounded-full shadow-lg hover:shadow-xl hover:bg-blue-accent/90 text-lg">
+                    <Link href="/aandoeningen" className="inline-flex items-center text-white font-bold hover:gap-3 transition-all bg-blue-accent px-8 md:px-10 py-4 md:py-5 rounded-full shadow-lg hover:shadow-xl hover:bg-blue-accent/90 text-lg">
                         Bekijk het volledige overzicht <ArrowRight size={22} className="ml-3" />
                     </Link>
                 </div>

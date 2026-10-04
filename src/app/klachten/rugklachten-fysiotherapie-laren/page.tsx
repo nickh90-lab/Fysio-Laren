@@ -67,6 +67,28 @@ export default function RugklachtenLaren() {
                             Dit kan bestaan uit dry needling voor acute spierkrampen te deactiveren; het lokaal 'kraken'/manueel moduleren van gestagneerde wervels of – vaak the onmisbare langetermijn factor: medisch bewezen revalidatie fysiotherapieoefeningen en 'core' versterkende fitnessprogramma's in onze zaal aanbouw in het centrum van Laren.
                         </p>
 
+                        {/* Uitgelicht: RugFit Beweeggroep */}
+                        <div className="bg-gradient-to-br from-blue-50/80 to-indigo-50/50 p-6 md:p-8 rounded-3xl border border-blue-accent/20 mb-10 not-prose">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div>
+                                    <span className="text-xs font-bold uppercase tracking-wider text-blue-accent bg-white px-3 py-1 rounded-full border border-blue-accent/20 inline-block mb-3">
+                                        Speciale sportgroep
+                                    </span>
+                                    <h4 className="text-xl font-bold text-foreground mb-2">Blijvend sterk met RugFit</h4>
+                                    <p className="text-foreground/75 leading-relaxed text-sm md:text-base m-0 max-w-xl">
+                                        Wilt u na uw herstel gericht blijven trainen of klachten juist vóór zijn? Binnen onze <strong>RugFit</strong> beweeggroep traint u wekelijks met een persoonlijk schema op maat aan rompstabiliteit, mobiliteit en spierversterking – onder begeleiding van onze fysiotherapeuten om de rug krachtig, mobiel en sterk te houden.
+                                    </p>
+                                </div>
+                                <Link 
+                                    href="/gespecialiseerde-groepstraining?groep=rugfit"
+                                    className="inline-flex items-center gap-2 bg-blue-accent hover:bg-blue-accent/90 text-white font-bold text-sm px-5 py-3 rounded-full transition-all shrink-0 self-start sm:self-center shadow-xs"
+                                >
+                                    <span>Ontdek RugFit</span>
+                                    <ChevronRight size={16} />
+                                </Link>
+                            </div>
+                        </div>
+
                         <div className="bg-accent p-8 rounded-3xl border border-foreground/5 mb-10">
                             <h4 className="text-xl font-bold text-foreground mb-4">Moet ik eerst naar de huisarts?</h4>
                             <p className="text-foreground/80 leading-relaxed m-0">
@@ -85,7 +107,10 @@ export default function RugklachtenLaren() {
                         Zorg voor een snellere diagnose en direct de startbehandeling de u verdient de gespecialiseerde therapeut van Fysio Laren. Plan een consult (zonder verwijzing).
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/20 pt-10">
-                        <Link href="/afspraak-maken" className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center">
+                        <Link 
+                            href="/afspraak-maken" 
+                            className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center cursor-pointer"
+                        >
                             Maak een afspraak in Laren <ChevronRight size={20} className="ml-2" />
                         </Link>
                     </div>

@@ -86,7 +86,10 @@ export default function SchouderklachtenLaren() {
                         De schouderexperts in de omgeving Laren staan deze week nog voor u paraat.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/20 pt-10">
-                        <Link href="/afspraak-maken" className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center">
+                        <Link 
+                            href="/afspraak-maken" 
+                            className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center cursor-pointer"
+                        >
                             Maak een intakeafspraak <ChevronRight size={20} className="ml-2" />
                         </Link>
                     </div>

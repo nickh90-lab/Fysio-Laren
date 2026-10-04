@@ -22,7 +22,10 @@ export default function CTASelector() {
                             <h3 className="font-bold text-2xl md:text-3xl text-foreground mb-8 relative z-10">Neem direct contact op</h3>
 
                             <div className="flex flex-col gap-4 relative z-10">
-                                <Link href="/afspraak-maken" className="flex items-center justify-between w-full bg-blue-accent text-white px-8 py-5 rounded-full hover:bg-blue-accent/90 transition-all shadow-md group/btn">
+                                <Link 
+                                    href="/afspraak-maken" 
+                                    className="flex items-center justify-between w-full bg-blue-accent text-white px-8 py-5 rounded-full hover:bg-blue-accent/90 transition-all shadow-md group/btn"
+                                >
                                     <span className="font-bold text-lg">Online afspraak plannen</span>
                                     <CalendarPlus size={24} className="group-hover/btn:scale-110 transition-transform" />
                                 </Link>

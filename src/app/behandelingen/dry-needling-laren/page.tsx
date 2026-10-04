@@ -89,7 +89,10 @@ export default function DryNeedlingLaren() {
                         Kampt u met hardnekkige spierknopen of uitstralende pijn? Maak kennis met deze snelle en doeltreffende behandelmethode in Laren.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/20 pt-10">
-                        <Link href="/afspraak-maken" className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center">
+                        <Link 
+                            href="/afspraak-maken" 
+                            className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center cursor-pointer"
+                        >
                             Plan een fysiotherapie afspraak <ChevronRight size={20} className="ml-2" />
                         </Link>
                     </div>

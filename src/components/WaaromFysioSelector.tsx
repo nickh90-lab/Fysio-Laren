@@ -8,7 +8,7 @@ export default function WaaromFysioSelector() {
     return (
         <section className={cn("py-24 md:py-32 px-6 md:px-12 flex flex-col items-center transition-colors duration-500 relative bg-primary/40")}>
             <div className="flex flex-col items-center justify-center min-h-[300px] w-full max-w-6xl mt-12 md:mt-8">
-                <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-foreground mb-16 md:mb-20 text-center tracking-tight">Daarom kiest u voor Fysio Laren.</h2>
+                <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-foreground mb-16 md:mb-20 text-center tracking-tight">Daarom kiest u voor Fysio Laren</h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 md:gap-x-12 gap-y-10 w-full px-4 lg:px-12">
                     {[

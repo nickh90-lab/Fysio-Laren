@@ -1,13 +1,21 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import Image from "next/image";
-import { GraduationCap, ChevronDown } from "lucide-react";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { GraduationCap, ChevronDown, ArrowUpRight } from "lucide-react";
 import { team } from "@/data/team";
 import { cn } from "@/lib/utils";
 
-export default function TeamInteractive() {
-  const [activeMemberId, setActiveMemberId] = useState<string>(team[0]?.slug || "marloes");
+function TeamInteractiveContent() {
+  const searchParams = useSearchParams();
+  const lidParam = searchParams.get("lid");
+
+  const [selectedMemberId, setSelectedMemberId] = useState<string | null>(null);
+
+  const activeMemberId = selectedMemberId || (lidParam && team.some(m => m.slug === lidParam) ? lidParam : (team[0]?.slug || "marloes"));
+  const setActiveMemberId = (slug: string) => setSelectedMemberId(slug);
 
   const activeMember = team.find(m => m.slug === activeMemberId) || team[0];
 
@@ -64,7 +72,7 @@ export default function TeamInteractive() {
         
         {/* Intro - Compact & Direct in beeld */}
         <div className="text-center mb-6 max-w-2xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-black text-foreground tracking-tight">Ontmoet ons team.</h1>
+          <h1 className="text-3xl md:text-5xl font-black text-foreground tracking-tight">Ontmoet ons team</h1>
         </div>
 
         {/* Alle collega's even groot naast elkaar in beeld */}
@@ -155,15 +163,31 @@ export default function TeamInteractive() {
               </div>
 
               {/* ⭐ SPECIALISMEN TABLETS / TAGS */}
-              <div className="flex flex-wrap gap-1.5 my-3 pb-3 border-b border-foreground/10">
-                {activeMember.specialties.map(spec => (
-                  <span 
-                    key={spec} 
-                    className="bg-white border border-foreground/15 px-3 py-1 rounded-full text-xs font-semibold text-foreground/80 shadow-xs"
-                  >
-                    {spec}
-                  </span>
-                ))}
+              <div className="flex flex-wrap gap-2 my-3.5 pb-3.5 border-b border-foreground/10">
+                {activeMember.specialties.map((spec) => {
+                  if (spec.href) {
+                    return (
+                      <Link
+                        key={spec.name}
+                        href={spec.href}
+                        className="inline-flex items-center gap-1 bg-white hover:bg-blue-accent/5 border border-foreground/15 hover:border-blue-accent/40 px-3 py-1 rounded-full text-xs font-semibold text-foreground/80 hover:text-blue-accent shadow-2xs group/spec transition-all duration-150 cursor-pointer"
+                        title={`Bekijk behandeling: ${spec.name}`}
+                      >
+                        <span>{spec.name}</span>
+                        <ArrowUpRight className="w-3 h-3 text-foreground/40 group-hover/spec:text-blue-accent group-hover/spec:translate-x-0.5 group-hover/spec:-translate-y-0.5 transition-all shrink-0" />
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <span
+                      key={spec.name}
+                      className="inline-flex items-center bg-white border border-foreground/15 px-3 py-1 rounded-full text-xs font-semibold text-foreground/75 shadow-2xs"
+                    >
+                      {spec.name}
+                    </span>
+                  );
+                })}
               </div>
 
               {/* Volledige persoonlijke tekst */}
@@ -214,3 +238,12 @@ export default function TeamInteractive() {
     </div>
   );
 }
+
+export default function TeamInteractive() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <TeamInteractiveContent />
+    </Suspense>
+  );
+}
+
