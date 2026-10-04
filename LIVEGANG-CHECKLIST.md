@@ -4,19 +4,22 @@ Dit document bewaart de exacte actiepunten voor het moment dat we de website def
 
 ---
 
-### 1. Website Publiek Maken (Preview-slot uitschakelen)
-In `src/middleware.ts` is een automatische lanceringstoggle ingebouwd.
-- **Actie**: Voeg in uw hostingomgeving (bijv. Netlify / Vercel Environment Variables) de volgende variabele toe:
-  ```env
-  NEXT_PUBLIC_SITE_LAUNCHED=true
-  ```
-- **Resultaat**: Het `coming-soon` wachtscherm verdwijnt direct voor alle bezoekers en zoekmachines (Googlebot) krijgen vrije toegang tot alle pagina's.
+### 1. Hosting Omgevingsvariabelen (Netlify Environment Variables)
+Voeg in het Netlify Dashboard (onder **Site configuration** > **Environment variables**) de volgende twee variabelen toe:
+1. **Livegang (Preview-slot uitschakelen)**:
+   ```env
+   NEXT_PUBLIC_SITE_LAUNCHED=true
+   ```
+2. **E-mailkoppeling Contactformulier (Resend)**:
+   - **Key**: `RESEND_API_KEY`
+   - **Value**: *(Kopieer de sleutel uit uw lokale `.env.local`)*
+- **Resultaat**: Zowel de publieke livegang als het contactformulier naar `info@fysio-laren.nl` zijn direct 100% operationeel.
 
 ---
 
 ### 2. Contactformulier & Mailbezorging Testen
-- **Actie**: Zodra het domein `https://www.fysio-laren.nl` actief is, vult u het contactformulier één keer in als test.
-- **Resultaat**: De Resend API verstuurt het bericht live naar `info@fysio-laren.nl`.
+- **Actie**: Vul het contactformulier op `https://www.fysio-laren.nl/contact` in als test.
+- **Resultaat**: De Resend API verstuurt het bericht direct live naar `info@fysio-laren.nl` en beantwoordt dit met een bevestiging.
 
 ---
 

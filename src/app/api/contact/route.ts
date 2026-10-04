@@ -15,18 +15,12 @@ export async function POST(request: Request) {
         const apiKey = process.env.RESEND_API_KEY;
 
         if (!apiKey) {
-            console.warn("RESEND_API_KEY is nog niet ingesteld in de omgevingsvariabelen (.env.local).");
-            console.log("=== ONTVANGEN BERICHT (NOG GEEN API KEY) ===");
-            console.log(`Naam: ${name} | E-mail: ${email} | Telefoon: ${phone || 'Niet ingevuld'}`);
-            console.log(`Bericht: ${message}`);
-            console.log("============================================");
-
+            console.error("RESEND_API_KEY is nog niet ingesteld in de hostingomgeving (Netlify Environment Variables).");
             return NextResponse.json(
                 { 
-                    success: true, 
-                    warning: "Bericht verwerkt in testmodus (geen API key gevonden)." 
+                    error: "Het contactformulier kan momenteel niet worden verzonden via de server. Neem alstublieft telefonisch contact op via 0573 - 21 50 58 of stuur een e-mail naar info@fysio-laren.nl." 
                 },
-                { status: 200 }
+                { status: 500 }
             );
         }
 

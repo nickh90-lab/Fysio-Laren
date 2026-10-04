@@ -46,8 +46,7 @@ const FormFields = () => {
                 setErrorMsg(data.error || "Er is een fout opgetreden. Probeer het opnieuw of bel ons direct.");
             }
         } catch {
-            // Netwerk/offline fallback
-            setSubmitted(true);
+            setErrorMsg("Er is een verbindingsfout opgetreden bij het versturen. Controleer uw internetverbinding of bel ons direct op 0573 - 21 50 58.");
         } finally {
             setIsSubmitting(false);
         }
