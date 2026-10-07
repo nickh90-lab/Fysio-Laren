@@ -36,7 +36,15 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Fysio Laren" }],
   creator: "Fysio Laren",
-  publisher: "Fysio Laren",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   formatDetection: {
     email: true,
     address: true,
