@@ -51,6 +51,9 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
+  verification: {
+    google: "cMe_-pAMxDSmg3rvJap-B9DG_S6V6nqWLl9XmX-cSCg",
+  },
   openGraph: {
     title: "Fysio Laren | Specialist in Fysiotherapie & Revalidatie",
     description: "Professionele fysiotherapie en manuele therapie in Laren, Gld. Persoonlijke zorg en een snelle weg naar herstel.",
@@ -163,6 +166,7 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <head>
+        <meta name="google-site-verification" content="cMe_-pAMxDSmg3rvJap-B9DG_S6V6nqWLl9XmX-cSCg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema) }}
