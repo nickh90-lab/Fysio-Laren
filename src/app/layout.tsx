@@ -189,7 +189,7 @@ export default function RootLayout({
         <CookieBanner />
         <ChatBot />
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-3LC9WFEYY7"} />
     </html>
   );
 }
