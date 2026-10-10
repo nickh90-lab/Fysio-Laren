@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.fysio-laren.nl';
+    const baseUrl = 'https://fysio-laren.nl';
     const lastModified = new Date();
 
     const staticRoutes = [

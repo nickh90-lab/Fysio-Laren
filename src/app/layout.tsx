@@ -10,7 +10,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fysio-laren.nl"),
+  metadataBase: new URL("https://fysio-laren.nl"),
   alternates: {
     canonical: "./",
   },
@@ -38,13 +38,17 @@ export const metadata: Metadata = {
   creator: "Fysio Laren",
   icons: {
     icon: [
-      { url: "/icon.svg?v=3", type: "image/svg+xml" },
-      { url: "/icon.png?v=3", type: "image/png", sizes: "512x512" },
-      { url: "/favicon.ico?v=3", sizes: "any" },
+      { url: "/icon-48.png?v=4", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96.png?v=4", sizes: "96x96", type: "image/png" },
+      { url: "/icon-192.png?v=4", sizes: "192x192", type: "image/png" },
+      { url: "/icon.png?v=4", sizes: "512x512", type: "image/png" },
+      { url: "/icon.svg?v=4", type: "image/svg+xml" },
+      { url: "/favicon.ico?v=4", sizes: "any" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png?v=3", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png?v=4", sizes: "180x180", type: "image/png" },
     ],
+    shortcut: "/favicon.ico?v=4",
   },
   formatDetection: {
     email: true,
@@ -57,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fysio Laren | Specialist in Fysiotherapie & Revalidatie",
     description: "Professionele fysiotherapie en manuele therapie in Laren, Gld. Persoonlijke zorg en een snelle weg naar herstel.",
-    url: "https://www.fysio-laren.nl",
+    url: "https://fysio-laren.nl",
     siteName: "Fysio Laren",
     locale: "nl_NL",
     type: "website",
@@ -94,9 +98,9 @@ const clinicSchema = {
   "@type": ["MedicalClinic", "LocalBusiness"],
   "name": "Fysio Laren",
   "alternateName": ["Fysiotherapie Laren", "Fysio Laren Gld"],
-  "image": "https://www.fysio-laren.nl/images/Teamfoto_v2.jpg",
-  "@id": "https://www.fysio-laren.nl/#clinic",
-  "url": "https://www.fysio-laren.nl",
+  "image": "https://fysio-laren.nl/images/Teamfoto_v2.jpg",
+  "@id": "https://fysio-laren.nl/#clinic",
+  "url": "https://fysio-laren.nl",
   "telephone": "+31573215058",
   "email": "info@fysio-laren.nl",
   "priceRange": "$$",
@@ -166,6 +170,13 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <head>
+        <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/icon-48.png?v=4" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/icon-96.png?v=4" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=4" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/icon.png?v=4" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg?v=4" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4" />
         <meta name="google-site-verification" content="cMe_-pAMxDSmg3rvJap-B9DG_S6V6nqWLl9XmX-cSCg" />
         <script
           type="application/ld+json"
