@@ -38,17 +38,16 @@ export const metadata: Metadata = {
   creator: "Fysio Laren",
   icons: {
     icon: [
-      { url: "/icon-48.png?v=4", sizes: "48x48", type: "image/png" },
-      { url: "/icon-96.png?v=4", sizes: "96x96", type: "image/png" },
-      { url: "/icon-192.png?v=4", sizes: "192x192", type: "image/png" },
-      { url: "/icon.png?v=4", sizes: "512x512", type: "image/png" },
-      { url: "/icon.svg?v=4", type: "image/svg+xml" },
-      { url: "/favicon.ico?v=4", sizes: "any" },
+      { url: "/fysio-laren-icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/fysio-laren-icon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/fysio-laren-icon-v1.png", sizes: "512x512", type: "image/png" },
+      { url: "/icon.svg?v=5", type: "image/svg+xml" },
+      { url: "/fysio-laren-favicon-v1.ico", sizes: "any" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png?v=4", sizes: "180x180", type: "image/png" },
+      { url: "/fysio-laren-apple-touch-v1.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/favicon.ico?v=4",
+    shortcut: "/fysio-laren-favicon-v1.ico",
   },
   formatDetection: {
     email: true,
@@ -170,13 +169,13 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <head>
-        <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/icon-48.png?v=4" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/icon-96.png?v=4" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=4" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/icon.png?v=4" />
-        <link rel="icon" type="image/svg+xml" href="/icon.svg?v=4" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4" />
+        <link rel="icon" type="image/x-icon" href="/fysio-laren-favicon-v1.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/fysio-laren-icon-48.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/fysio-laren-icon-96.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/fysio-laren-icon-v1.png" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg?v=5" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/fysio-laren-apple-touch-v1.png" />
+        <link rel="mask-icon" href="/icon.svg?v=5" color="#002f9f" />
         <meta name="google-site-verification" content="cMe_-pAMxDSmg3rvJap-B9DG_S6V6nqWLl9XmX-cSCg" />
         <script
           type="application/ld+json"
