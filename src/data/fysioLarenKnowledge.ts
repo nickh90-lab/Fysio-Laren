@@ -10,9 +10,9 @@ export interface KnowledgeTopic {
 
 // Centrale contact- en praktijkgegevens
 export const PRACTICE_INFO = {
-  name: "Fysio Laren",
-  address: "Huenderstraat 3, 7245 BG Laren, Gld",
-  temporaryAddressNote: "Let op: Vanaf 1 oktober wordt ons pand aan de Huenderstraat verbouwd. Wij behandelen tijdelijk in het huidige pand van Solis (Huenderstraat 3). Vanaf 1 januari 2027 verwelkomen we u in ons compleet vernieuwde pand!",
+  // Tijdelijk adres voor zorgverzekeraars (Permanent: Huenderstraat 3, 7245 BG Laren, Gld)
+  address: "Rengersweg 2, 7245 AC Laren, Gld",
+  temporaryAddressNote: "Let op: Vanaf 1 oktober wordt ons pand aan de Huenderstraat verbouwd. Wij behandelen tijdelijk in het huidige pand van Solis (Rengersweg 2). Vanaf 1 januari 2027 verwelkomen we u in ons compleet vernieuwde pand aan de Huenderstraat 3!",
   phone: "0573 - 21 50 58",
   whatsapp: "0573 - 21 50 58",
   phoneSolis: "0573 - 401984",
@@ -102,10 +102,10 @@ We hebben dus ook ruime behandelmogelijkheden in de avonduren op maandag, dinsda
     keywords: ["adres", "locatie", "waar", "gevestigd", "pand", "huenderstraat", "verbouwing", "solis", "tijdelijk", "parkeren", "parkeerplaats"],
     intentPatterns: [/waar.*zitten/i, /waar.*gevestigd/i, /wat is.*adres/i, /verbouwing/i, /solis/i, /route/i, /parkeer/i],
     title: "Locatie & Verbouwing",
-    answer: `Wij zijn gevestigd aan de Huenderstraat 3 in Laren, Gld. Er is voldoende gratis parkeergelegenheid en de praktijk is drempelvrij toegankelijk.
+    answer: `Wij zijn gevestigd aan de Rengersweg 2 in Laren, Gld. Er is voldoende gratis parkeergelegenheid en de praktijk is drempelvrij toegankelijk.
 
 Belangrijk i.v.m. de verbouwing:
-Vanaf 1 oktober wordt ons pand verbouwd. Tijdens de verbouwing behandelen wij tijdelijk in het huidige pand van Solis (ook aan de Huenderstraat 3). Vanaf 1 januari 2027 starten we in ons compleet vernieuwde pand!`,
+Vanaf 1 oktober wordt ons pand verbouwd. Tijdens de verbouwing behandelen wij tijdelijk in het huidige pand van Solis (aan de Rengersweg 2). Vanaf 1 januari 2027 starten we in ons compleet vernieuwde pand aan de Huenderstraat 3!`,
     quickLinks: [
       { label: "Over onze praktijk", href: "/de-praktijk" },
       { label: "Route & Contact", href: "/contact" }

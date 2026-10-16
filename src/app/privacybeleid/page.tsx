@@ -103,8 +103,9 @@ export default function Privacybeleid() {
                         <div>
                             <p className="font-bold text-foreground mb-1">Bezoekadres</p>
                             <p>Fysio Laren</p>
-                            <p>Huenderstraat 3</p>
-                            <p>7245 BG Laren, Gld</p>
+                            {/* Tijdelijk adres voor zorgverzekeraars (Permanent: Huenderstraat 3, 7245 BG Laren, Gld) */}
+                            <p>Rengersweg 2</p>
+                            <p>7245 AC Laren, Gld</p>
                         </div>
                         <div>
                             <p className="font-bold text-foreground mb-1">Privacy Contact</p>

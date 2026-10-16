@@ -81,8 +81,9 @@ export default function Footer() {
                                 <MapPin size={16} />
                             </div>
                             <span className="text-sm text-white/80 mt-1">
-                                Huenderstraat 3<br />
-                                7245 BG Laren, Gld
+                                {/* Tijdelijk adres voor zorgverzekeraars (Permanent: Huenderstraat 3, 7245 BG Laren, Gld) */}
+                                Rengersweg 2<br />
+                                7245 AC Laren, Gld
                             </span>
                         </li>
                         <li>

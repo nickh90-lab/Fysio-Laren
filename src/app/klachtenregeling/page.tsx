@@ -62,8 +62,9 @@ export default function Klachtenregeling() {
                         <div>
                             <p className="font-bold text-foreground mb-1">Bezoekadres</p>
                             <p>Fysio Laren</p>
-                            <p>Huenderstraat 3</p>
-                            <p>7245 BG Laren (GLD)</p>
+                            {/* Tijdelijk adres voor zorgverzekeraars (Permanent: Huenderstraat 3, 7245 BG Laren) */}
+                            <p>Rengersweg 2</p>
+                            <p>7245 AC Laren, Gld</p>
                         </div>
                         <div>
                             <p className="font-bold text-foreground mb-1">Bereikbaarheid</p>

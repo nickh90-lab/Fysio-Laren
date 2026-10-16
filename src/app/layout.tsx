@@ -107,9 +107,10 @@ const clinicSchema = {
   "paymentAccepted": "PIN, Zorgverzekering, Factuur",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Huenderstraat 3",
+    // Tijdelijk adres voor zorgverzekeraars (Permanent: Huenderstraat 3, 7245 BG Laren)
+    "streetAddress": "Rengersweg 2",
     "addressLocality": "Laren",
-    "postalCode": "7245 BG",
+    "postalCode": "7245 AC",
     "addressRegion": "Gelderland",
     "addressCountry": "NL"
   },

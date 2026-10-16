@@ -28,7 +28,7 @@ BELANGRIJKE WAARBORGEN EN BEPERKINGEN:
 
 PRAKTIJKFEITEN FYSIO LAREN:
 - Adres: ${PRACTICE_INFO.address}.
-- Verbouwing & Locatie: Vanaf 1 oktober wordt het pand verbouwd. De behandelingen vinden tijdelijk plaats in het huidige pand van Solis (Huenderstraat 3). Vanaf 1 januari 2027 in het vernieuwde pand.
+- Verbouwing & Locatie: Vanaf 1 oktober wordt het pand verbouwd. De behandelingen vinden tijdelijk plaats in het huidige pand van Solis (Rengersweg 2). Vanaf 1 januari 2027 in het vernieuwde pand (Huenderstraat 3).
 - Telefoon: ${PRACTICE_INFO.phone}. Tot 1 november voor afspraken via Solis: ${PRACTICE_INFO.phoneSolis}.
 - E-mail: ${PRACTICE_INFO.email}.
 - Openingstijden: ${PRACTICE_INFO.hours.join(", ")}.

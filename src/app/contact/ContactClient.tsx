@@ -6,8 +6,9 @@ import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowRight, MessageCircle } fr
 
 const MapEmbed = ({ height = "h-[400px]", rounded = "rounded-[2.5rem]" }) => (
     <div className={`w-full ${height} overflow-hidden shadow-xl border border-foreground/5 ${rounded} relative z-10 bg-white/50 backdrop-blur-sm`}>
+        {/* Tijdelijk adres voor zorgverzekeraars (Permanent: Huenderstraat 3, 7245 BG Laren) */}
         <iframe
-            src="https://maps.google.com/maps?q=Huenderstraat%203,%207245%20BG%20Laren&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=Rengersweg%202,%207245%20AC%20Laren&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -149,10 +150,11 @@ export default function ContactClient() {
         phoneHref: "tel:0573215058",
         email: "info@fysio-laren.nl",
         emailHref: "mailto:info@fysio-laren.nl",
+        // Tijdelijk adres voor zorgverzekeraars (Permanent: Huenderstraat 3, 7245 BG Laren, Gld)
         address: (
             <>
-                Huenderstraat 3<br />
-                7245 BG Laren, Gld
+                Rengersweg 2<br />
+                7245 AC Laren, Gld
             </>
         ),
     };
@@ -233,7 +235,7 @@ export default function ContactClient() {
                         <div className="w-full md:w-1/3">
                             <h3 className="text-3xl font-bold mb-6">Onze Locatie</h3>
                             <p className="text-foreground/70 mb-6">U vindt ons centraal in Laren, Gld, met gratis parkeergelegenheid direct voor de deur.</p>
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=Huenderstraat+3,+7245+BG+Laren" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-accent font-bold hover:gap-2 transition-all">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Rengersweg+2,+7245+AC+Laren" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-accent font-bold hover:gap-2 transition-all">
                                 Plan uw route via Google Maps <ArrowRight size={18} className="ml-2" />
                             </a>
                         </div>

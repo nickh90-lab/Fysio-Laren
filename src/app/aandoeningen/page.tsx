@@ -16,9 +16,10 @@ export default function AandoeningenPage() {
         "telephone": "+31573215058",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Huenderstraat 3",
+            // Tijdelijk adres voor zorgverzekeraars (Permanent: Huenderstraat 3, 7245 BG Laren)
+            "streetAddress": "Rengersweg 2",
             "addressLocality": "Laren",
-            "postalCode": "7245 BG",
+            "postalCode": "7245 AC",
             "addressCountry": "NL"
         },
         "medicalSpecialty": [

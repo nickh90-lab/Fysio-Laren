@@ -180,7 +180,8 @@ export default function AfspraakMakenOnlineModule() {
                         <div>
                             <h3 className="font-bold text-foreground text-sm mb-1">Gratis parkeren & drempelvrij</h3>
                             <p className="text-xs text-foreground/70 font-light leading-relaxed">
-                                Huenderstraat 3 in Laren met ruime parkeergelegenheid direct voor de deur.
+                                {/* Tijdelijk: Rengersweg 2 (Permanent: Huenderstraat 3) */}
+                                Rengersweg 2 in Laren met ruime parkeergelegenheid direct voor de deur.
                             </p>
                         </div>
                     </div>

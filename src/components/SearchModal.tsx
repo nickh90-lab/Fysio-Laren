@@ -432,7 +432,7 @@ export const searchableItems: SearchItem[] = [
     {
         id: "p-contact",
         title: "Contact & Telefoonnummer",
-        description: "Bel 0573 - 21 50 58 of bekijk onze locaties Huenderstraat 3 & Rengersweg 2 in Laren.",
+        description: "Bel 0573 - 21 50 58 of bekijk onze locatie aan de Rengersweg 2 (tijdelijk) in Laren.",
         category: "Praktisch",
         href: "/contact",
         keywords: ["contact", "telefoon", "telefoonnummer", "tel nr", "tel", "bellen", "0573", "0573-215058", "0573 21 50 58", "adres", "route", "locatie", "huenderstraat", "rengersweg", "email", "mail", "whatsapp", "dokter", "huisarts", "spreekuur", "parkeren", "bereikbaarheid", "inschrijven"]
