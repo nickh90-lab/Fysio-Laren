@@ -163,7 +163,86 @@ const behandelingen = [
     {
         slug: "voetentraining",
         title: "Voetentraining",
-        desc: "Uw voeten vormen letterlijk de basis van uw lichaam bij het staan en bewegen. Wanneer de spieren in de voeten verzwakt of stijf zijn, kan dit niet alleen leiden tot voetklachten (zoals hielpijn of overbelasting van de peesplaat), maar ook tot compensatie en spanning in de enkels, knieën of heupen. Met gerichte voetentraining versterken we de spieren en de flexibiliteit van uw voeten en voetboog. Dit zorgt voor een betere natuurlijke schokdemping en stabiliteit, zodat u weer prettig en met vertrouwen kunt staan en lopen."
+        desc: (
+            <div className="space-y-4 text-left">
+                <p>
+                    Voetklachten komen veel voor. Denk aan een scheve grote teen, klauw- of hamertenen, hielspoor of pijn onder de voorvoet.
+                </p>
+                <p>
+                    Bij voetentraining kijken we verder dan alleen het verminderen van de pijn. We onderzoeken waardoor je klachten ontstaan en wat ervoor zorgt dat ze blijven terugkomen. Daarbij kijken we niet alleen naar je voeten, maar ook naar de rest van je lichaam.
+                </p>
+
+                <div className="pt-2">
+                    <h3 className="font-bold text-foreground text-base sm:text-lg mb-1.5">Onderzoek en behandeling</h3>
+                    <p>
+                        Tijdens een uitgebreid onderzoek brengen we je voetklachten en de mogelijke oorzaken in kaart. Op basis daarvan kijken we welke aanpak het beste bij jou past.
+                    </p>
+                </div>
+
+                <div className="bg-muted/50 rounded-2xl p-4 sm:p-5 border border-foreground/5">
+                    <p className="font-bold text-foreground mb-2">Neem bij je eerste afspraak mee:</p>
+                    <ul className="list-disc list-inside space-y-1 text-foreground/80">
+                        <li>Een grote handdoek</li>
+                        <li>Je identiteitsbewijs</li>
+                        <li>Eventuele steunzolen</li>
+                        <li>Een paar schoenen die je veel draagt</li>
+                    </ul>
+                </div>
+
+                <p>
+                    Voor de training maken we gebruik van oefenprogramma&apos;s van het Kennis- en Opleidingscentrum Voet, Houding en Beweging. Meer informatie vind je op{" "}
+                    <a
+                        href="https://www.voetentraining.nl/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors"
+                    >
+                        www.voetentraining.nl
+                    </a>.
+                </p>
+
+                <div className="pt-2">
+                    <h3 className="font-bold text-foreground text-base sm:text-lg mb-1.5">Vergoeding en kosten</h3>
+                    <p className="mb-2">
+                        De behandeling valt onder fysiotherapie en wordt mogelijk vergoed vanuit je aanvullende zorgverzekering. Raadpleeg hiervoor je eigen polis.
+                    </p>
+                    <p>
+                        Voor screening, intake, onderzoek en fysiotherapie gelden onze actuele tarieven. De oefenprogramma&apos;s vallen buiten de zorgverzekering en worden apart berekend. Meer informatie vind je op{" "}
+                        <a
+                            href="https://www.voetentraining.nl/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors"
+                        >
+                            www.voetentraining.nl
+                        </a>.
+                    </p>
+                </div>
+
+                <div className="pt-2">
+                    <h3 className="font-bold text-foreground text-base sm:text-lg mb-1.5">Een afspraak maken?</h3>
+                    <p className="mb-2">
+                        Wil je weten wat voetentraining voor jou kan betekenen? Neem gerust contact op met <strong>Ingrid Enderink</strong>.
+                    </p>
+                    <p className="text-foreground/90">
+                        Mail gerust naar{" "}
+                        <a
+                            href="mailto:info@fysio-laren.nl"
+                            className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors"
+                        >
+                            info@fysio-laren.nl
+                        </a>{" "}
+                        of bel/app naar{" "}
+                        <a
+                            href="tel:0573215058"
+                            className="text-blue-accent font-semibold underline hover:text-blue-accent/80 transition-colors"
+                        >
+                            0573-215058
+                        </a>.
+                    </p>
+                </div>
+            </div>
+        )
     },
     {
         slug: "medical-taping",
