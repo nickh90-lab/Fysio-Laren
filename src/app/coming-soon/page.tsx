@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 
 export default function ComingSoon() {
@@ -76,13 +77,13 @@ export default function ComingSoon() {
               </div>
             </div>
 
-            {/* Solis afspraakinfo */}
+            {/* Afspraak & contact info */}
             <div className="w-full max-w-xl mb-5 text-xs sm:text-sm text-foreground/75 leading-relaxed bg-foreground/[0.03] rounded-xl p-3 sm:p-3.5 border border-foreground/8 text-center sm:text-left">
               <p className="font-medium text-foreground mb-0.5">
-                Afspraak maken tot 1 november?
+                Direct contact voor een afspraak of vraag?
               </p>
               <p className="text-foreground/65 text-xs sm:text-[13px]">
-                U kunt tot 1 november voor afspraken contact opnemen met <strong>Solis</strong> (<a href="tel:0573401984" className="hover:underline font-semibold text-foreground">0573-401984</a>). Vanaf 1 november zijn wij rechtstreeks bereikbaar via onderstaand nummer:
+                Onze praktijk aan de Rengersweg 2 is geopend. U kunt ons rechtstreeks bellen of bereiken via WhatsApp en ons contactformulier:
               </p>
             </div>
 
@@ -95,13 +96,13 @@ export default function ComingSoon() {
                 <Phone size={15} />
                 <span>0573 - 21 50 58</span>
               </a>
-              <a
-                href="mailto:info@fysio-laren.nl"
+              <Link
+                href="/contact"
                 className="w-full sm:w-auto px-6 py-3 bg-white text-foreground font-semibold rounded-full border border-foreground/15 hover:bg-foreground/5 transition-all flex items-center justify-center gap-2 shadow-xs text-sm"
               >
                 <Mail size={15} />
-                <span>info@fysio-laren.nl</span>
-              </a>
+                <span>Naar contactformulier</span>
+              </Link>
             </div>
 
           </div>

@@ -22,17 +22,7 @@ export function SubHeaderBar({ isScrolled = false }: { isScrolled?: boolean }) {
         {/* Links: Afspraken & Telefoonnummers */}
         <div className="flex items-center flex-wrap justify-center md:justify-start gap-x-2.5 gap-y-1 text-center md:text-left">
           <span className="text-white/95">
-            <span className="text-white/80 font-medium">Afspraak vóór 1 nov?</span>{" "}
-            <a 
-              href="tel:0573401984" 
-              className="font-bold text-white hover:text-white/80 transition-colors underline decoration-white/60 underline-offset-2 hover:decoration-white text-xs sm:text-[13px] md:text-sm"
-            >
-              0573 - 40 19 84
-            </a>
-          </span>
-          <span className="text-white/35 hidden sm:inline">·</span>
-          <span className="text-white/95">
-            <span className="text-white/80 font-medium">Afspraak vanaf 1 nov?</span>{" "}
+            <span className="text-white/80 font-medium">Afspraak maken of vraag?</span>{" "}
             <a 
               href="tel:0573215058" 
               className="font-bold text-white hover:text-white/80 transition-colors underline decoration-white/60 underline-offset-2 hover:decoration-white text-xs sm:text-[13px] md:text-sm"
@@ -48,7 +38,7 @@ export function SubHeaderBar({ isScrolled = false }: { isScrolled?: boolean }) {
             Locaties:
           </span>
           <span>
-            Start 1 nov: <strong className="font-bold text-white">Rengersweg 2</strong>
+            Huidig: <strong className="font-bold text-white">Rengersweg 2</strong>
           </span>
           <span className="text-white/35 hidden sm:inline">·</span>
           <span>

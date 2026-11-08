@@ -58,28 +58,37 @@ export default function OpeningHeroSelector() {
     );
   }
 
-  // 2. TIJDELIJKE OPENINGSVERSIE (Hoera, we gaan beginnen - subtieler formaat & rustig)
+  // 2. OPENINGSVERSIE (Rustig, stijlvol & evenwichtig)
   return (
     <div className="w-full bg-background flex flex-col lg:flex-row min-h-[85vh] -mt-20 pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 relative items-center">
       <div className="max-w-screen-2xl mx-auto w-full flex flex-col lg:flex-row items-center px-6 lg:px-12 xl:px-24 gap-12 lg:gap-20">
         
-        {/* Linkerzijde - Feestelijke maar stijlvolle openingstekst */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center text-center items-center z-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-foreground mb-6 leading-[1.18] lg:leading-[1.12] tracking-tight text-center w-full">
-            Hoera, we gaan beginnen<br />
-            <span className="text-blue-accent">Welkom bij Fysio Laren!</span>
+        {/* Linkerzijde - Rustige en stijlvolle openingstekst */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left items-center lg:items-start z-10">
+          
+          {/* Subtiel openingslabel voor rustige hiërarchie */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-accent/10 text-blue-accent tracking-wide mb-4">
+            Hoera, we zijn gestart!
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-[1.15] tracking-tight">
+            Welkom bij <span className="text-blue-accent">Fysio Laren</span>
           </h1>
 
-          <p className="text-foreground/80 text-lg md:text-xl max-w-xl font-light leading-relaxed mx-auto text-center">
-            Vanaf 1 november starten wij aan de Rengersweg 2 en vanaf 1 januari aan de Huenderstraat 3. Onze agenda voor behandelingen is geopend vanaf 1 november. Wilt u een afspraak vóór 1 november? Bel dan naar <a href="tel:0573401984" className="font-semibold text-blue-accent underline hover:text-blue-accent/80 transition-colors">0573 - 40 19 84</a>. Voor afspraken vanaf 1 november kunt u alvast online plannen of bellen naar <a href="tel:0573215058" className="font-semibold text-blue-accent underline hover:text-blue-accent/80 transition-colors">0573 - 21 50 58</a>.
+          <p className="text-foreground/75 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl">
+            Wij zijn officieel geopend en heten u van harte welkom op onze praktijklocatie aan de Rengersweg 2 in Laren. Vanaf 1 januari 2027 verhuizen wij naar ons compleet vernieuwde pand aan de Huenderstraat 3.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-10 items-center justify-center w-full sm:w-auto">
+          <p className="text-foreground/75 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl mt-4">
+            Wilt u een afspraak inplannen? Maak direct gebruik van onze online planmodule via de knop hieronder, of neem contact met ons op via <a href="tel:0573215058" className="text-foreground hover:text-blue-accent transition-colors font-medium">0573 - 21 50 58</a> of het <Link href="/contact" className="text-foreground hover:text-blue-accent transition-colors font-medium underline underline-offset-4 decoration-foreground/30 hover:decoration-blue-accent">contactformulier</Link>.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 items-center lg:items-start w-full sm:w-auto">
             <Link
               href="/afspraak-maken"
               className="w-full sm:w-auto px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg hover:shadow-blue-accent/20 md:text-lg hover:scale-102 cursor-pointer"
             >
-              Plan alvast uw afspraak
+              Plan uw afspraak
             </Link>
             <Link
               href="/ons-team"

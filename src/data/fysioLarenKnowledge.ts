@@ -15,8 +15,7 @@ export const PRACTICE_INFO = {
   temporaryAddressNote: "Let op: Vanaf 1 oktober wordt ons pand aan de Huenderstraat verbouwd. Wij behandelen tijdelijk in het huidige pand van Solis (Rengersweg 2). Vanaf 1 januari 2027 verwelkomen we u in ons compleet vernieuwde pand aan de Huenderstraat 3!",
   phone: "0573 - 21 50 58",
   whatsapp: "0573 - 21 50 58",
-  phoneSolis: "0573 - 401984",
-  phoneNotice: "U kunt ons bereiken op 0573 - 21 50 58 (telefonisch of via WhatsApp). Tot 1 november kunt u voor afspraken contact opnemen met Solis via 0573 - 401984.",
+  phoneNotice: "U kunt ons rechtstreeks bereiken op 0573 - 21 50 58 (telefonisch of via WhatsApp) of via ons contactformulier op de website.",
   email: "info@fysio-laren.nl",
   hours: [
     "Maandag: 08:00 – 21:00",
@@ -121,9 +120,9 @@ Vanaf 1 oktober wordt ons pand verbouwd. Tijdens de verbouwing behandelen wij ti
 • Telefoon: 0573 - 21 50 58
 • WhatsApp: 0573 - 21 50 58
 • E-mail: info@fysio-laren.nl
+• Contactformulier: direct via onze website.
 
-Let op tijdens de overgangsperiode:
-Tot 1 november 2026 kunt u voor afspraken contact opnemen met Solis via 0573 - 401984. Vanaf 1 november zijn wij rechtstreeks bereikbaar op 0573 - 21 50 58.`,
+Onze praktijk aan de Rengersweg 2 is geopend. Vanaf 1 januari 2027 verwelkomen we u aan de Huenderstraat 3!`,
     quickLinks: [
       { label: "WhatsApp sturen", href: "https://wa.me/31573215058" },
       { label: "Naar contactformulier", href: "/contact" },
@@ -573,8 +572,7 @@ Heeft u een vraag over onze zorg of praktijk? Stel hem gerust!`,
 
 Wij helpen u graag persoonlijk verder! Neem gerust telefonisch contact met ons op of stel uw vraag via ons contactformulier.
 
-• Telefoon praktijk: ${PRACTICE_INFO.phone}
-• Tot 1 november (afspraken via Solis): ${PRACTICE_INFO.phoneSolis}`,
+• Telefoon praktijk: ${PRACTICE_INFO.phone} (ook bereikbaar via WhatsApp)`,
     quickLinks: [
       { label: "Bel Fysio Laren", href: "tel:0573215058" },
       { label: "Stel een vraag via contact", href: "/contact" },
