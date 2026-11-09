@@ -85,12 +85,14 @@ export default function KnieklachtenLaren() {
                         Zorg voor duidelijkheid. Laat the gespecialiseerde therapeut van Fysio Laren direct The testjes uitvoeren op uw ligamenten The.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/20 pt-10">
-                        <Link 
-                            href="/afspraak-maken" 
+                        <a 
+                            href="https://fysio-laren.uwpraktijkonline.nl" 
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center cursor-pointer"
                         >
                             Boek online The consult Knie <ChevronRight size={20} className="ml-2" />
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </section>

@@ -55,12 +55,14 @@ export default function TarievenPage() {
 
                     {/* Call to Actions: Bescheiden & Elegant */}
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 text-sm font-semibold">
-                        <Link
-                            href="/afspraak-maken"
+                        <a
+                            href="https://fysio-laren.uwpraktijkonline.nl"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-blue-accent text-white rounded-full py-3 px-6 flex items-center justify-center gap-2 group hover:bg-blue-accent/90 transition-all shadow-xs w-full sm:w-auto cursor-pointer"
                         >
                             Afspraak inplannen <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                        </a>
 
                         <Link
                             href="/contact"

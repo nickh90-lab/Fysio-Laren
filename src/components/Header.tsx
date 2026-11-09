@@ -259,8 +259,10 @@ export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) 
                     </button>
 
                     {/* Afspraak Maken CTA - Solid Blue / Solid White */}
-                    <Link 
-                        href="/afspraak-maken" 
+                    <a 
+                        href="https://fysio-laren.uwpraktijkonline.nl" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={closeMenu} 
                         className="shrink-0"
                     >
@@ -276,7 +278,7 @@ export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) 
                         >
                             Afspraak maken
                         </motion.div>
-                    </Link>
+                    </a>
 
                     {/* Mobile Menu Toggle */}
                     <button
@@ -581,13 +583,15 @@ export function HeaderBase({ variant }: { variant: 'light' | 'dark' | 'blue' }) 
 
                             {/* Actieknoppen onderaan */}
                             <div className="pt-4 mt-2 border-t border-black/5 space-y-2.5">
-                                <Link
-                                    href="/afspraak-maken"
+                                <a
+                                    href="https://fysio-laren.uwpraktijkonline.nl"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     onClick={closeMenu}
                                     className="w-full py-3 px-5 rounded-full bg-blue-accent text-white font-bold text-sm text-center shadow-md hover:bg-blue-accent/90 transition-all flex items-center justify-center gap-2"
                                 >
                                     Afspraak maken
-                                </Link>
+                                </a>
 
                                 <a
                                     href="tel:0573215058"

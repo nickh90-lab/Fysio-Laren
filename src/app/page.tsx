@@ -37,12 +37,14 @@ export default function Home() {
               <p className="text-foreground/80 mb-10 flex-grow text-lg leading-relaxed">
                 Wij zijn een gespecialiseerde fysiotherapiepraktijk. Onze therapeuten bieden persoonlijke en doelgerichte behandelingen om u zo snel mogelijk weer in beweging te krijgen.
               </p>
-              <Link 
-                href="/afspraak-maken" 
+              <a 
+                href="https://fysio-laren.uwpraktijkonline.nl" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-white bg-blue-accent font-bold hover:bg-blue-accent/90 transition-all mt-auto w-fit px-8 py-4 rounded-full shadow-xl hover:scale-105 border border-foreground/5 md:text-lg"
               >
                 Maak een afspraak <ArrowRight size={20} className="ml-2" />
-              </Link>
+              </a>
             </div>
 
             {/* Ondersteunend blok FysioFit */}

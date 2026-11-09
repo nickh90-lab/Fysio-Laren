@@ -89,12 +89,14 @@ export default function ManueleTherapieLaren() {
                         Heeft u veel last van een stijve rug of een vastzittende nek? Tijd voor de Master specialistische focus in manuele therapie.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/20 pt-10">
-                        <Link 
-                            href="/afspraak-maken" 
+                        <a 
+                            href="https://fysio-laren.uwpraktijkonline.nl" 
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-full sm:w-auto px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform shadow-lg flex items-center justify-center cursor-pointer"
                         >
                             Maak een afspraak <ChevronRight size={20} className="ml-2" />
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </section>

@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/afspraak-maken',
+        destination: 'https://fysio-laren.uwpraktijkonline.nl',
+        permanent: false,
+      },
+      {
         source: '/sportis',
         destination: '/fysiofit',
         permanent: true,

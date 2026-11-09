@@ -460,13 +460,15 @@ function BehandelingenContent() {
                                             {item.desc}
                                         </div>
                                         <div className="pt-3 border-t border-foreground/8 flex flex-col sm:flex-row gap-2.5">
-                                            <Link
-                                                href="/afspraak-maken"
+                                            <a
+                                                href="https://fysio-laren.uwpraktijkonline.nl"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-blue-accent text-white font-semibold text-xs sm:text-sm shadow-xs hover:bg-blue-accent/90 transition-all cursor-pointer"
                                             >
                                                 <span>Afspraak inplannen</span>
                                                 <ArrowRight className="w-3.5 h-3.5" />
-                                            </Link>
+                                            </a>
                                             <Link
                                                 href="/contact"
                                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground font-semibold text-xs sm:text-sm transition-all"
@@ -489,12 +491,14 @@ function BehandelingenContent() {
                     Wilt u persoonlijk advies over welke behandeling het beste bij uw situatie aansluit? Onze therapeuten staan voor u klaar.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
-                    <Link
-                        href="/afspraak-maken"
+                    <a
+                        href="https://fysio-laren.uwpraktijkonline.nl"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="bg-blue-accent text-white rounded-full py-4 px-8 font-bold flex items-center justify-center gap-2 group hover:scale-105 transition-transform w-full sm:w-auto shadow-md cursor-pointer"
                     >
                         Afspraak inplannen <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
                     <Link
                         href="/contact"
                         className="bg-foreground/5 text-foreground hover:bg-foreground/10 rounded-full py-4 px-8 font-bold flex items-center justify-center gap-2 transition-colors w-full sm:w-auto"

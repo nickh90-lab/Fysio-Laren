@@ -426,7 +426,7 @@ export const searchableItems: SearchItem[] = [
         title: "Afspraak maken (Directe Toegankelijkheid)",
         description: "Plan direct online uw afspraak of neem contact op. Geen verwijsbrief van de huisarts nodig.",
         category: "Praktisch",
-        href: "/afspraak-maken",
+        href: "https://fysio-laren.uwpraktijkonline.nl",
         keywords: ["afspraak maken", "afspraak plannen", "afspraak", "intake", "online agenda", "directe toegankelijkheid", "zonder verwijzing", "verwijzing", "verwijsbrief", "huisarts", "aanmelden"]
     },
     {
@@ -914,13 +914,15 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                                     >
                                         <Phone size={14} /> Neem contact op
                                     </Link>
-                                    <Link
-                                        href="/afspraak-maken"
+                                    <a
+                                        href="https://fysio-laren.uwpraktijkonline.nl"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         onClick={onClose}
                                         className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground font-bold text-xs transition-all cursor-pointer"
                                     >
                                         <Calendar size={14} /> Afspraak inplannen
-                                    </Link>
+                                    </a>
                                 </div>
                             </div>
                         )}

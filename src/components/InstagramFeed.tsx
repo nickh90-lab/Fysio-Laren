@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Instagram, Facebook, ArrowUpRight, Heart } from "lucide-react";
+import { Instagram, Facebook, ArrowUpRight } from "lucide-react";
 
 interface InstagramPost {
     id: string;
@@ -158,12 +158,6 @@ export default function InstagramFeed() {
                                         <span className="font-semibold text-blue-accent group-hover:underline flex items-center gap-1">
                                             Bekijk bericht <ArrowUpRight size={13} />
                                         </span>
-                                        {post.likeCount !== undefined && post.likeCount > 0 && (
-                                            <span className="flex items-center gap-1 text-foreground/60 font-medium">
-                                                <Heart size={13} className="text-rose-500 fill-rose-500" />
-                                                {post.likeCount}
-                                            </span>
-                                        )}
                                     </div>
                                 </div>
                             </Link>

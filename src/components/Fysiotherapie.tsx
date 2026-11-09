@@ -460,12 +460,14 @@ export default function Fysiotherapie() {
             <div className="bg-white rounded-[3rem] p-10 md:p-14 shadow-sm border border-foreground/5 text-center max-w-4xl mx-auto flex flex-col items-center">
                 <h2 className="text-3xl font-bold text-foreground mb-6">Samen werken aan uw gezondheid</h2>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
-                    <Link
-                        href="/afspraak-maken"
+                    <a
+                        href="https://fysio-laren.uwpraktijkonline.nl"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="bg-blue-accent text-white rounded-full py-4 px-8 font-bold flex items-center justify-center gap-2 group hover:scale-105 transition-transform w-full sm:w-auto shadow-md cursor-pointer"
                     >
                         Afspraak inplannen <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
                     <Link
                         href="/contact"
                         className="bg-foreground/5 text-foreground hover:bg-foreground/10 rounded-full py-4 px-8 font-bold flex items-center justify-center gap-2 transition-colors w-full sm:w-auto"

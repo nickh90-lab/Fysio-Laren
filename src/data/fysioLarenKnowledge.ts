@@ -92,7 +92,7 @@ export const KNOWLEDGE_TOPICS: KnowledgeTopic[] = [
 We hebben dus ook ruime behandelmogelijkheden in de avonduren op maandag, dinsdag en woensdag!`,
     quickLinks: [
       { label: "Contactpagina", href: "/contact" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Locatie & Adres", "Afspraak maken", "Tarieven"]
   },
@@ -126,7 +126,7 @@ Onze praktijk aan de Rengersweg 2 is geopend. Vanaf 1 januari 2027 verwelkomen w
     quickLinks: [
       { label: "WhatsApp sturen", href: "https://wa.me/31573215058" },
       { label: "Naar contactformulier", href: "/contact" },
-      { label: "Direct online afspraak", href: "/afspraak-maken" }
+      { label: "Direct online afspraak", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Openingstijden", "Locatie & Verbouwing"]
   },
@@ -141,7 +141,7 @@ Heeft u een verwijsbrief nodig?
 Nee, voor reguliere fysiotherapie heeft u géén verwijsbrief van uw huisarts of specialist nodig (Directe Toegankelijkheid Fysiotherapie - DTF). 
 Alleen bij chronische aandoeningen of behandeling aan huis is een verwijzing vereist om in aanmerking te komen voor vergoeding.`,
     quickLinks: [
-      { label: "Plan direct online uw afspraak", href: "/afspraak-maken" },
+      { label: "Plan direct online uw afspraak", href: "https://fysio-laren.uwpraktijkonline.nl" },
       { label: "Contact opnemen", href: "/contact" }
     ],
     suggestedFollowups: ["Tarieven & Vergoedingen", "Telefoonnummer"]
@@ -220,7 +220,7 @@ Tarieven FysioFit (abonnementsvorm, geen verwijsbrief nodig):
 • Gespecialiseerde begeleiding bij Parkinson, MS, CVA, COPD, Claudicatio Intermittens (etalagebenen) en Oncologie.`,
     quickLinks: [
       { label: "Bekijk alle behandelingen", href: "/behandelingen" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Ons team", "Tarieven"]
   },
@@ -234,7 +234,7 @@ Tarieven FysioFit (abonnementsvorm, geen verwijsbrief nodig):
 Bij Fysio Laren krijgt u eerst een gerichte proefbehandeling en krijgt u het apparaat 7 tot 10 dagen mee naar huis om het in uw eigen leefomgeving te testen. Verloopt deze proefperiode goed, dan kan het TENS-apparaat definitief worden aangevraagd en wordt dit vaak vergoed door uw zorgverzekeraar.`,
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Behandelingen", "Contact"]
   },
@@ -254,7 +254,7 @@ Afhankelijk van de manier waarop de tape wordt aangelegd, kan deze voor verschil
 Medical taping is breed toepasbaar bij onder andere spierblessures (zoals een zweepslag of verrekking), pees- en gewrichtsklachten, overbelasting en zwellingen.`,
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Behandelingen", "TENS", "Contact"]
   },
@@ -274,7 +274,7 @@ Wat we voor u kunnen betekenen:
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Neurologie beweeggroepen", href: "/gespecialiseerde-groepstraining?groep=neurologie" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Beweeggroepen", "Ons team", "Contact"]
   },
@@ -293,7 +293,7 @@ Wat we voor u kunnen betekenen:
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Neurologie beweeggroepen", href: "/gespecialiseerde-groepstraining?groep=neurologie" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Beweeggroepen", "Parkinson", "Contact"]
   },
@@ -312,7 +312,7 @@ Wat we voor u kunnen betekenen:
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Neurologie beweeggroepen", href: "/gespecialiseerde-groepstraining?groep=neurologie" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Beweeggroepen", "Parkinson", "Ons team", "Contact"]
   },
@@ -331,7 +331,7 @@ U ontvangt persoonlijk advies over:
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "Sportfysiotherapie", href: "/behandelingen/sportfysiotherapie-laren" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Behandelingen", "Tarieven", "Contact"]
   },
@@ -350,7 +350,7 @@ Wat we voor u kunnen betekenen:
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
       { label: "COPD beweeggroep", href: "/copd" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Beweeggroepen", "Tarieven", "Contact"]
   },
@@ -368,7 +368,7 @@ Wat we voor u kunnen betekenen:
 • Voorkomen of uitstellen van een operatieve vaatingreep`,
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Behandelingen", "Vergoedingen", "Contact"]
   },
@@ -386,7 +386,7 @@ Waar we u mee kunnen helpen:
 • Balans tussen dagelijkse belasting en rust om terugkerende klachten te voorkomen`,
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Behandelingen", "Ons team", "Contact"]
   },
@@ -404,7 +404,7 @@ Wat we voor u kunnen betekenen:
 • Praktische oefeningen voor thuis en advies over schoeisel`,
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Hardloopanalyse", "Behandelingen", "Contact"]
   },
@@ -422,7 +422,7 @@ Wat we voor u kunnen betekenen:
 • Praktische handvatten voor het versterken van de rugspieren en een veilige, actieve lichaamshouding`,
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Behandelingen", "Ons team", "Contact"]
   },
@@ -439,7 +439,7 @@ Binnen onze praktijk bieden we hiervoor het wetenschappelijk bewezen Otago-oefen
 • Of individueel in de thuissituatie (1 jaar begeleiding met huisbezoeken en consulten op maat)`,
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen?behandeling=valpreventie" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Ouderenzorg", "Behandelingen", "Contact"]
   },
@@ -457,7 +457,7 @@ Wat we voor u kunnen betekenen:
 • Voorkomen of langdurig uitstellen van operaties`,
     quickLinks: [
       { label: "Bekijk bij Behandelingen", href: "/behandelingen" },
-      { label: "Afspraak maken", href: "/afspraak-maken" }
+      { label: "Afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedFollowups: ["Behandelingen", "Osteoporose", "Contact"]
   },
@@ -498,7 +498,7 @@ export function findSmartAnswer(userMessage: string): {
 
 Onze fysiotherapeuten helpen u graag persoonlijk tijdens een intake op de praktijk om de oorzaak van uw klacht vast te stellen en een gericht herstelplan te maken.`,
       quickLinks: [
-        { label: "Plan direct een intake in", href: "/afspraak-maken" },
+        { label: "Plan direct een intake in", href: "https://fysio-laren.uwpraktijkonline.nl" },
         { label: "Bel ons: 0573 - 21 50 58", href: "tel:0573215058" },
         { label: "Contactpagina", href: "/contact" }
       ],
@@ -576,7 +576,7 @@ Wij helpen u graag persoonlijk verder! Neem gerust telefonisch contact met ons o
     quickLinks: [
       { label: "Bel Fysio Laren", href: "tel:0573215058" },
       { label: "Stel een vraag via contact", href: "/contact" },
-      { label: "Online afspraak maken", href: "/afspraak-maken" }
+      { label: "Online afspraak maken", href: "https://fysio-laren.uwpraktijkonline.nl" }
     ],
     suggestedQuestions: [
       "Wat zijn de openingstijden?",

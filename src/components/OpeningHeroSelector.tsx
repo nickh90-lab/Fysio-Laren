@@ -27,12 +27,14 @@ export default function OpeningHeroSelector() {
               Persoonlijke aandacht, duidelijke uitleg en een behandeling die bij u past. Samen werken we aan herstel en blijvend resultaat.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10 items-center lg:items-start w-full sm:w-auto">
-              <Link 
-                href="/afspraak-maken" 
+              <a 
+                href="https://fysio-laren.uwpraktijkonline.nl" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg hover:shadow-blue-accent/20 md:text-lg cursor-pointer"
               >
                 Maak een afspraak
-              </Link>
+              </a>
               <Link href="/ons-team" className="w-full sm:w-auto px-8 py-4 bg-white/80 hover:bg-white text-foreground font-bold rounded-full border border-foreground/10 shadow-sm transition-all flex items-center justify-center md:text-lg">
                 Ons team
               </Link>
@@ -84,12 +86,14 @@ export default function OpeningHeroSelector() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-8 items-center lg:items-start w-full sm:w-auto">
-            <Link
-              href="/afspraak-maken"
+            <a
+              href="https://fysio-laren.uwpraktijkonline.nl"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-blue-accent text-white font-bold rounded-full hover:bg-blue-accent/90 transition-all flex items-center justify-center shadow-lg hover:shadow-blue-accent/20 md:text-lg hover:scale-102 cursor-pointer"
             >
               Plan uw afspraak
-            </Link>
+            </a>
             <Link
               href="/ons-team"
               className="w-full sm:w-auto px-8 py-4 bg-white/80 hover:bg-white text-foreground font-bold rounded-full border border-foreground/10 shadow-sm transition-all flex items-center justify-center md:text-lg"
